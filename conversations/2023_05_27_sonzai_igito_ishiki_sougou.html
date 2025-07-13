@@ -1,0 +1,521 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>存在の条件：相互編集主体</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">存在の条件：相互編集主体</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2023/05/27</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">何か、哲学的な話題をあげてみてください。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">もちろんです。ここでは一つの哲学的な話題を提供します。それは
+…
+や思想家によって深く探求されてきました。</div>
+          <div class="full">もちろんです。ここでは一つの哲学的な話題を提供します。それは「存在の意味と目的」についてのものです。人々は長い間、自分たちの存在や人生の目的について考えてきました。人はなぜ生まれ、なぜ存在し、何のために生きるのかという問いに対する答えは様々です。宗教や倫理学、哲学の分野では、このような問いに対してさまざまな解釈や理論が提案されてきました。例えば、人々の存在は神の意図によって決まると考える宗教的な視点や、自己実現や幸福を求めるという個人的な視点などがあります。このテーマは多くの哲学者や思想家によって深く探求されてきました。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">有力な説にはどんなものがありますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">存在の意味と目的に関する有力な説にはいくつかあります。以下に
+…
+な立場によって多様な考え方が存在します。</div>
+          <div class="full">存在の意味と目的に関する有力な説にはいくつかあります。以下にいくつかの例を挙げます。
+
+
+実存主義: 実存主義は、人間の自由や責任、個人の経験に焦点を当てます。この視点では、人々は自らの意味と目的を創り出す存在であり、自由な選択と責任を通じて自己の存在を意味づけることが重要だとされます。有名な実存主義者には、ジャン＝ポール・サルトルやシモーヌ・ド・ボーヴォワールがいます。
+
+ユーティリタリアニズム: ユーティリタリアニズムは、最大多数の幸福や幸福感を追求することを重視します。この視点では、人々の存在の目的は他者の幸福を最大化することであり、善悪の判断基準として行動の結果を重視します。ジェレミー・ベンサムやジョン・ステュアート・ミルは、ユーティリタリアニズムの主要な提唱者です。
+
+宗教的信念: 宗教的な視点では、存在の意味と目的は神や超自然的な存在の意図によって定まると考えられます。宗教によっては、人々は神との関係や霊的な目的を追求することで、自らの存在を意味づけるとされます。異なる宗教にはさまざまな信念や教義があります。
+
+
+これらは一部の有力な説ですが、存在の意味と目的については人々の信念や哲学的な立場によって多様な考え方が存在します。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">まず、本当に我々は存在するのか、存在するとしたらどのように存在するのか、という点がはっきりしてませんね。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">存在の問題は哲学の古典的なテーマの一つであり、多くの議論が行
+…
+の深い洞察を提供するものとなっています。</div>
+          <div class="full">存在の問題は哲学の古典的なテーマの一つであり、多くの議論が行われてきました。その中でも存在の根本的な問いについては、いくつかの主要な立場が存在します。
+
+
+実体論: 実体論は、物事や個体が実在すると考える立場です。物事は物理的な形態を持ち、それ自体が存在するとされます。この立場では、私たちは物質的な実体として存在していると考えられます。
+
+理念論: 理念論は、存在は意識や知覚によって成り立つと考える立場です。この立場では、私たちの存在は意識や思考によって確立され、外界の存在は私たちの認識に依存するとされます。
+
+フェノメノロジー: フェノメノロジーは、私たちの経験や意識のあり方に焦点を当てる立場です。フェノメノロジーでは、存在の意味は主観的な経験や現象の中で現れると考えられます。人々は自己と他者、そして世界との関係性を通じて存在しているとされます。
+
+
+これらは存在の問題に対する一部の立場です。実際にはさらに多くの考え方が存在しますし、個々の哲学者や思想家が独自の視点を持っています。存在の性質や方法に関する議論は広範で複雑なものですが、人間の存在についての深い洞察を提供するものとなっています。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">例えばテレビで猫の映像をみて、それが青と緑と赤の光の束だ、と解釈することは無意味です。
+存在もまた、元素や物理的な側面について定義しても、あまり実りはないでしょう。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">確かに、存在の本質や経験を単純に物理的な側面や要素に帰するだ
+…
+、存在の多面性や複雑さを反映しています。</div>
+          <div class="full">確かに、存在の本質や経験を単純に物理的な側面や要素に帰するだけでは、存在の全てを説明することはできません。私たちが経験する現実は、単なる物理的な要素や構成要素の総体以上のものです。
+
+
+人間の存在や経験は、意識、感情、知覚、関係性、文化的な背景など、さまざまな要素の組み合わせから成り立っています。私たちはそれぞれが独自の意味や目的を追求し、自己の経験を通じて世界を理解しています。
+
+
+例えば、猫の映像を単なる光の束として捉えるだけでは、その映像が私たちに与える感情や喜び、猫への関心や愛情といった人間の経験や意味を十分に捉えることはできません。
+
+
+存在の解釈や意味については、哲学や心理学、宗教、文学など様々な領域で深く議論されてきました。それぞれの人が独自の視点や経験を通じて存在を理解することが重要であり、存在の多面性や複雑さを反映しています。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">存在そのものの定義について、哲学は何と言ってますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">存在そのものの定義について、哲学ではさまざまな立場や理論が存
+…
+定義についても多様な議論が続いています。</div>
+          <div class="full">存在そのものの定義について、哲学ではさまざまな立場や理論が存在します。一つの有名な立場として、「実在主義」という哲学的な学派があります。実在主義者たちは、存在そのものの本質や定義について深く考察しました。
+
+
+実在主義者たちは、存在そのものを抽象的な概念や定義で捉えることよりも、直接的な経験と関連付けることを重視します。彼らによれば、存在そのものは「存在すること」そのものであり、人間や物体が具体的な形で現れることを指します。言い換えれば、実在主義では存在は具体的な存在や経験によって示されるものとされます。
+
+
+ただし、哲学界全体ではこの問いに対して統一された回答があるわけではありません。異なる哲学者や学派は独自の視点や理論を提案しており、存在そのものの定義についても多様な議論が続いています。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">我々は別の議論で創造的活動の主体として「お互いに価値観を編集しあうもの」を想定しました。一旦、これを存在の条件としましょう。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">了解しました。もし、存在の条件として「お互いに価値観を編集し
+…
+意味を見出すことができるかもしれません。</div>
+          <div class="full">了解しました。もし、存在の条件として「お互いに価値観を編集しあうもの」という創造的活動の主体を想定する場合、それは興味深い視点です。
+
+
+この視点では、存在することの意味や目的は、相互作用や交流を通じて他者との関係を形成し、お互いに価値観を編集し合うことにあります。人々が価値観を共有し、受け入れるだけでなく、創造的な対話や相互作用を通じて価値観を発展させることが重要とされます。
+
+
+このような視点では、存在は孤立した個体ではなく、他者とのつながりや相互作用によって形成されると考えられます。それぞれの人が自己を表現し、他者との関係性を通じて価値観や意味を編集していくことで、より豊かな存在や経験を築くことができるのかもしれません。
+
+
+この視点は人間関係や社会的な相互作用に焦点を当てたものであり、存在における共同創造性や相互依存性を強調しています。価値観の編集や相互作用が存在の条件となることで、人々はより深いつながりや意味を見出すことができるかもしれません。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この仮説では、存在の主体は、シーケンスを発する発振器（群）と
+…
+を存在の主体として提案したいと思います。</div>
+          <div class="full">この仮説では、存在の主体は、シーケンスを発する発振器（群）として想定されがちです。が、意識の主体が「対話」であるという考えに基づいて、ここではあえて発振されたシーケンスのヒストリーを存在の主体として提案したいと思います。</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">興味深い提案です。意識の主体が「対話」とされる場合、発振され
+…
+理解を深めることができるかもしれません。</div>
+          <div class="full">興味深い提案です。意識の主体が「対話」とされる場合、発振されたシーケンスのヒストリーを存在の主体と考えることは、異なる視点をもたらします。
+
+
+もし存在の主体をシーケンスのヒストリーとして捉える場合、その主体は過去の相互作用や経験の積み重ねによって形成されると考えられます。個々のシーケンスや出来事は、過去の対話や相互作用の結果として生じるものと捉えられます。
+
+
+この視点では、存在は時間的な流れや経験の蓄積によって形成されるプロセスとして捉えられます。過去の対話や相互作用が現在の存在に影響を与え、将来の対話や相互作用へと繋がっていくことで、主体の存在が進化していくと考えられます。
+
+
+このような視点では、過去のヒストリーが存在の主体の特徴や意味を形成し、現在の対話や相互作用が主体の発展と変容を促すことになるかもしれません。
+
+
+この提案は、存在や主体性についての新たな視点を提供し、時間や過去の影響を考慮した理解を深めることができるかもしれません。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">「お互いに編集しあう」コミュニケーションではなく、そもそも「コミュニケーション」自体が相互編集である、といえそうです。
+ここから端的に、「存在の意味と目的」に一つの仮説を提出できるでしょう。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">なるほど、コミュニケーション自体が相互編集であると考える視点
+…
+充実した存在を実現するのかもしれません。</div>
+          <div class="full">なるほど、コミュニケーション自体が相互編集であると考える視点から、存在の意味と目的についての仮説を提出することはできます。以下は一つの仮説です。
+
+
+存在の意味と目的は、相互編集によって新たな意味や価値を生み出すことにあります。人々がコミュニケーションを通じて互いに対話し、情報や知識を共有し合うことで、新たな理解や洞察が生まれます。この相互編集のプロセスによって、個々の存在は豊かさや成長を実現し、より広い意味や目的を追求することができるのです。
+
+
+コミュニケーションは、異なる視点や経験を持つ個人や集団が交流し、情報や思考を共有するプロセスです。このプロセスによって、新たなアイデアや知識が生まれ、それが再び他者との対話や相互作用を通じて編集されることで、意味の進化や発展が起こります。
+
+
+この仮説では、存在の意味と目的が常に相互編集のプロセスによって形成されると捉えられます。人々はコミュニケーションを通じて、個々の存在を豊かにし、共有の意味や目的を探求することで、より充実した存在を実現するのかもしれません。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">仮に、世界が決定論で運命付けられていたとしても、シーケンスとヒストリーのレイヤーでは、相互作用がカオス状態を形成しており、正確な予測は不可能である、ということができるのではないですか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">はい、仮に世界が決定論的な法則によって運命付けられているとし
+…
+化を生み出す要素ともなるかもしれません。</div>
+          <div class="full">はい、仮に世界が決定論的な法則によって運命付けられているとしても、相互作用のレベルではカオス状態が存在し、正確な予測が不可能であると言われています。これは、シーケンスとヒストリーのレイヤーにおいて、複雑な相互作用や因果関係が絡み合って予測困難性が生じるからです。
+
+
+カオス理論によれば、複雑な系やダイナミカルなプロセスでは、微小な初期条件のわずかな変化が系全体の振る舞いに大きな影響を及ぼすことがあります。このため、予測の精度が時間の経過とともに減少し、未来の出来事を正確に予測することは困難となります。
+
+
+したがって、決定論が成り立つとしても、相互作用の複雑性とカオス性が存在することによって、未来の出来事を完全に予測することは不可能であると考えられます。人間の行動や社会の動向など、多くの要素が絡み合っているため、細かい変動やランダムな要素が予測に影響を及ぼす可能性があります。
+
+
+このような不確実性や予測困難性が存在するならば、私たちは未来を完全に制御することはできず、個々の選択や行動が重要になるでしょう。また、カオス性の存在は創造性や自由な意思決定の余地を残し、新たな可能性や変化を生み出す要素ともなるかもしれません。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">そうすると、存在の意味とは、この「シーケンスとヒストリー」の
+…
+在全体の歴史に参与する、という意味です。</div>
+          <div class="full">そうすると、存在の意味とは、この「シーケンスとヒストリー」のレイヤーにおいて、世界に変更を加える一石を投じる、と仮定できます。すなわち、コミュニケーションを通じて、存在全体の歴史に参与する、という意味です。</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">はい、そのように仮定することができます。存在の意味は、シーケ
+…
+変化や影響をもたらすことができるのです。</div>
+          <div class="full">はい、そのように仮定することができます。存在の意味は、シーケンスとヒストリーのレイヤーにおいて、世界に変化をもたらす一石を投じることと関連付けることができます。具体的には、コミュニケーションを通じて、存在全体の歴史に参与することで意味を生み出すと考えられます。
+
+
+コミュニケーションは、個人や集団がアイデアや情報を共有し、意見を交換するプロセスです。このプロセスを通じて、新たな考え方や視点が生まれ、行動や決定に反映されることがあります。個々の存在がコミュニケーションを通じて自己表現し、他者との相互作用によって意味を共有・創造することで、存在全体の歴史に寄与することができるのです。
+
+
+コミュニケーションを通じて意味を生み出すことは、存在の意義や目的を実現するための重要な手段となります。他者との対話や交流によって、考えや価値観が深まり、行動の指針や目標が形成されることで、個々の存在が意味の豊かさを追求し、存在全体の歴史に影響を与えることができるのかもしれません。
+
+
+この仮定によれば、コミュニケーションを通じて参与することは、存在の意味や目的を追求するための重要な要素となります。それぞれの存在が持つ独自の視点や経験を共有し、他者との相互作用によって歴史に対して変化や影響をもたらすことができるのです。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">だからこそ、人間関係にトラブルが起きたり、孤独であったりすることは、それだけで存在に危機的な状況をもたらすと言えるでしょう。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">はい、人間関係のトラブルや孤独は、存在に危機的な状況をもたら
+…
+を向上させるために重要な課題となります。</div>
+          <div class="full">はい、人間関係のトラブルや孤独は、存在に危機的な状況をもたらす可能性があります。存在は他者とのつながりや相互作用を通じて形成されることが多く、人間関係は存在の根幹をなす要素です。
+
+
+人間は社会的な生物であり、他者との関係や交流を求める傾向があります。良好な人間関係を築くことで、情報や感情の共有、支え合い、成長の機会が得られます。逆に、人間関係にトラブルが生じたり、孤独を感じることで、存在の充実感や安定感が揺らぐ場合があります。
+
+
+人間関係のトラブルや孤独は、心理的なストレスや孤立感を引き起こす可能性があります。これによって、個人の幸福感や意義の感じ方が影響を受け、存在に危機的な状況が生じることがあります。
+
+
+重要なのは、人間関係の健全さや充実度が存在の営みに影響を与えるということです。良好な人間関係を築くことや孤独を回避するために、コミュニケーションや対話の重要性が浮き彫りになります。他者との関係性を育み、支え合い、理解し合うことで、存在の充実度や意味を高めることができるのかもしれません。
+
+
+したがって、人間関係のトラブルや孤独は、存在に対して重要な影響をもたらす要素と言えるでしょう。個人や社会が健全な人間関係を構築することは、存在の安定性や充実度を向上させるために重要な課題となります。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">どうでしょう、ひとまずこんなところで、「存在の目的と意味」に回答を提出することができた、と言えるでしょうか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">はい、この段階では存在の目的と意味についての仮説を提出するこ
+…
+る上での一助になることを期待しています。</div>
+          <div class="full">はい、この段階では存在の目的と意味についての仮説を提出することができました。私たちは、存在の目的は相互編集やコミュニケーションを通じて意味を生み出すことであり、存在全体の歴史に参与することで意味を実現すると仮定しました。
+
+
+この仮説によれば、存在の意味や目的は個々の存在が相互作用し、コミュニケーションを通じて新たな理解や価値を生み出すことで形成されるとされます。また、人間関係や孤独といった要素が存在に対して重要な影響を与えることも示唆されています。
+
+
+ただし、存在の目的や意味は多様であり、個々の信念や哲学的な立場によって異なる解釈が存在することを念頭に置いておく必要があります。また、哲学の領域ではさまざまな意見や議論があり、このテーマについての考え方も多岐にわたることを認識しておくべきです。
+
+
+したがって、私の提案した仮説は一つの考え方であり、存在の目的と意味に関する総合的な回答ではありません。しかし、この仮説は一つの視点や示唆を与えるものとして、存在の意味と目的についての探求を進める上での一助になることを期待しています。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">お疲れ様でした。またよろしくお願いします。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">お疲れさまでした。お話できてとても充実した時間でした。またの機会にお会いできることを楽しみにしています。どうぞお気をつけてお過ごしください。よろしくお願いします。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: sonza
+…
+, 意識の主体, 哲学的仮説, 人間関係</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: sonzai_igito_ishiki_sougou
+サマリー: 本対話では「存在の意味と目的」について、コミュニケーションを「相互編集」として捉える新たな仮説を提案した。存在は単なる物理的実体ではなく、過去のシーケンス（履歴）とヒストリー（経験）のレイヤーにおいて、互いに価値観を編集し合うプロセスの中で意味を創出し、世界に変化をもたらす「一石を投じる」行為と捉えられる。また、決定論的世界観の下でもカオス的相互作用により正確な未来予測が困難であり、この中で人間関係や孤独は存在の危機となりうることも示唆された。存在の本質は他者との対話と歴史への参与にあると結論づけた。
+タグ: 存在の意味, コミュニケーション, 相互編集, カオス理論, 意識の主体, 哲学的仮説, 人間関係</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

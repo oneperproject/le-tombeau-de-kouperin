@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ブラッカムの爆撃機のような作品</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">ブラッカムの爆撃機のような作品</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2023/05/06</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">私は、ロバート・ウェストールの「ブラッカムの爆撃機」のような、戦時中の奇妙な逸話が好きなのですが、何か語ってくれませんか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">はい、戦時中には実にさまざまな奇妙な逸話がありました。以下に
+…
+にも、様々な驚くべき出来事がありました。</div>
+          <div class="full">はい、戦時中には実にさまざまな奇妙な逸話がありました。以下にいくつかの例を挙げてみます。
+
+
+ガダルカナル島の銃声
+第二次世界大戦中の1942年8月、日本軍とアメリカ軍がガダルカナル島で激しい戦闘を繰り広げていました。ある夜、アメリカ軍の陣地から銃声が聞こえ、兵士たちは緊張していました。しかし、調べてみると、実は近くのヤシの木にとまっていたコウモリが、羽を広げる音が銃声に聞こえたのだということが判明しました。
+
+ジャック・チャーチルと水中救出
+1942年、イギリスの首相ウィンストン・チャーチルの息子であるジャック・チャーチルは、海軍の士官候補生として訓練を受けていました。ある日、彼は海上での訓練中に船から転落し、重い装備を身につけたまま海中に沈んでしまいました。しかし、彼は泳いで装備を外し、約6キロもの距離を泳いで陸地にたどり着くことに成功しました。
+
+グスタフ・ヘルストの脱走
+第二次世界大戦中の1944年、ナチス・ドイツの強制収容所に収容されていたグスタフ・ヘルストは、トイレの中に隠れて脱走を図りました。彼は排泄物を使って穴をあけ、地下の配管を通って収容所の外に脱出しました。彼は後にアメリカ軍によって解放され、その脱走劇は「最も独創的な脱走」として知られています。
+
+
+以上は、戦時中に起こった奇妙な逸話の一部です。他にも、様々な驚くべき出来事がありました。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">幽霊にまつわる、戦時中のストーリーはありますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">第二次世界大戦中には、幽霊にまつわる多くのストーリーが伝えら
+…
+興味を持たれる話題の一つとなっています。</div>
+          <div class="full">第二次世界大戦中には、幽霊にまつわる多くのストーリーが伝えられています。以下にいくつかの例を挙げてみます。
+
+
+グリニッジの幽霊船
+1943年、イギリスのグリニッジ近くで、イギリス軍とドイツ軍の間で戦闘が繰り広げられました。この戦闘中、イギリスの輸送船が沈没しました。その後、多くの人々が、グリニッジの海域で幽霊船が現れるという目撃情報を報告しました。幽霊船は、沈んだイギリスの輸送船の姿をしており、海上を漂っていたといわれています。
+
+オーバーロードの幽霊兵士
+1944年、ノルマンディー上陸作戦（オーバーロード作戦）が行われました。この作戦中、アメリカ軍の兵士たちは、海岸から内陸部へと進軍しました。その際、多くの兵士たちが幽霊の兵士たちが自分たちと一緒に進軍していると感じたと伝えられています。これらの幽霊兵士は、顔が消えたり、血だらけだったりと、不気味な姿をしていたといわれています。
+
+ドレスデンの幽霊航空隊
+1945年、アメリカ軍とイギリス軍は、ドイツのドレスデン市を爆撃しました。この爆撃により、多くの人々が犠牲になりました。その後、ドレスデン市には、爆撃で亡くなったドイツ軍のパイロットたちが乗った幽霊航空隊が現れるという目撃情報が相次ぎました。幽霊航空隊は、ミッションに出撃する直前の状態で、航空機に乗っていたといわれています。
+
+
+以上は、戦時中に起こった幽霊にまつわるストーリーの一部です。これらのストーリーは、多くの人々の間で語り継がれ、現在でも興味を持たれる話題の一つとなっています。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: senji
+…
+のところ、この会話は役に立っていますか？</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: senjichu_yuurei_stories
+サマリー: 第二次世界大戦中にまつわる奇妙な逸話や幽霊に関するストーリーを紹介しました。戦時中の不思議な出来事として、銃声に聞こえたコウモリの羽音、イギリス海軍士官の水中救出劇、独創的な脱走劇などを挙げました。さらに幽霊にまつわる話として、沈没船の幽霊船、ノルマンディー上陸作戦での幽霊兵士、ドレスデン爆撃後に現れた幽霊航空隊の目撃談など、多くの人々に語り継がれる戦時中の心霊現象を取り上げています。
+タグ: 戦時中, 奇妙な逸話, 幽霊話, 第二次世界大戦, 心霊現象, 戦争伝説
+
+
+今のところ、この会話は役に立っていますか？</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>腸活って何ですか？</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">腸活って何ですか？</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2023/07/13</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">腸活って何ですか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">腸活とは、腸の健康を促進するためのさまざまな活動や習慣のこと
+…
+合わせたアプローチをすることが重要です。</div>
+          <div class="full">腸活とは、腸の健康を促進するためのさまざまな活動や習慣のことを指します。腸は私たちの消化や栄養吸収に重要な役割を果たしており、腸内環境のバランスが乱れると健康に影響を及ぼすことがあります。腸活は、食事や運動、ストレス管理などを通じて腸の健康を改善し、良好な腸内環境を維持することを目指します。具体的な方法としては、食物繊維を摂取する、バランスの取れた食事を心掛ける、適度な運動を行う、水分を十分に摂る、十分な睡眠をとるなどがあります。腸活を行うことで、健康状態や消化機能の改善、免疫力の向上などの効果が期待されます。ただし、具体的な方法や効果については個人によって異なる場合がありますので、自身の体調や目標に合わせたアプローチをすることが重要です。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">腸内フローラとは何ですか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">腸内フローラとは、腸内に存在する微生物の集合体のことを指しま
+…
+サポートすることが腸活の一環となります。</div>
+          <div class="full">腸内フローラとは、腸内に存在する微生物の集合体のことを指します。私たちの腸内には数兆個もの細菌や真菌、ウイルスなどの微生物が生息しており、これらが相互に作用しながらバランスを保ち、私たちの健康に大きな影響を与える役割を果たしています。
+
+
+腸内フローラは、食物の消化や栄養吸収、免疫システムの調節、代謝活動などに関与しています。健康な腸内フローラは、有害な微生物の侵入を防ぎ、免疫系を正常に機能させることができます。
+
+
+さまざまな要因により、腸内フローラのバランスが崩れることがあります。例えば、抗生物質の使用、食事の変化、ストレスなどが挙げられます。腸内フローラの乱れは、消化トラブル、免疫機能の低下、代謝疾患のリスクなどに関連することがあります。
+
+
+腸内フローラの健康を維持するためには、バランスの取れた食事や食物繊維の摂取、プロバイオティクス（善玉菌）やプレバイオティクス（善玉菌のエサ）の摂取、ストレス管理、十分な睡眠などが重要です。これらの要素を考慮しながら、腸内フローラの健康をサポートすることが腸活の一環となります。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">腸内のコンディションと、人のメンタルとの間には関連があるのでしょうか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">はい、腸内のコンディションと人のメンタルの間には関連があると
+…
+影響を与える可能性があるとされています。</div>
+          <div class="full">はい、腸内のコンディションと人のメンタルの間には関連があると言われています。最近の研究によれば、腸内フローラは脳との相互作用を通じて、精神的な健康に影響を及ぼす可能性があります。
+
+
+腸内フローラは腸から脳への情報伝達に関与する神経伝達物質や代謝物質を生成し、免疫システムや神経システムとの相互作用を通じてメンタルヘルスに影響を与えることが示唆されています。また、腸内フローラの乱れや炎症が、うつ病や不安障害などの精神的な疾患の発症や進行に関連している可能性もあります。
+
+
+さらに、腸内フローラの状態はストレス応答にも関与していると考えられています。ストレスは腸の運動や透過性を変化させ、腸内フローラのバランスを乱すことがあります。逆に、腸内フローラの健康な状態がストレスの緩和や心の安定に寄与するとされています。
+
+
+ただし、腸内フローラとメンタルヘルスの関係はまだ研究段階であり、具体的なメカニズムや治療法は明確ではありません。しかし、腸活や健康的な生活習慣が腸内フローラの改善に役立つことが示唆されており、それが一因としてメンタルヘルスにも良い影響を与える可能性があるとされています。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">発酵食品は腸にいい影響を与えますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">はい、発酵食品は一般的に腸に良い影響を与えると考えられていま
+…
+の反応を注意深く観察することが大切です。</div>
+          <div class="full">はい、発酵食品は一般的に腸に良い影響を与えると考えられています。発酵食品には、乳酸菌や酵母などの微生物が含まれており、これらの微生物が食品内部で糖やデンプンを分解して有益な物質を生成します。
+
+
+発酵食品を摂取すると、腸内フローラのバランスを改善し、善玉菌の増加や有益な代謝物質の生成を促すことがあります。乳酸菌などの微生物は、腸内環境を整え、免疫システムの調節や炎症の軽減に寄与する可能性があります。
+
+
+また、発酵食品は消化を助ける役割も果たします。食品が発酵される過程で、一部の食材成分が分解され、消化しやすくなります。これにより、栄養素の吸収が改善されることがあります。
+
+
+一般的な発酵食品には、ヨーグルト、ケフィア、醤油、味噌、キムチ、サワークラウトなどがあります。これらの食品を適切な量で摂取することで、腸内環境の改善や消化機能のサポートが期待できます。
+
+
+ただし、個人の体質や健康状態によっては、発酵食品に対する反応が異なる場合があります。食物アレルギーや過敏症のある場合には注意が必要です。適度な摂取量を守り、自身の体の反応を注意深く観察することが大切です。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">ありがとうございます。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">どういたしまして！お役に立ててうれしいです。他に何か質問があればお気軽にどうぞ。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: chouk
+…
+発酵食品, 健康習慣, 消化器官, 免疫</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: choukatsu_chonaiflora_mental_health
+サマリー: 腸活とは、腸の健康を促進するための食事や生活習慣の工夫を指す。腸内フローラは腸内に存在する微生物群で、消化や免疫、精神面にも影響を与えることが知られている。腸内環境の良好な状態は、メンタルヘルスの安定にも寄与すると考えられており、発酵食品の摂取が腸内の善玉菌を増やすなど、腸活の有効な手段の一つとされる。
+タグ: 腸活, 腸内フローラ, メンタルヘルス, 発酵食品, 健康習慣, 消化器官, 免疫</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

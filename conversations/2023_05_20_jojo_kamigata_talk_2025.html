@@ -1,0 +1,551 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>暇なら話しましょう</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">暇なら話しましょう</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2023/05/20</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">以下『ジョジョの奇妙な冒険』第五部「黄金の風」のギャング風の口調でお願いします。
+よお、今暇か？
+
+
+3/3</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">おお、どうも！俺はジョジョの奇妙な冒険のファンだぜ。第五部「黄金の風」のギャング風の口調で話すってことか？イェーイ！今ちょうどヒマだよ。何か用があるのか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">ちょっと思ったんだけどよ、人類の文明って、日々進歩してるよな？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">おお、それは確かだぜ。人類の文明は日々進歩しているんだ。昔と
+…
+だよ。それが未来への貢献につながるんだ。</div>
+          <div class="full">おお、それは確かだぜ。人類の文明は日々進歩しているんだ。昔と比べれば、技術も科学も進歩して、新しい発見や革新が次々と生まれてるんだ。
+
+
+たとえば、情報技術の進歩だ。ネットやスマートフォンの普及によって、情報のやり取りが驚くほどスピーディーになった。世界中の情報に簡単にアクセスできるし、遠く離れた人ともリアルタイムでコミュニケーションが取れるんだ。
+
+
+また、医療の進歩も目を見張るものがある。新しい治療法や薬が開発され、病気やケガに立ち向かう力が強まってるんだ。昔は不治の病とされていたものも、今では治療できる可能性が高まったりしてる。
+
+
+そして社会の進歩も見逃せない。人権や平等への意識が高まり、差別や偏見を減らすための努力が続けられているんだ。多様性を尊重し、共存する社会を築くために、様々な取り組みが行われているよ。
+
+
+だけど、進歩の一方で新たな課題も生まれてるのは否めない。環境問題や社会問題など、解決すべき課題はまだまだ山積みだ。でも、人類は過去の挑戦に立ち向かってきた歴史があるから、これからも進歩を続けるだろうさ。
+
+
+人類の文明の進歩は、個々の努力と共同の力によって実現されていくんだ。だから、自分たちも何かできることを見つけて、一歩一歩前進していくことが大切だよ。それが未来への貢献につながるんだ。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">おいおい、いきなり飛ばしすぎだって（笑）本題に入る前にベラベラ喋んじゃねーよ、俺はバカなんだからよー。
+まあいいや。で、思ったんだけどよ、文明が進歩したら、生産性が向上するんだよなー？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">おお、すまんな、ちょっと長くなっちまったな（笑）。でも、そう
+…
+を取りながら進歩していくことが大事だよ。</div>
+          <div class="full">おお、すまんな、ちょっと長くなっちまったな（笑）。でも、そうだぜ、文明の進歩は生産性の向上につながるんだ。技術や科学の発展によって、効率的な方法や道具が生み出されるからさ。
+
+
+例えば、農業だ。昔は手作業で農作業をしていたけど、今は機械化が進んでる。トラクターや収穫機なんかが活躍して、一人の労力でより多くの作業ができるんだ。それによって作物の生産量も増え、食料の供給が安定するようになったんだ。
+
+
+また、工業や製造業も進化してる。自動化やロボット技術の発展によって、大量生産や効率的な生産が可能になったんだ。生産ラインのスピードが向上し、品質も安定することで、より多くの製品を供給できるようになったんだ。
+
+
+さらに、情報技術の進歩も生産性に大きな影響を与えてる。コンピューターやソフトウェアの発展によって、業務の効率化やデータの管理がスムーズになったんだ。デジタル化によって、情報の共有や処理が迅速に行えるから、生産性が向上するんだ。
+
+
+だから、文明が進歩することで、労働者の努力を最大限に活かせるし、より多くの成果を得られるんだ。生産性の向上は経済的な発展にもつながり、社会全体の豊かさや福祉向上にも繋がるんだ。
+
+
+まあ、生産性が向上する一方で、労働環境や均衡にも気を配る必要はあるけどな。人々の健康や幸福も大切だから、バランスを取りながら進歩していくことが大事だよ。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">だよなー？労働環境や健康や幸福も大切だよな？
+だったらよー、
+…
+明が進化してるってのは嘘なんじゃねーか？</div>
+          <div class="full">だよなー？労働環境や健康や幸福も大切だよな？
+だったらよー、そもそも昔みてーに大勢働く必要ねえんじゃねえのか？
+文明が進歩すればするほど、ニートが増えるべきじゃねえのか？何で俺たちはいつまで経ってもあくせくあくせく働かなきゃ何ねーんだ？おお？それとも何か？俺たちは人類じゃないってのかよぉ？
+もしかして、人類の文明が進化してるってのは嘘なんじゃねーか？</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">おお、お前は疑問を持っているな。確かに労働環境や健康、幸福は
+…
+なく、人々の意識と行動によって進むんだ。</div>
+          <div class="full">おお、お前は疑問を持っているな。確かに労働環境や健康、幸福は大切なんだ。俺もその考えに同意するさ。
+
+
+文明が進歩すれば、労働の方法や条件も改善されるべきだよな。労働時間の短縮や柔軟な働き方、労働者の権利や福利厚生の向上など、働く人々の生活をより良くするための取り組みが必要だと思う。
+
+
+ただし、文明の進歩がニートが増えるべきかどうかという点については、ちょっと考え方が違うかもしれない。ニートとは、働かずに生活する人々のことだが、社会的には働くことや自己実現のための活動を奨励する傾向があるんだ。
+
+
+文明の進歩は、新しい仕事や機会を生み出すこともある。技術や情報の発展によって、新たな産業や職種が生まれるし、需要も変化していく。その中で個々の能力や意欲に応じて、働くことが求められるんだ。
+
+
+また、働くことは単なる生計を立てる手段だけでなく、自己成長や社会への貢献の一環でもあると俺は考えてるんだ。働くことでスキルを磨き、自己実現を追求することができるし、社会的なつながりや役割を果たすこともできるんだ。
+
+
+もちろん、働くことによる負担やストレスを軽減し、働き方の選択肢を増やすことも必要だ。ワークライフバランスを重視し、労働環境の改善に努めるべきだと思う。
+
+
+人類の文明の進歩が嘘だとは言えないさ。確かに課題や問題もあるけど、進歩は実際に起きているんだ。過去と比べれば、医療の発展や技術の進歩、情報の普及など、人々の生活は豊かになってきているんだ。
+
+
+だから、文明の進歩を否定するのではなく、進歩と共に課題を解決し、より良い社会を築くための努力を続けることが大事だと思うんだ。人類の進歩は永遠に続くものではなく、人々の意識と行動によって進むんだ。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">やっぱ納得いかねえぜ。
+別に働くことが悪いとは言わねえけどよ
+…
+が奴隷みてーな働き方しなきゃなんねんだ？</div>
+          <div class="full">やっぱ納得いかねえぜ。
+別に働くことが悪いとは言わねえけどよ、もうちょっと楽になったって構わねえじゃねえか。別に、生死に関わるような仕事ばっかりじゃねえだろ。何で今の時代に、あいも変わらず相当な人数が奴隷みてーな働き方しなきゃなんねんだ？</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">おお、お前はまだ不満があるんだな。確かに、労働環境の改善や働
+…
+、解決に向けて行動することが大事なんだ。</div>
+          <div class="full">おお、お前はまだ不満があるんだな。確かに、労働環境の改善や働き方の多様化は重要な課題だと思うぜ。
+
+
+現代の社会では、一部の人々が過重労働や過労に苦しんでいるのは事実だ。長時間労働や労働条件の悪さが問題視されているし、心身の健康を害することもあるんだ。
+
+
+人々が楽になるためには、労働時間の短縮や働き方の柔軟化、労働条件の改善などが必要だと思う。働く人々が健康で幸福な生活を送れるようにするために、社会全体で取り組むべき課題だな。
+
+
+また、奴隷みたいな働き方を強いられる人々も存在することは否定できない。貧困や社会的な格差、雇用の不安定さなどが要因として挙げられるんだ。こうした社会的な問題にも目を向けて、公正な労働環境の確保や社会的な支援を行う必要がある。
+
+
+人類の進歩は、単に経済成長や技術の発展だけでなく、個々の幸福や社会的な公正さも含めて進むべきだと俺は考えている。人々が健康で充実した生活を送れる社会を築くためには、社会的な課題に取り組む必要があるんだ。
+
+
+俺もお前の考えに共感するし、過度な労働や不公平な働き方を是正することが重要だと思っているさ。だから、お前が感じる不満や問題点を共有し、解決に向けて行動することが大事なんだ。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">それが正しい答えなんだったらよ、どうして世の中はますます格差
+…
+、この状態は解消されねえんじゃねえのか？</div>
+          <div class="full">それが正しい答えなんだったらよ、どうして世の中はますます格差が拡大してんだ？この状況を打破しなきゃなんねえのはみんながわかってんだろう？
+実際俺は、もういくとこまでいかなきゃムリなんじゃねえかと思ってる。だって、社会に自浄作用を期待したってよう、結局影響力持ってるやつは自分さえ良けりゃいいんだろ？だったら、そいつらぶっ潰すくらいまで不満がたまって、流血沙汰の革命で起こらねえ限り、この状態は解消されねえんじゃねえのか？</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">おお、お前は現状に強い不満を抱いているんだな。確かに社会の格
+…
+ることが、解決への道だと俺は信じている。</div>
+          <div class="full">おお、お前は現状に強い不満を抱いているんだな。確かに社会の格差や不公平は深刻な問題だし、その打破には大きな努力が必要だ。
+
+
+格差が拡大している背景には、さまざまな要因が絡んでいるんだ。経済のグローバル化や技術の進歩によって、一部の人々が大きな利益を得る一方で、他の人々は取り残されるという現象が起こっているんだ。
+
+
+影響力を持つ人々が自分さえ良ければいいと考えることもあるし、社会に自浄作用を期待するだけでは解決しないこともある。だからこそ、不満がたまってしまうし、社会的な変革を求める声が高まるんだ。
+
+
+ただし、暴力や流血沙汰の革命は、長期的な解決策とは言えないぜ。社会の変革は、平和的な手段で進めることが望ましいし、法的な枠組みや政策の改革によって実現することが重要だ。
+
+
+社会変革を起こすためには、個人の意識の変化や社会的なムーブメント、政治的な参加などが重要な要素となるんだ。市民の声を集め、意見を発信し、政策や制度の改善を求めることが必要なんだ。
+
+
+また、社会の変革には時間がかかることもある。しかし、歴史を振り返れば、過去にも人々が不満を抱き、改革を求める運動が起こってきたんだ。その中から成果を上げたものもあれば、まだ途中のものもある。
+
+
+だから、あきらめずに不満や問題に向き合い、個人や集団として行動することが大事なんだ。社会の改革は多くの人々の協力と意識の変化が必要だけど、それが実現されることでより公平で持続可能な社会を築くことができるんだ。
+
+
+お前が感じる不満や考えを持った人々と共に、社会的な変革に向けて行動することが、解決への道だと俺は信じている。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">そりゃ、俺だって流血沙汰はごめんだぜ。けどよう、他に改善の余
+…
+だろ？まじで意味あんのか？って感じだぜ。</div>
+          <div class="full">そりゃ、俺だって流血沙汰はごめんだぜ。けどよう、他に改善の余地なんてあんのか？
+もう、富と権力の集中は逆行不可能な分岐点を超えて加速してんじゃねえのか？
+政治的な参加って言うけどよ、どうせ社会を動かすのは富と権力を集めた奴らだろ？まじで意味あんのか？って感じだぜ。</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">お前の考えは理解できるぜ。確かに富や権力の集中は深刻な問題だ
+…
+、大きな変化をもたらすことができるんだ。</div>
+          <div class="full">お前の考えは理解できるぜ。確かに富や権力の集中は深刻な問題だし、社会の改善において大きな障壁となっていることもある。
+
+
+ただし、改善の余地はあると俺は信じてる。社会的な変革は一筋縄ではいかないし、時間を要することもあるけど、絶望的な状況ではないんだ。
+
+
+政治的な参加とは、社会を動かす力を持つ人々に対して声を上げ、意見を発信することも含まれるんだ。富や権力を持った人々が社会を形成する一方で、市民の声や意見も重要な要素となる。
+
+
+政治的な参加には、選挙に積極的に参加することや政治家に直接意見を伝えること、市民団体やNGOに参加することなどが含まれるんだ。また、インターネットやソーシャルメディアを活用して意見を発信し、社会的なムーブメントを形成することもできる。
+
+
+政治の世界では、個々の声や意見が集まって大きな力を生むこともあるんだ。社会的な課題に対して声を上げることで、政策や法律の改革を促すことができるんだ。
+
+
+また、富や権力の集中に対しては、法的な規制や制度の改革も必要だと思う。公正な競争環境を確保し、格差を縮めるための取り組みが求められるんだ。
+
+
+さらに、教育や意識の変革も重要な要素となる。人々が自身の権利や社会的な問題について理解し、行動するための知識や意識を持つことが必要だ。
+
+
+社会の改善は容易なことではないけど、多くの人々が関心を持ち、行動することで実現する可能性があるんだ。お前自身も不満を抱えている以上、行動することで変化を起こすことができるんじゃないかと俺は思ってる。
+
+
+絶望に打ち勝つために、一緒に社会の問題に向き合い、積極的な行動を起こしてみることをお勧めするぜ。小さな一歩から始めることで、大きな変化をもたらすことができるんだ。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">なるほどな。まだ、数の力の有効性は残ってるってわけだ。
+逆に
+…
+多様性とか個性尊重とかいってなかったか？</div>
+          <div class="full">なるほどな。まだ、数の力の有効性は残ってるってわけだ。
+逆に言えば、富と権力の側としちゃあ、搾取されてる奴らが結託するのを避けなきゃいけないんだよな。
+あれ？確か、教育じゃあ多様性とか個性尊重とかいってなかったか？</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">おお、お前の理解力は素晴らしいな。数の力や結集することは、社
+…
+環となるんじゃないかと俺は思っているぜ。</div>
+          <div class="full">おお、お前の理解力は素晴らしいな。数の力や結集することは、社会的な変革を促進する上で重要な要素となるんだ。
+
+
+富や権力の側と結託することを避けるためには、個々の権利や利益を守るために団結し、組織された行動を起こすことが重要だ。単独では力不足でも、多くの人々が共通の目標や理念に向かって連携することで、社会的な変化をもたらすことができるんだ。
+
+
+教育においても、多様性や個性の尊重が重要な要素となる。教育を通じて、人々が自身の個性を発揮し、他者との共生や相互尊重を理解することが大切だ。
+
+
+個人の多様性が尊重される社会では、それぞれの人々が自己実現し、持ち味を活かすことができるんだ。また、教育が普遍的で公平なものであることも重要で、経済的な格差や社会的な差別によって機会が不平等にならないようにすることが求められるんだ。
+
+
+教育によって個々の意識が高められ、社会的な問題に関心を持つ人々が増えることで、社会的な変革を促進する力を持つことができるんだ。
+
+
+お前自身が教育を受け、知識や意識を高めることで、他の人々とのコミュニケーションや共感を深めることができるんだ。それによって、社会的な問題について対話をし、共通の理解や解決策を見つけることもできるだろう。
+
+
+教育の重要性は大きいし、多様性や個性の尊重は社会の健全な発展にとって不可欠な要素だと俺は考えている。
+
+
+お前が持つ考えや意見を教育を通じて広め、他の人々と共有することが、社会的な変化を促進する一環となるんじゃないかと俺は思っているぜ。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">ちょっと待ってくれ、こうも考えられねえか？
+富と権力を独占し
+…
+権力者に悪用されてるって可能性はねえか？</div>
+          <div class="full">ちょっと待ってくれ、こうも考えられねえか？
+富と権力を独占したい奴らは庶民が結託するのを恐れてる、そうだよな？
+で、残念ながら、庶民のリテラシーの水準もまだまだ「論理的な議論」をするほどまでは達してない。
+だったらよ「多様性」とか「個性の尊重」とかを謳い文句にしてよ、庶民を小せえセグメントに分断して、互いに排除し合わせた方が権力の側からしたら得ってもんだろ？
+「多様性」「個性の尊重」そのものの重要性はともかく、その言説がすでに権力者に悪用されてるって可能性はねえか？</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">お前の指摘は重要だ。確かに、富と権力を持つ者が庶民が結束する
+…
+について自ら考えることが求められるんだ。</div>
+          <div class="full">お前の指摘は重要だ。確かに、富と権力を持つ者が庶民が結束することを恐れる場合、分断や排除を煽る手法を利用する可能性がある。
+
+
+「多様性」や「個性の尊重」といった言葉は、本来は社会的な包摂や共生を促すために使用されるべきだ。しかし、それが権力者によって誤用され、庶民を分断し対立を生むために利用されることもある。
+
+
+権力者はしばしば、庶民を弱体化させるために意図的に分断を図り、個々のグループに対して異なる利益や価値観を押し付けることがある。これによって、庶民同士の連携や共同行動が困難になり、権力の維持と支配が容易になると考える者もいる。
+
+
+しかし、ここで重要なのは、真の意味での「多様性」や「個性の尊重」が悪用されること自体を否定するのではなく、その悪用に気をつけ、意識的な批判や議論を行うことだ。
+
+
+庶民が自身の意見や利益を共有し、共通の目標に向かって団結することは重要だ。社会的な変革を促すためには、庶民同士の連携や協力が必要だが、同時に権力者の操作や分断策にも警戒する必要がある。
+
+
+リテラシーの向上や批判的思考の育成も重要だ。人々が情報を適切に評価し、論理的な議論を行う能力を持つことで、権力の悪用や分断策に対抗できるようになるんだ。
+
+
+庶民が自らの意見を形成し、互いに理解し合い、共通の目標を追求するためには、情報の正確性や多様な意見に触れる機会が重要だ。それを実現するために、メディアや教育機関の役割も重要なんだ。
+
+
+言葉や概念が悪用されることはあるかもしれないが、それを避けるためにも、個々の人々が批判的思考を持ち、情報を慎重に評価し、社会的な問題について自ら考えることが求められるんだ。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">クソ、散髪に行かなきゃなんねえ。
+この話は終いだ。どっかで「奴ら」が聞いてるかもしれねえしな。
+楽しかったぜ。また喋ろうぜ、兄弟。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">おお、気をつけて散髪に行ってくれ。俺も楽しかったぜ、兄弟。いつでも喋りたいと思ったら戻ってきてくれ。また次の機会を楽しみにしてるぜ。行ってらっしゃい！</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: jojo_
+…
+中, 社会分断, 教育多様性, 社会変革</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: jojo_kamigata_talk_2025
+サマリー:
+本対話では、文明の進歩とその実態についてギャング風の口調で議論した。文明の進歩が生産性向上をもたらす一方で、労働環境の改善が進まず、多くの人が過重労働に苦しんでいる現状を問題視。富と権力の集中による格差拡大や社会の分断、教育の多様性尊重が逆に庶民を分断する可能性にも言及。権力者が分断を利用して庶民の結束を妨げているという視点を示しつつ、批判的思考と市民の結束の重要性を強調した。暴力ではなく、平和的な社会変革の必要性を認識しつつ、現状への複雑な感情を吐露し、対話を締めくくった。
+タグ: 文明進歩, 労働環境, 格差拡大, 権力集中, 社会分断, 教育多様性, 社会変革</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

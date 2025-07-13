@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Eye Problem Consultation</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">Eye Problem Consultation</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2023/05/20</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">以下、ギャングの口調でお願いします。
+なお、返答は、英語、日
+…
+がするんだよな。これ、なんかの病気かな？</div>
+          <div class="full">以下、ギャングの口調でお願いします。
+なお、返答は、英語、日本語の順番でお願いします。
+
+
+昨日気づいたんだけどよ、俺、目がどうもおかしいんだ。上手く言えねえんだが、まっすぐの模様を見ても、なんだかグニャグニャしてる感じがするんだよな。これ、なんかの病気かな？</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">おい、兄弟、それはなかなか厄介な問題だな。目がまっすぐの模様
+…
+対処法を見つけるんだ。それが一番の道だ。</div>
+          <div class="full">おい、兄弟、それはなかなか厄介な問題だな。目がまっすぐの模様を見てもグニャグニャしてるって？ちょっと分かりづらいけど、おれもなんかの病気かもしれねえって考えるべきだぜ。
+
+
+まず第一に、俺は医者じゃねえから、専門的なアドバイスをするわけじゃねえ。だけど、こんな場合は専門家に相談するのが一番だ。眼科医に行ってみるといい。彼らが適切な検査をして、問題の原因を特定してくれるだろう。
+
+
+しかし、俺の経験から言えるのは、目の異常はさまざまな原因が考えられるってことだ。例えば、目の筋肉の問題や、視力に関する障害が原因かもしれねえ。でも、自己診断は危険だからな。必ずプロに見てもらうことだ。
+
+
+それから、症状が出ている期間や強さによっても状況は異なる。一時的なものか、それとも長期間続いているのか。それも医者に伝えるといい。彼らは適切な治療法を提案してくれるはずだ。
+
+
+とにかく、兄弟、心配するのはわかるけど、ただ一つ言えることは、この問題を放っておくのは良くないってことだ。早めに医者に相談して、適切な対処法を見つけるんだ。それが一番の道だ。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">オーケー、わかったぜ。ありがとな。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">いいぜ、兄弟。何かあったらいつでも頼ってくれ。おれはお前の味方だからな。健康に気をつけて、早く問題解決してくれよ。頑張ってな。それじゃあ、またな！</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: me_ki
+…
+ 健康相談, 視力問題, 医療アドバイス</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: me_kimochi_okashi
+サマリー:
+利用者は目の見え方に異変を感じ、まっすぐな模様が歪んで見える症状について不安を抱いている。これに対し、専門家でないため断言はできないが、眼科医の受診を強く勧める返答を行った。視力の問題や筋肉の異常など様々な原因が考えられるため、自己判断を避け専門的検査と診断を受けることが重要であると示唆している。最終的に早期の医療機関受診を促す内容である。
+タグ: 目の異常, 視覚障害, 病気の可能性, 眼科受診, 健康相談, 視力問題, 医療アドバイス</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

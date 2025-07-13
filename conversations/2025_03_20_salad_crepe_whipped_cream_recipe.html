@@ -1,0 +1,391 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>サラダクレープレシピ</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">サラダクレープレシピ</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2025/03/20</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">サラダクレープのレシピを教えてください。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">サラダクレープのレシピ
+
+
+（2〜3人分 / 約6枚分）
+
+
+…
+ク質を組み合わせて楽しんでみてください！</div>
+          <div class="full">サラダクレープのレシピ
+
+
+（2〜3人分 / 約6枚分）
+
+
+◆ クレープ生地
+
+
+材料：
+
+
+薄力粉 … 100g
+
+牛乳 … 200ml
+
+卵 … 1個
+
+砂糖 … 小さじ1（甘さ控えめ）
+
+塩 … ひとつまみ
+
+サラダ油 … 小さじ1
+
+
+作り方：
+
+
+ボウルに卵を割り入れ、砂糖と塩を加えてよく混ぜる。
+
+牛乳を加え、さらに混ぜる。
+
+薄力粉をふるい入れ、ダマがなくなるまでしっかり混ぜる。
+
+サラダ油を加えて混ぜ、冷蔵庫で30分ほど休ませる。（生地がなじみ、焼きやすくなる）
+
+フライパンを熱し、薄く油をひいてお玉1杯分の生地を流し、フライパンを回して薄く広げる。
+
+弱火で焼き、表面が乾いてきたらひっくり返し、もう片面も軽く焼く。
+
+取り出して粗熱をとる。
+
+
+
+◆ 具材（例）
+
+
+レタス … 3〜4枚（食べやすくちぎる）
+
+トマト … 1個（薄切り）
+
+きゅうり … 1/2本（細切り）
+
+ハム … 3枚（細切り）
+
+チーズ … 適量（スライスチーズまたは細切り）
+
+ツナ … 1/2缶（軽く油を切る）
+
+ゆで卵 … 1個（スライス）
+
+
+
+◆ おすすめのドレッシング・ソース
+
+
+シーザードレッシング（チーズ風味でコクが出る）
+
+マヨネーズ＋粒マスタード（ちょっとピリッとした味わい）
+
+ヨーグルト＋レモン汁＋塩（さっぱりとしたヘルシー系）
+
+バジルソース（イタリアン風味）
+
+ハニーマスタード（甘さと酸味のバランス◎）
+
+
+
+◆ 巻き方
+
+
+クレープ生地を広げ、中央にレタスをのせる。
+
+その上に、他の具材をバランスよく重ねる。
+
+ソースやドレッシングをかける。
+
+巻きやすいように、下1/3を折り、左右を内側に折ってから巻く。
+円すい型（片方を開ける） にすると食べやすい。
+
+全部巻き込んで包む（ブリトー風） にすると崩れにくい。
+
+
+
+アレンジアイデア
+
+
+サーモン＋アボカド＋クリームチーズ（カフェ風）
+
+蒸し鶏＋ごまドレッシング（和風ヘルシー）
+
+ツナ＋コーン＋マヨネーズ（子ども向け）
+
+ローストビーフ＋ホースラディッシュソース（ちょっと贅沢）
+
+
+
+サラダクレープは中の具材を変えれば無限にアレンジ可能なので、好きな野菜やタンパク質を組み合わせて楽しんでみてください！</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">ホイップは、クリーム１００CCに砂糖どれくらいですか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">ホイップクリームの甘さはお好みによりますが、一般的な目安は以
+…
+わらかい状態）がオススメです！ 🍓🥞</div>
+          <div class="full">ホイップクリームの甘さはお好みによりますが、一般的な目安は以下の通りです。
+
+
+ホイップクリームの砂糖の目安
+
+
+甘さ控えめ → 砂糖 5g（小さじ1）
+
+標準的な甘さ → 砂糖 10g（小さじ2）
+
+しっかり甘め → 砂糖 15g（大さじ1）
+
+
+
+ホイップクリームの作り方
+
+
+材料
+
+
+生クリーム … 100cc
+
+砂糖 … 5〜15g（好みで調整）
+
+バニラエッセンス … 数滴（お好みで）
+
+
+作り方
+
+
+生クリームと砂糖をボウルに入れ、氷水に当てながら泡立てる。
+
+最初は低速→次第に中速にしてツノが立つまで泡立てる。
+やわらかめ（7分立て） → クレープやケーキにぴったり
+
+しっかりめ（8～9分立て） → デコレーションや絞り出しに最適
+
+
+
+💡 ポイント
+
+
+しっかり冷やした状態で泡立てると、分離せずキレイに仕上がる。
+
+泡立てすぎに注意！ 分離するとバター状になってしまうので、ツノが立ったらすぐ止める。
+
+
+クレープに使うなら、7分立てくらい（なめらかでやわらかい状態）がオススメです！ 🍓🥞</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+]
+ファイル名: 
+サマリー: 
+タグ:</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: salad
+…
+ーム, 砂糖分量, レシピ, 手作り料理</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: salad_crepe_whipped_cream_recipe
+サマリー: サラダクレープの基本レシピを紹介。クレープ生地の作り方から具材例、ドレッシングのおすすめ、巻き方のポイントまで詳述。さらにホイップクリームの砂糖の分量についても説明し、100ccのクリームに対して5～15gの砂糖が一般的で、泡立て方や甘さ調整のコツも解説している。家庭で手軽に作れるサラダクレープの参考となる内容。
+タグ: サラダクレープ, クレープ生地, ホイップクリーム, 砂糖分量, レシピ, 手作り料理</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

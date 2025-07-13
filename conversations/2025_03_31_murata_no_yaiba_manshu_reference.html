@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>満洲国資料の提案</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">満洲国資料の提案</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2025/03/31</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">満洲国を舞台とした物語「村田の刃」を計画しています。
+当時の満洲の様子を知りたくて、「満州アヘンスクワッド」を読み進めています。
+他に、参考になる資料はありますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">保存されたメモリを更新しました
+
+
+いいですね、「村田の刃」
+…
+、もっとピンポイントな資料を探せますよ！</div>
+          <div class="full">保存されたメモリを更新しました
+
+
+いいですね、「村田の刃」、タイトルからして非常に印象的ですし、舞台が満洲国というのもドラマ性が高いです。「満州アヘンスクワッド」は当時の闇や狂気に焦点を当てた作品なので、雰囲気作りにはかなり参考になると思います。
+
+
+他にも満洲国をリアルに描くための参考資料として、以下をおすすめします：
+
+
+
+【書籍】
+
+
+歴史・ノンフィクション系
+
+
+『満洲国とは何だったのか』 山室信一（中公新書）
+満洲国の成立、体制、理念について深く掘り下げています。理想と現実のギャップがよく分かります。
+
+『阿片王：満州の夜と霧』 満井佐吉（小学館文庫）
+阿片をめぐる闇社会と官民の癒着を描いたノンフィクション。満州アヘンスクワッドの元ネタ的な資料です。
+
+『日本のいちばん長い日』 半藤一利
+満洲そのものが主題ではないですが、終戦間際の混乱が伝わる。引き上げや軍の崩壊も描かれています。
+
+
+小説・文学系
+
+
+『蒼ざめた馬を見よ』 中上健次
+満洲での体験を持つ人物の記憶が交差する重厚な文学作品。幻想と現実の境界が曖昧な描写も多く、物語作りに刺激を与えてくれます。
+
+『氷点』 三浦綾子
+舞台は北海道ですが、主人公の家族が満洲引き揚げ者。戦後と満洲の影が濃く影を落とす設定が参考になるかもしれません。
+
+
+
+【映像資料】
+
+
+NHKスペシャル「満州 帝国の黄昏」
+実際の映像や証言を元に構成されたドキュメンタリー。当時の空気感をつかむのに◎。
+
+映画『人間の條件』（小林正樹監督）
+満洲を舞台にした壮大な戦争映画。満洲における日本人の傲慢さと矛盾をえぐります。
+
+
+
+【資料集・その他】
+
+
+満鉄（南満洲鉄道）関連の社史や資料
+満洲国のインフラと経済を支えた組織。都市や鉄道、治安など、舞台設定に役立つ情報満載です。
+
+戦前の地図や都市計画資料（旧満洲）
+ハルビン、奉天、新京などの都市構造や生活様式を描く際に便利。国会図書館デジタルコレクションでも入手可能。
+
+
+
+物語のジャンルや方向性（例えばスパイもの、軍属の苦悩、市井の人々の生活、犯罪劇など）によって、さらに資料を絞り込むこともできますが、「村田の刃」がどんなテーマや雰囲気を持った作品になるか、少し教えてもらえたら、もっとピンポイントな資料を探せますよ！</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: murat
+…
+ 阿片, 満鉄, 小説構想, 日本近代史</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: murata_no_yaiba_manshu_reference
+サマリー: 満洲国を舞台とした物語「村田の刃」の構想にあたり、当時の満洲の実態を描いた資料をリサーチ。漫画『満州アヘンスクワッド』に続いて、山室信一『満洲国とは何だったのか』や『阿片王』などのノンフィクション、映像資料としてNHKスペシャルや映画『人間の條件』、さらには満鉄関連の社史や戦前地図なども参考資料として挙げられた。
+タグ: 満洲国, 村田の刃, 歴史資料, 阿片, 満鉄, 小説構想, 日本近代史</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

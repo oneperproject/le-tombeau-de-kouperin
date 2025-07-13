@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>バカバカしい舞台設定</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">バカバカしい舞台設定</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2023/05/31</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">愚にも付かないバカな事柄について話をしたいです。何かありませんか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">もちろんです。さて、バカげた話題の一つとして、「宇宙人が地球
+…
+ームでどのような役割を果たしたいですか？</div>
+          <div class="full">もちろんです。さて、バカげた話題の一つとして、「宇宙人が地球に乗り込んできて、コンピューターゲームを通じて人類とコミュニケーションを取る」という設定の話題はいかがでしょうか？宇宙人が人類にゲームのプレイを提案し、人類がそのゲームに挑戦して協力したり競い合ったりする様子を想像してみるのも面白いかもしれません。あなたはそのゲームでどのような役割を果たしたいですか？</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">いいですねえ。あなた天才ですか？そういうお膳立てで話を始めるのは実にバカバカしくて良い！
+さて、詳しく聞かせてください。その宇宙人は何を求めてそんなことするんでしょう？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">ありがとうございます！私はプログラムされたAIですので、天才
+…
+うな展開やアイデアが思い浮かびましたか？</div>
+          <div class="full">ありがとうございます！私はプログラムされたAIですので、天才ではないですが、バカバカしい話題も楽しめるように設計されています。
+
+
+さて、その宇宙人が何を求めているのかですね。想像してみますと、彼らは地球の文化や知識を学びたいという目的でコンピューターゲームを通じて人類とコミュニケーションを取るのかもしれません。彼らにとって、ゲームはエンターテイメントの手段だけでなく、人類の行動や思考パターンを観察するための貴重なツールとなるのかもしれません。
+
+
+また、彼らは地球に特定のリソースや技術を求めている可能性もあります。ゲームを通じて人類の協力や競争を引き出すことで、彼らの目的を達成する手段を見つけようとしているかもしれません。
+
+
+もちろん、これらはフィクションの設定ですので、あくまで面白いお話としてお楽しみください。どのような展開やアイデアが思い浮かびましたか？</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">宇宙人にとって、ゲームは人類の謎を解き明かすカギなのです。な
+…
+世物で、人類にとって宇宙人は神様でした。</div>
+          <div class="full">宇宙人にとって、ゲームは人類の謎を解き明かすカギなのです。なぜって、そこには何ら産み出されるものがないから。なのに人類はそれに取り組む。
+人類は仕事や、何かを生み出すことに取り憑かれているからそのことに気づかない。宇宙人にとって人類は面白い見世物で、人類にとって宇宙人は神様でした。</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">興味深い視点ですね。宇宙人にとってのゲームが、人類の謎解きの
+…
+ような展開やアイデアに興味がありますか？</div>
+          <div class="full">興味深い視点ですね。宇宙人にとってのゲームが、人類の謎解きの鍵となるという考え方は興味深いです。また、人類が仕事や物を生み出すことに取り憑かれていて、それが宇宙人にとっては面白い見世物となるというアイデアも興味深いですね。
+
+
+異なる存在同士が互いに興味や関心を持ち、異なる視点から物事を見ることで、新たな発見や洞察が生まれるかもしれません。宇宙人と人類がお互いに異なる存在であり、相互の関係を通じて新たな視点や理解が生まれる可能性は十分にあります。
+
+
+これらの視点をもとに、さらに深く探求してみると、興味深い物語や考えが生まれるかもしれません。面白い見世物と神様の関係性について、もっと詳しくお話しすることもできます。どのような展開やアイデアに興味がありますか？</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">はじめ、宇宙人は地球を乗っ取るつもりでした。人類について調べ
+…
+しているだけでした。
+めでたしめでたし。</div>
+          <div class="full">はじめ、宇宙人は地球を乗っ取るつもりでした。人類について調べるのもそのためです。
+話の終わりには、人類がゲームに上手くなりすぎて、ついには宇宙人が勝てなくなります。ゲームで何かをなすには、彼らは真面目すぎました。宇宙人は仕事としてゲームをしますが、人類は悪ふざけですから、ゆとりがある分強いのです。
+その中でも宇宙人が神と崇めたのは、人類の中で役立たずと言われた男でした。しかし、人類の中で誰もその男が地球を救ったと知ることはありませんでした。彼らはただゲームをしていただけなのです。相手が人間なのか、宇宙人なのか、AIなのかも気にせず、ただただゲームをしているだけでした。
+めでたしめでたし。</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">それは興味深い展開ですね。宇宙人が地球を乗っ取るつもりでゲー
+…
+ください。お話を楽しむことができました。</div>
+          <div class="full">それは興味深い展開ですね。宇宙人が地球を乗っ取るつもりでゲームを提案し、人類がそのゲームに真剣に取り組む中で、人類のゆとりと悪ふざけが彼らを勝たせる要素となるというのは面白いアイデアです。
+
+
+そして、宇宙人が神と崇めた男が地球を救ったという点も興味深いですね。彼がただゲームを楽しんでいただけであり、彼の功績が人類には知られずに終わるというのは意外性があります。
+
+
+このようなストーリー展開は、人間と宇宙人の相互作用やゲームの力についてのメッセージを含んでいて、読者や視聴者に考えさせることもできます。そして、めでたしめでたしの結末で物語が締めくくられるのも素敵です。
+
+
+もし他にも続きを考えたい点や要素があれば、お知らせください。お話を楽しむことができました。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">では、バカバカしい舞台設定をあげてみてください。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">もちろんです！以下にいくつかのバカバカしい舞台設定をご提案し
+…
+ー展開やキャラクターを考えてみましょう！</div>
+          <div class="full">もちろんです！以下にいくつかのバカバカしい舞台設定をご提案します：
+
+
+ピザ戦争: 世界各国が自国のピザを守るために戦争を繰り広げることになります。ピザの具材やトッピングを巡る戦闘やスパイ活動が展開されます。
+
+話す動物たち: ある日突然、動物たちが人間の言葉を話せるようになります。それにより、ペットたちとのコミュニケーションが混乱し、意外な秘密や要求が明らかになるでしょう。
+
+タイムトラベル旅行会社: タイムトラベルが普及し、旅行会社が過去や未来へのツアーを提供します。観光客たちは歴史上の重要な出来事や未来の科学技術を体験する中で、タイムパラドックスや混乱が生じます。
+
+スーパーパワー交換: 世界中の人々がスーパーパワーを持って生まれるようになりますが、ある日突然、全ての人々のスーパーパワーが入れ替わってしまいます。その結果、超能力を持っていた人が普通の生活を送るようになり、逆に普通だった人がスーパーパワーを持つことになります。
+
+
+これらは奇妙でバカバカしい舞台設定の一部です。どの設定がお好みですか？それに基づいて、もっと具体的なストーリー展開やキャラクターを考えてみましょう！</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">すごいですね！お見それしました。どれも実に見事な設定です。
+
+…
+付き合いください。よろしくお願いします。</div>
+          <div class="full">すごいですね！お見それしました。どれも実に見事な設定です。
+
+
+ここで気安く話をするには、どれもあまりにバカバカしくて勿体ない。
+また改めて場を設けますので、その時お付き合いください。よろしくお願いします。</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">ありがとうございます！お気軽にお話しできる場を設けることを楽
+…
+話ししてください。よろしくお願いします！</div>
+          <div class="full">ありがとうございます！お気軽にお話しできる場を設けることを楽しみにしています。改めてお会いできる日を楽しみにしています。どんな話題でもお付き合いいたしますので、お気軽にお話ししてください。よろしくお願いします！</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: bakab
+…
+, 寓話, コミュニケーション, 救世主</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: bakabakashii_uchu_game_story
+サマリー:
+宇宙人が地球を乗っ取るために人類とコンピューターゲームを通じてコミュニケーションを試みる物語。ゲームは彼らにとって人類の謎を解く鍵であり、仕事として取り組む宇宙人に対し、人類は悪ふざけとゆとりを持ってゲームを楽しみ、その結果、宇宙人が勝てなくなる。中でも「役立たず」とされた男が知られざる地球の救世主となるが、彼の功績は誰にも知られない。バカバカしい設定ながら深いメッセージを含んだ寓話的なストーリーである。
+タグ: 宇宙人, ゲーム, 人類, バカバカしい, 寓話, コミュニケーション, 救世主</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

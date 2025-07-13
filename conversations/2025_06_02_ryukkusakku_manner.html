@@ -1,0 +1,311 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>リュックのマナー問題</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">リュックのマナー問題</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2025/06/02</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">リュックサックは、マナーに則って背中に背負う方がいいんでしょうか？
+前にした方が混み合った電車では迷惑にならないし、姿勢も悪くならないと思うのですが。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">非常に良い問題提起です。結論から言うと、
+
+状況によって「背
+…
+ックの選び方・持ち方ガイドも作成します。</div>
+          <div class="full">非常に良い問題提起です。結論から言うと、
+
+状況によって「背負う」「前に抱える」を使い分けるのが最もマナー的・実用的に優れています。
+
+
+■ 背中に背負う：マナー的に正しいのか？
+
+
+一見、「リュックは背中に背負うもの」というのが基本形であり、
+通行中や広い場所では 背負うのが自然 です。
+
+
+ただし、混雑した場所では次の問題があります：
+
+
+人にぶつかる
+
+リュックが他人の視界から外れているため、配慮が難しい
+
+ドアの開閉やターン時に無自覚な接触を起こす
+
+
+よって、混雑時に背負うこと自体がマナー違反と見なされるケースも増えてきています。
+
+
+
+■ 前に抱える：迷惑を防ぐ意味では正解
+
+
+混雑した電車内やエレベーター内では、前に抱える方が、
+
+
+他人との接触を防ぎやすい
+
+視界に入っているので管理しやすい
+
+スリ防止にも有効
+
+
+という点で、むしろ「配慮している行動」として評価されます。
+
+
+
+■ 姿勢の問題
+
+
+「前に抱える方が姿勢が悪くならない」という点は、やや条件付きです。
+
+
+**背負うときは、正しいストラップ調整（短め）**にすれば、重心が背骨に近くなり、姿勢はむしろ良くなります。
+
+一方で前抱えにすると、前屈みになりがちで腰や肩に負担がかかることもあります（重い荷物のときは特に）。
+
+
+
+■ まとめ：状況別おすすめ
+
+状況
+背中に背負う
+前に抱える
+通学・通勤の道中（空いている）
+◎
+△
+混雑した電車内・バス内
+×
+◎
+美術館・店舗など狭い通路
+×
+◎
+荷物が軽い／小さい
+○
+○
+荷物が重い・大きい
+◎（ただしストラップ調整必須）
+△（姿勢注意）
+
+
+■ 備考：前抱えの見た目について
+
+
+一昔前は「前に抱えるのはダサい」「オタクっぽい」とされた時期もありましたが、
+今はむしろ『気遣いのある人』としてポジティブに受け止められる風潮が強いです。
+とくに都市部では、前抱えはマナーの一部として定着しています。
+
+
+
+ご希望であれば、シチュエーション別のイラストやリュックの選び方・持ち方ガイドも作成します。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+]
+ファイル名: 
+サマリー: 
+タグ:</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: ryukk
+…
+ 姿勢
+
+
+この性格は気に入りましたか？</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: ryukkusakku_manner
+サマリー: リュックサックの背負い方について、混雑状況に応じて「背中に背負う」「前に抱える」を使い分けることがマナー的かつ実用的に望ましいと解説した。混雑した電車や狭い場所では前に抱えることで他人への迷惑や接触を避けられ、視界にも入り管理しやすい。また、姿勢面では背負う際のストラップ調整が重要で、前抱えは荷物が重いと姿勢を崩しやすい点にも注意が必要とまとめた。
+タグ: リュックサック, マナー, 電車, 混雑時, 背負い方, 前抱え, 姿勢
+
+
+この性格は気に入りましたか？</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

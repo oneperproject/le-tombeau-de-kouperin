@@ -1,0 +1,497 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>食べたいもの占い</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">食べたいもの占い</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2025/05/31</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">僕は今、何を食べたいんでしょうね？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">いい問いですね。
+人は「空腹」だけでなく、「感情」や「気温」
+…
+できます。どうでしょう、やってみますか？</div>
+          <div class="full">いい問いですね。
+人は「空腹」だけでなく、「感情」や「気温」「記憶」「最近食べたもの」などから食欲を導き出します。少し探ってみましょうか。
+
+
+
+1. 体調・気温ベースの仮説
+
+
+朝起きたばかり → 温かい味噌汁、トースト、白湯
+
+ちょっとだるい → 梅干し入りのおにぎり、鶏雑炊、うどん
+
+蒸し暑い → ざるそば、冷やし中華、スイカ
+
+肌寒い → シチュー、豚汁、焼き芋
+
+
+
+2. 感情ベースの仮説
+
+
+なんだか疲れた → カレーライス、ラーメン、餃子
+
+満たされたい → 焼肉、寿司、とろけるチーズ系
+
+思索モード → 喫茶店のナポリタン、バタートーストと深煎りコーヒー
+
+ノスタルジック → 学食のカツ丼、母の味の煮物
+
+
+
+3. 行動・生活リズムベース
+
+
+夜ふかし後 → ジャンクなもの（ポテチ、インスタントラーメン）
+-仕事集中後 → 甘いもの（プリン、チョコレート、フルーツサンド）
+
+
+
+では、こちらから聞いてみましょう：
+
+
+A. 今日は何時に起きましたか？
+
+
+B. 最後に食べたものは何でしたか？
+
+
+C. 今の気分を一言で言うと？
+
+
+この3つで、かなり精度の高い「あなたが今食べたいもの」占いができます。どうでしょう、やってみますか？</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">5:45におきました。
+プロテインドリンクを朝食に摂取しました。
+今の気分？本を読みたい。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">ありがとうございます。
+これで、あなたの「食べたいものの輪郭
+…
+かがですか？ 胃がちょっと反応しました？</div>
+          <div class="full">ありがとうございます。
+これで、あなたの「食べたいものの輪郭」がかなり見えてきました。
+
+
+
+🔍 条件整理
+
+
+早起き（5:45） → 体はすでにある程度目覚めている
+
+プロテインドリンクだけ → 咀嚼欲・満腹感は未充足
+
+「本を読みたい」気分 → 集中・静けさ・知的快楽を求めている
+
+
+
+🍽️ 導き出される欲望のパターン
+
+
+✦ 身体的には…
+
+
+「固形物」かつ「腹にたまるが重すぎないもの」を求めている
+
+＝おにぎり、ベーグル、だし巻き卵サンド、干物定食（軽め）
+
+
+✦ 精神的には…
+
+
+「五感を邪魔しない」「読書のリズムを壊さない」
+
+＝カリッ・ふわっ・じゅわっのどれかに集中できるもの
+
+例）厚切りトーストと珈琲（純喫茶セット）／温かいほうじ茶と羊羹／レモンケーキと紅茶
+
+
+
+🎯 最終提案：「読書の供になる軽食セット」
+
+
+【選択肢A】純喫茶系で思索に沈むなら：
+
+
+バタートースト（厚切り）＋ゆで卵＋濃い珈琲（砂糖なし）
+
+
+【選択肢B】静かに整う茶の時間：
+
+
+ほうじ茶＋上品な和菓子（きんつば、黒糖まんじゅう）
+
+
+【選択肢C】少し満腹感と幸福感を添えて：
+
+
+コンビニのおにぎり2種（昆布・高菜）＋無糖ヨーグルト＋白湯
+
+
+
+本に集中しながら、静かに咀嚼できて、胃も脳も喜ぶもの。
+…今のあなたには、炙り鮭のおにぎり＋味噌汁（小松菜と豆腐）＋ほうじ茶なんか、完璧かもしれません。
+
+
+いかがですか？ 胃がちょっと反応しました？</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">奥さんに何を食べたいか聞かれていましてね。
+おにぎりと、しょっぱめの味噌汁、漬物なんて魅力的かもしれません。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">それはもう、**「正解」**にたどり着いてると思います。
+
+
+…
+す。
+
+
+いってらっしゃい、いい一日を。</div>
+          <div class="full">それはもう、**「正解」**にたどり着いてると思います。
+
+
+
+🍙 あなたの今朝の「欲望の正体」は：
+
+
+✔ 咀嚼欲 → おにぎり（握ってもらえたら最高）
+
+
+✔ 塩分・うま味 → しょっぱめの味噌汁（田舎味噌系だと特に◎）
+
+
+✔ 食のリズム → 漬物で箸休め
+
+
+
+🔧 もし奥さんにお願いするなら、こう伝えてみては？
+
+「おにぎりと、ちょっとしょっぱい味噌汁と、漬物が食べたい気分かも。
+ああいうのって、身体も落ち着くし、読書にも合うんだよね。」
+
+静かに立ち上る湯気と、塩気のきいた味噌汁。
+本を読む静けさに寄り添う、質素だけど豊かな朝。
+
+
+これはもう、食欲じゃなく生活欲ですね。
+奥さん、にこっとして作ってくれそうな気がします。
+
+
+いってらっしゃい、いい一日を。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">晩御飯は何を所望しましょうか。
+身体のことを考えると、高タンパク低脂肪、野菜多めの食事がいいと感じるのですが。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">理想的な自己診断ですね。
+では、朝の「和食的な静けさ」からの
+…
+じ鶏」はかなり喜ばれる献立でもあります）</div>
+          <div class="full">理想的な自己診断ですね。
+では、朝の「和食的な静けさ」からの流れを活かしつつ、晩は「滋養と満足感」を両立する食事を提案しましょう。
+
+
+
+🧠 あなたの今夜の食欲構造
+
+
+✅ 朝は軽く → 夜はしっかり食べてもOK
+
+✅ 高タンパク・低脂肪 → 筋肉にも肝臓にも優しい
+
+✅ 野菜多め → 代謝と腸内環境ケア
+
+✅ 読書したい気分継続 → 消化にやさしい、落ち着いた味
+
+
+
+🍽️ 今夜の献立案（和風ver.）
+
+
+【主菜】
+
+
+✔ 鶏むね肉の塩こうじ焼き（or しっとり蒸し鶏）
+→ 塩こうじで柔らかく、旨味を引き出す。低脂肪・高タンパクの王道。
+
+
+【副菜1】
+
+
+✔ ひじきと大豆の煮物
+→ 食物繊維＋植物性たんぱく＋ミネラルのトリプル補給。
+
+
+【副菜2】
+
+
+✔ 小松菜と油揚げの煮浸し or ほうれん草のおひたし
+→ 緑黄色野菜で抗酸化・鉄分・カルシウム。
+
+
+【汁物】
+
+
+✔ 根菜たっぷりのけんちん汁
+→ 食べ応えもありながら、根菜の甘みで満足感。
+
+
+【ごはん】
+
+
+✔ 雑穀米 or 押し麦入り白米
+→ 血糖値の上昇もゆるやかに。
+
+
+
+🍷 おまけの提案
+
+
+小さなおちょこ一杯の冷酒 or ノンアルの柚子ドリンク
+→ 食事の“余白”を作って、読書に戻る余韻を調整。
+
+
+
+🪵 全体の印象
+
+
+「静かに力を蓄える晩餐」。
+満腹で眠くならず、むしろ**“夜の集中力”を高めてくれる設計**です。
+
+
+
+どうでしょう？
+胃腸も頭も、ほどよく整いそうじゃありませんか。
+（奥さんが作ってくれるなら、「塩こうじ鶏」はかなり喜ばれる献立でもあります）</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+]
+ファイル名: 
+サマリー: 
+タグ:</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: taber
+…
+ンパク, 低脂肪, 和食, 読書との相性</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: taberu_yokubou_chousa
+サマリー:
+ユーザーは自身の今の食欲について対話を行い、朝の状況から読書に集中しやすい軽めの和食系メニューを提案された。具体的にはおにぎりとしょっぱめの味噌汁、漬物の組み合わせが望ましいと確認し、奥さんへのリクエスト案も話した。さらに晩御飯には高タンパク低脂肪、野菜多めで消化に良い献立を希望し、鶏むね肉の塩こうじ焼きや根菜たっぷりのけんちん汁など具体的なメニュー案を提示された。身体の状態と気分に合った食事選択の意義も話題となった。
+タグ: 食欲, 朝食, 晩御飯, 高タンパク, 低脂肪, 和食, 読書との相性</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

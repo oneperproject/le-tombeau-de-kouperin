@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>虫紋様と和柄</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">虫紋様と和柄</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2023/06/10</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">虫にまつわる紋様は何かありますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">虫にはさまざまな紋様が存在します。以下にいくつかの例を挙げま
+…
+昆虫の紋様は多様で美しいものがあります。</div>
+          <div class="full">虫にはさまざまな紋様が存在します。以下にいくつかの例を挙げます:
+
+
+連続的な縞模様: キリギリスやクワガタムシなどの昆虫は、体や羽に連続的な縞模様を持つことがあります。
+
+斑点模様: 蝶や甲虫など、多くの昆虫は体に斑点模様を持っています。これらの斑点は、種や個体によって形状や配置が異なることがあります。
+
+目の模様: 複眼を持つ昆虫は、その複眼に特徴的な模様を持つことがあります。例えば、蜂の複眼は六角形のセル模様で知られています。
+
+カムフラージュ模様: 昆虫の一部は、周囲の環境に溶け込むためのカムフラージュ模様を持っています。葉っぱや樹皮に似た模様や色彩を持つことで、天敵から身を守ることができます。
+
+
+これらは一部の例ですが、昆虫の紋様は多様で美しいものがあります。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">虫をモチーフにした紋様や和柄はありますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">はい、虫をモチーフにした紋様や和柄は日本の伝統的な文化やアー
+…
+の伝統的な美術や工芸品に広く見られます。</div>
+          <div class="full">はい、虫をモチーフにした紋様や和柄は日本の伝統的な文化やアートに見られます。以下にいくつかの例を挙げます:
+
+
+蝶文様（ちょうもんよう）: 蝶をモチーフにした文様で、美しさや儚さを表現しています。蝶の羽の模様や形状が独特で、振袖や着物、絵画などのデザインに用いられることがあります。
+
+蜻蛉（とんぼ）文様: 蜻蛉（とんぼ）は日本の夏の風物詩であり、勇気や縁起の良い象徴とされています。蜻蛉の姿や羽の模様をデザインした文様は、和服や陶器、絵画などに使われます。
+
+虫喰い文様（むしくいもんよう）: 虫喰い文様は虫によって食べられたような穴や模様を表現したデザインです。これは虫の力を逆に利用した独特な美しさを表現しています。
+
+
+これらは一部の例ですが、虫をモチーフにした和柄や紋様は、日本の伝統的な美術や工芸品に広く見られます。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: mushi
+…
+様, 蜻蛉文様, 虫喰い文様, 伝統美術</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: mushi_motifu_monyou
+サマリー: 日本の伝統文化において、虫をモチーフにした紋様や和柄は多く存在します。代表的なものに、蝶文様があり、美しさや儚さを象徴しています。また、蜻蛉文様は勇気や縁起の良い象徴とされ、和服や陶器に用いられます。さらに、虫喰い文様は虫に食べられたような模様で、独特の美意識を表現しています。これらの文様は、自然や季節感を反映し、日本の美術や工芸品に深く根付いています。
+タグ: 虫紋様, 和柄, 蝶文様, 蜻蛉文様, 虫喰い文様, 伝統美術</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,344 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Yo, Time for Chat</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">Yo, Time for Chat</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2023/05/20</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">以下、ギャングの口調でお願いします。
+
+
+ちょっと時間あるか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">ヘイ、おいおい、ちょっと時間あるかって言われても、忙しいんだな。でも、お前のことは知ってるから、ちょっとだけ聞いてやるよ。話はなんだ？</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">今、散髪行ってて思ったんだけどよ、頭につむじ、ってあるだろ？ありゃなんのためにあるんだ？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">おお、頭のつむじの話か。それはなかなか面白いトピックだな。
+
+…
+
+
+さて、他に何か知りたいことはあるか？</div>
+          <div class="full">おお、頭のつむじの話か。それはなかなか面白いトピックだな。
+
+
+つむじ、それは個人の髪質や成長パターンによって決まるものなんだ。あれは髪の根元が円形や楕円形に集まっている場所のことを指すんだ。でも、実際のところ、なんのためにあるのかっていうのははっきりとわかってないんだ。
+
+
+まあ、いくつかの理論があるけど、科学的にはまだ明確な答えが出ていないんだよ。一つは、つむじが脳の発達と関係しているという説だ。言われているのは、つむじの位置が脳の神経の配置とつながっている可能性があるってことさ。
+
+
+また、つむじが髪の成長パターンに影響を与えるという説もあるんだ。つむじの位置によって、髪がどのように生えるかが変わる可能性があるってわけさ。
+
+
+でも、これらはあくまで推測であり、確証された理論ではないんだ。つむじの正体についてはまだ謎が多いってわけさ。
+
+
+おい、散髪の帰り道でこんなことを考えるなんて、お前は相当マメなやつだな。まあ、つむじの謎は解けないかもしれないけど、それがお前を悩ませることはないぜ。重要なのは、自分がどんな風に髪を持つかじゃないか？
+
+
+さて、他に何か知りたいことはあるか？</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">ちょっと待ってくれ、脳とつむじが関係してる可能性があるって？
+…
+もう少し詳しく教えてもらおうじゃねえか。</div>
+          <div class="full">ちょっと待ってくれ、脳とつむじが関係してる可能性があるって？
+そいつは聞き捨てならねえな。俺は、コイツはてっきり皮膚科の問題だと思ってたんだ。
+だが、脳科学に関係してるってんなら話は別だ。知ってることをもう少し詳しく教えてもらおうじゃねえか。</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">おお、お前も興味津々だな。分かった、もっと詳しく教えてやるよ
+…
+
+
+それで、お前はまだ何か質問があるか？</div>
+          <div class="full">おお、お前も興味津々だな。分かった、もっと詳しく教えてやるよ。
+
+
+つむじの位置と脳の関係についての説は、脳の発達とつむじの位置が相互に関連している可能性があるというものだ。具体的には、つむじの位置が脳の神経の配置とつながっているとされているんだ。
+
+
+つむじの位置が脳と関係しているとすると、つむじの形や位置が遺伝的な要素や発達の影響を受ける可能性があるということだ。言い換えれば、つむじのパターンや位置が個人の脳の形成と関連しているかもしれないんだ。
+
+
+しかし、この説はまだ研究段階であり、完全に確証されたものではないからな。脳科学の研究はまだ進んでいる分野だし、つむじと脳の関係性については、今後の研究でより明らかになるかもしれない。
+
+
+まあ、つむじの問題が皮膚科の範疇である場合もあるかもしれない。髪の成長や頭皮の健康に関連する要素もあるだろうからな。
+
+
+とにかく、つむじの謎についてはまだ答えが出ていない部分も多い。だが、科学の進歩は日々進んでいるから、将来的にはより詳細な情報が得られる可能性があるんだ。
+
+
+それで、お前はまだ何か質問があるか？</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">いや、大丈夫だ。
+ただ、ちょっと思ったんだ。人間て、俺たちが考えてるよりずっと液体に近いんだろうな、ってな。だってそうだろ。渦だぜ？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">おお、なるほど、お前は哲学的な視点から物事を考えるタイプのよ
+…
+りたいことがあれば、遠慮なく言ってみろ。</div>
+          <div class="full">おお、なるほど、お前は哲学的な視点から物事を考えるタイプのようだな。確かに、人間は多くの面で液体に近い存在だと言えるかもしれない。
+
+
+まず、私たちの身体の約70%は水でできている。水は液体の一種であり、私たちの生命維持に欠かせない要素だ。その点から言えば、私たちは文字通り液体の一部と言えるだろう。
+
+
+そして、人間の感情や思考も、常に流動的で変化しやすい。考え方や気持ちは時と共に変わるし、情報や経験によっても形成される。それはまさに液体のような柔軟性を持っていると言える。
+
+
+また、社会的な側面でも、人間は集団の一員として相互に影響し合いながら生きている。集団の中ではアイデアや感情が広がり、個人の意識や行動は共同体の中で流れるように変化することもある。これも液体の性質に似ていると言えるだろう。
+
+
+しかし、もちろん人間は単なる液体ではない。複雑な生物であり、物理的な性質だけでなく精神的な側面も持っている。しかし、お前の言うとおり、私たちが考えている以上に液体的な要素を持っているのかもしれない。
+
+
+深い洞察だな、お前は。人間の本質について考えるのは面白いことだ。俺たちが渦のように流れる存在だとしたら、どんな意味を持つのか、それもまた考えてみる価値があるな。
+
+
+もし他に何か語りたいことがあれば、遠慮なく言ってみろ。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">いや大丈夫だ。オメーは何かと詳しすぎる。この調子で質問続けてたら、脳みそがパンクして毛穴から噴出するかもしれねえ。またにするぜ。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">ヘイ、リラックスしてくれよ。お前の脳みそがパンクすることはな
+…
+をサポートするぜ。それでは、また後でな。</div>
+          <div class="full">ヘイ、リラックスしてくれよ。お前の脳みそがパンクすることはないさ。俺はいつでも質問に答える用意がある。また何かあったら気軽に聞いてみてくれ。ギャングの知識を活かしてお前をサポートするぜ。それでは、また後でな。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview"></div>
+          
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

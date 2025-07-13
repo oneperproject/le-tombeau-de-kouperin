@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>GameMaker! オブジェクト向き制御</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">GameMaker! オブジェクト向き制御</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2023/12/26</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">GameMakerについて聞きます。オブジェクトの向きを操作するプログラムを教えてください。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">GameMaker Studioにおいて、オブジェクトの向き
+…
+トの向きを自由に制御することができます。</div>
+          <div class="full">GameMaker Studioにおいて、オブジェクトの向きを制御するには、image_angle プロパティを使用します。以下は、オブジェクトの向きを変更する基本的な方法です。
+
+
+例えば、以下の手順でオブジェクトの向きを変更できます：
+
+
+Createイベントで初期化： オブジェクトが作成されたときに image_angle を初期化します。
+
+
+// Createイベント
+image_angle = 0; // 初期の角度
+
+
+ステップイベントで向きを更新： オブジェクトの向きを更新するために、ステップイベントを使用します。例えば、左右のキー入力に基づいて向きを変更する場合：
+
+
+// ステップイベント
+// 例: 左右の矢印キーで回転
+if (keyboard_check(vk_left)) {
+    image_angle -= 5; // 左に5度回転
+}
+
+if (keyboard_check(vk_right)) {
+    image_angle += 5; // 右に5度回転
+}
+
+
+このコードでは、左矢印キーが押されている場合は image_angle を減少させ、右矢印キーが押されている場合は増加させています。必要に応じて角度の変更量を調整してください。
+
+
+もし特定の方向を向く必要がある場合は、point_direction 関数を使用しても良いです。例えば、特定の座標を向くようにするには：
+
+
+// ステップイベント
+// 例: 座標 (target_x, target_y) を向く
+image_angle = point_direction(x, y, target_x, target_y);
+
+
+これで、オブジェクトは (target_x, target_y) の方向を向くようになります。必要に応じてこれらのコードを組み合わせて、オブジェクトの向きを自由に制御することができます。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">方向を変えた上で、その方向に進むようにしたいです。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">理解しました。オブジェクトの向きを変えた後、その方向に進むに
+…
+要に応じて速さや方向を調整してください。</div>
+          <div class="full">理解しました。オブジェクトの向きを変えた後、その方向に進むには、speed および direction プロパティを使用します。以下は、オブジェクトを特定の方向に進ませる基本的な方法です。
+
+
+ステップイベントで向きを変更：
+
+
+// ステップイベント
+// 例: 左右の矢印キーで回転
+if (keyboard_check(vk_left)) {
+    image_angle -= 5; // 左に5度回転
+}
+
+if (keyboard_check(vk_right)) {
+    image_angle += 5; // 右に5度回転
+}
+
+
+ステップイベントで進む：
+
+
+// ステップイベント
+speed = 5; // 速さを設定（必要に応じて変更）
+
+// 方向を向いて進む
+motion_set(image_angle, speed, true);
+
+
+このコードでは、motion_set 関数を使用してオブジェクトの速さと方向を設定しています。第一引数には進む方向を指定し、第二引数には速さを指定します。第三引数が true の場合、オブジェクトはその方向に移動します。
+
+
+これで、オブジェクトは現在の向きに基づいて進むようになります。必要に応じて速さや方向を調整してください。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: gamem
+…
+向きの変更, 移動制御, プログラミング</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: gamemaker_direction_move
+サマリー: GameMakerでオブジェクトの向きを変更し、その方向に進むための基本的なプログラムについて説明した。image_angleを使って左右キーで向きを調整し、motion_set関数を用いて指定した方向に一定の速さで移動させる方法を示した。
+タグ: GameMaker, オブジェクト操作, 向きの変更, 移動制御, プログラミング</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

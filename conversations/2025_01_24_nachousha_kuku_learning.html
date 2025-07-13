@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>難聴者の九九学習法</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">難聴者の九九学習法</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2025/01/24</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">難聴者の九九について教えてください。
+程度によって違いあると思うのですが、難聴者はどのように九九を学習されますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">難聴者が九九を学ぶ際には、聴覚に依存する方法を補う工夫が行わ
+…
+るよう工夫することも成功の鍵になります。</div>
+          <div class="full">難聴者が九九を学ぶ際には、聴覚に依存する方法を補う工夫が行われます。難聴の程度や個人の特性に応じて、以下のような方法が取られることが多いです。
+
+
+1. 視覚的な支援
+
+
+手話: 手話を使って九九を教えることで、視覚的に情報を伝えることが可能です。
+
+カードや図表: 視覚的に九九を学べるように、九九の表を活用したり、数式を絵や色で工夫して表示します。
+
+ビデオ教材: 手話や字幕付きのビデオ教材を使うと、反復練習がしやすくなります。
+
+
+2. 触覚やジェスチャー
+
+
+指差し: 数字や掛け算の答えを指差しで示し、視覚的な理解を促進します。
+
+触覚教材: 点字や浮き彫りで作られた九九表を活用して、触覚を通じた学習を行います。
+
+
+3. 文字と書き取りを活用
+
+
+書く練習: 書き取りを重視し、九九を何度も書くことで覚える方法が取られることがあります。
+
+字幕付き教材: 教材や授業内容を文字で表示することで、聞こえなくても内容を理解できます。
+
+
+4. リズムや動きの利用
+
+
+難聴の程度が軽度の場合、振動を伴うリズムやボディムーブメントを活用することがあります。これにより、九九の「リズム」を体で感じながら学ぶことができます。
+
+
+5. マンツーマン指導
+
+
+難聴者には、教師や家庭での個別指導が有効な場合が多いです。特に、文字を指し示しながら教える方法や、一緒に問題を解くことで理解を深めます。
+
+
+難聴の程度による違い
+
+
+軽度難聴: 補聴器や人工内耳を使用して音声を補助することが可能であれば、通常の音声指導に加え、視覚的な補助を活用します。
+
+中等度～重度難聴: 音声指導が難しい場合、視覚的教材や手話、書き取り練習が中心になります。
+
+全聾（ろう）者: 聴覚情報がまったく利用できない場合、手話や点字教材、視覚的支援が中心となります。
+
+
+サポートの工夫
+
+
+ICTの活用: タブレットやパソコンのアプリで九九を学ぶ方法が広がっています。特に、難聴者向けに開発された字幕付きの教材やインタラクティブな練習ツールが役立ちます。
+
+家庭と学校の連携: 家庭でも視覚的な九九表を活用したり、日常生活で数字や掛け算を使う機会を増やすことが効果的です。
+
+
+難聴者が九九を学ぶ際は、個々の学習スタイルやニーズに合わせた方法を選ぶことが重要です。また、楽しみながら学べるよう工夫することも成功の鍵になります。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+]
+ファイル名: 
+サマリー: 
+タグ:</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: nacho
+…
+支援, 補聴器, ICT教材, 教育方法</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: nachousha_kuku_learning
+サマリー:
+難聴者が九九を学習する際は、聴覚に頼らない視覚的・触覚的支援が重要となる。手話や九九表、カード、字幕付き教材などを用い、書き取りやリズム、ジェスチャーも活用される。難聴の程度により音声指導の利用度合いが変わり、軽度は補聴器などで音声補助を受けつつ学び、中等度以上や全聾では視覚教材や手話中心の指導が中心。ICTツールや家庭・学校の連携も効果的で、個々のニーズに合わせて楽しく学ぶ工夫が鍵となる。
+タグ: 難聴者, 九九学習, 手話, 視覚支援, 補聴器, ICT教材, 教育方法</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

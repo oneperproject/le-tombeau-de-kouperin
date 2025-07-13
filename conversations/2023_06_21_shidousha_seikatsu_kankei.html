@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>指導者の生活と役割</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">指導者の生活と役割</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2023/06/21</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">指導者というものについて考えてみたいと思います。
+生活があって、その中に指導者としての時間があるのでしょうか？
+それとも、指導者に生活という側面があるのでしょうか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">指導者になることは、生活の一部であると言えます。指導者は特定
+…
+ルギーを両方に割り当てる必要があります。</div>
+          <div class="full">指導者になることは、生活の一部であると言えます。指導者は特定の役割を果たす人であり、指導者としての時間を割くことが多いです。彼らは他の人々を導き、指導やアドバイスを提供するために努力します。
+
+
+ただし、指導者もまた、自分自身や家族、友人などの生活を持っています。彼らは人間であり、仕事以外の時間も過ごす必要があります。指導者はバランスを取りながら、自身の生活を管理し、指導者としての責任を果たす必要があります。
+
+
+したがって、指導者には生活と指導者としての側面の両方があります。彼らの日常生活は指導者としての役割と密接に結びついており、時間とエネルギーを両方に割り当てる必要があります。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">では、指導者は、生活の中で指導者として存在しない時間があっても良いということですね？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">はい、指導者も人間ですので、生活の中で指導者として存在しない
+…
+導者としての責務を果たす必要があります。</div>
+          <div class="full">はい、指導者も人間ですので、生活の中で指導者として存在しない時間を持つことは自然であり、必要です。指導者も休息やプライベートな時間を必要とします。これにより、リラックスし、自己を再充電し、バランスを取ることができます。
+
+
+指導者が完全に仕事に没頭することは、疲弊やストレスの原因になる可能性があります。したがって、健全な生活を送るためには、仕事とプライベートの時間を適切に調整することが重要です。指導者が自身の生活をバランスよく管理し、健康や家族、個人の幸福にも配慮することが求められます。
+
+
+ただし、指導者としての責任が生じる場合には、必要な場合には常に指導者として行動する必要があります。重要な決断や問題解決が必要な時には、指導者としての役割を果たすために対応することが求められます。
+
+
+要するに、指導者も普通の人間であり、生活の中で指導者として存在しない時間を持つことは自然であり、必要ですが、重要な場面では指導者としての責務を果たす必要があります。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">生活そのものを指導する指導者は、事実上常に指導者であらねばならないということになりますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">生活そのものを指導する指導者が常に指導者でなければならないか
+…
+囲の人々に影響を与える可能性があります。</div>
+          <div class="full">生活そのものを指導する指導者が常に指導者でなければならないかどうかは、文脈によります。一般的に、指導者は特定の領域や組織においてリーダーシップを発揮し、他の人々を導く役割を果たします。彼らはその役割を担うために指導的な資質やスキルを持っていることが期待されます。
+
+
+ただし、個人の生活全体を指導するという意味での指導者は一般的には存在しません。私たちの生活は個人の自由と選択の範囲に基づいて形成されます。他人が直接的に私たちの生活を指導することは通常ありません。
+
+
+ただし、指導者は自身の生活を模範とすることが求められる場合があります。彼らが持つ価値観や倫理を実践し、自己管理や個人的な成長に取り組むことによって、他の人々に影響を与えることがあります。
+
+
+総括すると、一般的には生活そのものを指導する指導者は存在せず、個人の自己決定と自己責任が重視されます。ただし、指導者が自身の生活を良い例として示すことは、周囲の人々に影響を与える可能性があります。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">ありがとうございます。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">どういたしまして。お力になれて嬉しいです。他に何か質問やお手伝いできることがありますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: shido
+…
+プ, 役割と個人, バランス, 自己管理</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: shidousha_seikatsu_kankei
+サマリー: 本対話では「指導者」と「生活」の関係性について議論した。指導者は役割としての指導時間を持つ一方で、個人としての生活も営んでいるため、指導者として存在しない時間を持つことは自然かつ必要であると確認した。また、生活全般を指導する指導者は通常存在せず、個人の自己決定が尊重されるが、指導者は自身の生活を模範として周囲に影響を与える可能性があることも指摘された。
+タグ: 指導者, 生活, リーダーシップ, 役割と個人, バランス, 自己管理</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

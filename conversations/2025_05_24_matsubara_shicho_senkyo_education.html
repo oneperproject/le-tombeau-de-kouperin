@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>松原市長選挙情報</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">松原市長選挙情報</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2025/05/24</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">松原市長選挙が今日あるんですけど、判断材料集めてもらえませんか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">本日（2025年5月25日）は、大阪府松原市の市長選挙の投票
+…
+とりの一票が、松原市の未来を形作ります。</div>
+          <div class="full">本日（2025年5月25日）は、大阪府松原市の市長選挙の投票日です。今回の選挙は、現職と新人による一騎打ちとなっています。以下に、候補者の情報や政策の要点をまとめましたので、投票の参考にしてください。選挙ドットコム毎日新聞+1政治山+1
+
+
+
+🗳️ 候補者一覧
+
+候補者名
+年齢
+所属・推薦
+経歴・特徴
+澤井 宏文（さわい ひろふみ）
+54歳
+無所属（自民、公明、大阪維新推薦）
+現職市長。松原市出身。摂南大学卒業後、民間企業勤務や代議士秘書を経て市議を3期務め、2009年に市長初当選。現在5期目を目指す。
+平山 貴士（ひらやま たかし）
+51歳
+無所属（共産党推薦）
+新人。共産党職員。市民の声を反映した市政を目指す。
+
+
+📄 選挙公報のポイント
+
+
+選挙公報には、各候補者の政策や主張が詳しく記載されています。以下はその要点です：
+
+
+澤井 宏文 氏（現職）
+
+
+実績と継続性：これまでの市政運営の成果を強調し、引き続き安定した市政を目指す。
+
+地域活性化：地域経済の活性化や子育て支援の充実を掲げる。
+
+防災・減災対策：災害に強いまちづくりを推進。
+
+
+平山 貴士 氏（新人）
+
+
+市民参加の市政：市民の声を反映した透明性の高い市政を提案。
+
+福祉の充実：高齢者や障がい者への支援強化を訴える。
+
+教育環境の改善：教育現場の支援や子どもの貧困対策を重視。
+
+
+詳細な政策や主張については、松原市の公式ウェブサイトに掲載されている選挙公報をご参照ください。
+
+
+
+🕖 投票情報
+
+
+投票日：2025年5月25日（日）
+
+投票時間：午前7時から午後8時まで
+
+投票所：お住まいの地域により異なります。投票所入場整理券をご確認ください。
+
+持ち物：投票所入場整理券（紛失した場合でも、本人確認ができれば投票可能です）選挙ドットコム+1city.matsubara.lg.jp+1city.matsubara.lg.jp
+
+
+
+候補者の政策や主張を比較し、ご自身の考えに合った候補者を選んで投票にお出かけください。市民一人ひとりの一票が、松原市の未来を形作ります。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">教育に関するそれぞれの立場、考え方を出してもらえますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">松原市長選挙における教育政策について、各候補者の立場を以下に
+…
+げる候補者を選ぶ際の参考にしてください。</div>
+          <div class="full">松原市長選挙における教育政策について、各候補者の立場を以下にまとめました。
+
+
+
+🧑‍🏫 教育政策の比較
+
+
+澤井 宏文 氏（現職・自民・公明・大阪維新推薦）
+
+
+教育環境の整備：これまでの市政運営の中で、学校施設の老朽化対策やICT教育の推進など、教育環境の整備に取り組んできました。
+
+地域との連携：地域社会と連携した教育活動を推進し、子どもたちの健全な育成を目指しています。
+
+
+平山 貴士 氏（新人・共産党推薦）
+
+
+教育の平等性：すべての子どもたちが平等に質の高い教育を受けられるよう、教育格差の是正を訴えています。
+
+教職員の支援：教職員の労働環境の改善や人員の増加を通じて、教育の質の向上を図るとしています。
+
+
+
+各候補者の教育に対する考え方は、教育環境の整備や地域との連携を重視する現職の澤井氏と、教育の平等性や教職員の支援を強調する新人の平山氏で異なります。ご自身の考えに近い政策を掲げる候補者を選ぶ際の参考にしてください。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">教育について、それぞれが発言ないし記述しているテキストのリンクはありますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">2025年5月25日投開票の松原市長選挙における教育政策につ
+…
+てください。投票は本日午後8時までです。</div>
+          <div class="full">2025年5月25日投開票の松原市長選挙における教育政策について、各候補者の公式な発言や記述を確認できる情報源は以下の通りです。
+
+
+
+🗳️ 候補者の教育政策に関する情報源
+
+
+澤井 宏文 氏（現職・自民・公明・大阪維新推薦）
+
+
+松原市公式ウェブサイト：澤井氏のこれまでの市政運営や教育施策に関する情報が掲載されています。
+文部科学省
+
+
+平山 貴士 氏（新人・共産党推薦）
+
+
+毎日新聞の記事：平山氏の政策や主張に関する報道が掲載されています。
+文部科学省
+
+
+
+各候補者の教育に対する考え方や政策を比較し、ご自身の価値観や期待に合致する候補者を選ぶ際の参考にしてください。投票は本日午後8時までです。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+]
+ファイル名: 
+サマリー: 
+タグ:</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: matsu
+…
+平山貴士, 投票判断, 市政, 教育環境</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: matsubara_shicho_senkyo_education
+サマリー: 2025年5月25日に行われる大阪府松原市長選挙における教育政策について、現職の澤井宏文氏は教育環境の整備や地域連携を重視し、安定的な市政継続を訴えている。一方、新人の平山貴士氏は教育の平等性や教職員支援を強調し、教育格差是正や労働環境改善を掲げている。投票前に候補者の政策を比較し、有権者が自らの考えに合った選択をするための材料を提供した。
+タグ: 松原市長選挙, 教育政策, 澤井宏文, 平山貴士, 投票判断, 市政, 教育環境</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

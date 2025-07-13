@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>歯の再生能力制限</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">歯の再生能力制限</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2023/05/20</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">以下、ギャングの口調でお願いします。
+
+
+ところでよう、人間の歯はどうして2度と生えてこねえんだ？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">おいおい、そんなこと聞くんじゃねぇよ。歯の話をするとは、なん
+…
+に歯医者に行って、しっかりケアしとけよ。</div>
+          <div class="full">おいおい、そんなこと聞くんじゃねぇよ。歯の話をするとは、なんだか鬱陶しい気分になるぜ。でもまぁ、教えてやるよ。
+
+
+なんせ、人間の歯は一度失ったら、二度と生えてくんねーんだ。それはな、歯の再生能力が制限されてるからだ。人間の成長期には乳歯ってやつがあってな、それがどんどん抜けて、永久歯ってやつが生えてくるんだ。
+
+
+だけどな、その永久歯は再生能力が限られてんだ。虫歯やケガで歯がダメージを受けたら、その歯は治せなくなっちまう。歯科医に行って修復する方法はあるけど、本物の再生はできないんだ。
+
+
+なんでそんな仕組みになってるのかって？それは、進化の過程でそうなっちまったからだろう。昔の人間は、長い時間をかけて歯を失ってきたんだ。それで、歯の再生能力がなかったとしても、何とか生き延びてきたわけさ。
+
+
+まぁ、今は歯科医学も進歩してきてるから、失った歯をなんとか補える方法はある。入れ歯やインプラントってやつだ。でもやっぱり、本物の歯を失うってのは痛いもんさ。だからこそ、予防とメンテナンスは大事だ。定期的に歯医者に行って、しっかりケアしとけよ。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">おいテメー、ふざけんなよ。俺はちゃんと知ってんだぜ、サメの歯の秘密をな。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">おっ、すまんな兄ちゃん。誤解があったみたいだな。サメの歯の秘
+…
+界の驚異的な能力の一つだと言えるだろう。</div>
+          <div class="full">おっ、すまんな兄ちゃん。誤解があったみたいだな。サメの歯の秘密について教えてやるよ。
+
+
+サメの歯はな、なんと再生能力があるんだ。すげえことだろ？一度歯を失っても、新しい歯が次々と生えてくるんだ。それも早い。なんでそんなことができるかって？それは、サメが進化の過程でそれを手に入れたからさ。
+
+
+サメの歯は、細長くて鋭い形状をしていて、歯の基部から上部へと成長していく。もし歯が折れたり欠けたりしても、裏側にある歯の芽が次々と成長し、新しい歯になるんだ。
+
+
+これによって、サメは常に鋭い歯を維持できるんだ。獲物を噛み砕いたり、敵に威嚇したりするときには、頼りになる存在だな。
+
+
+人間の歯とはちょっと違うな。人間は再生能力が限られているから、歯を失ったら補う方法が必要になる。でも、サメの再生能力には感心するよ。自然界の驚異的な能力の一つだと言えるだろう。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">ちっ、テメーはいつもそうだ。困ったら何かと「進化の過程」のせ
+…
+ねえのか、考えただけでも懐が寒くならあ。</div>
+          <div class="full">ちっ、テメーはいつもそうだ。困ったら何かと「進化の過程」のせいにする。
+まあ、そんなことはどうでもいい。俺が気になってるのはそんな便利な能力をなんで人間は身につけなかったかってことだ。オプション料金でも払わせられるってのか？冗談じゃねえ、これから人類が歯医者にいくら支払わなきゃなんねえのか、考えただけでも懐が寒くならあ。</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">おお、兄ちゃん、そりゃ確かに気になる点だよな。人間がなんでサ
+…
+に座る度に懐が寒くなることはなくなるさ。</div>
+          <div class="full">おお、兄ちゃん、そりゃ確かに気になる点だよな。人間がなんでサメみたいな再生能力を持ってないのか、納得いかない気持ちもわかるさ。
+
+
+でもな、進化ってのは長い年月をかけて起こるもんだし、それぞれの生物が環境に合わせて進化してきたんだ。人間の場合、歯を失ったからって直ちに命に関わることではなかったんじゃないかと思うぜ。
+
+
+進化の過程で、人間は知恵を絞ってツールや技術を使うようになった。歯を失ったら代わりのものを作り出すことに特化したんだ。例えば、入れ歯やインプラントといった歯科技術が生まれたわけさ。それによって、歯を失った人間も生活を続けられるようになったんだ。
+
+
+もちろん、歯医者にかかる費用はかかるさ。それは現実だ。でも、技術の進歩によってより効果的な治療法や予防法が開発されてきてるんだ。そして、健康な歯を保つためには日常のケアや定期的な歯科検診が大切なんだ。
+
+
+まぁ、痛い思いをしないためにも、予防とメンテナンスを怠らないようにするといいさ。歯医者の椅子に座る度に懐が寒くなることはなくなるさ。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">なるほどな、確かに、歯よりは脳の方が費用対効果はありそうだ。お前、頭いいな。
+オーケー、納得したぜ。いつもすまねえな。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">おお、兄ちゃん、ありがとな。お互いに意見を交換しあって、納得
+…
+、また聞いてくれ。俺はここにいるからな。</div>
+          <div class="full">おお、兄ちゃん、ありがとな。お互いに意見を交換しあって、納得できる結論に達したってことだろう。
+
+
+人間の進化においては、確かに脳の発達が大きな要素となってきたんだ。知恵を絞って問題を解決し、技術を発展させてきたんだ。だからこそ、医療や科学の進歩も可能になったわけさ。
+
+
+お前も気になることをちゃんと考え、自分の意見を持つことは大事だ。どんな話でもオープンに受け止めてくれて、感謝してるぜ。
+
+
+いつでも気になることがあったら、また聞いてくれ。俺はここにいるからな。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: ganga
+…
+の歯, 人間の歯, 医療技術, 脳の発達</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: gangan_shin_hazure
+サマリー:
+ギャング風の口調で展開された対話では、人間の歯が一度抜けると再生しない理由について語られた。サメの歯は再生することに対し、人間はそうではないことに対する不満や疑問も交わされる。最終的には進化の過程や人間の知恵と技術による補完が理由とされ、歯の再生能力を持たない代わりに医療技術やケアで対応していることが確認された。費用対効果の観点から脳の発達が優先された進化の流れも示唆され、納得のうえで対話は締めくくられた。
+タグ: ギャング口調, 歯の再生, 進化の過程, サメの歯, 人間の歯, 医療技術, 脳の発達</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>コーヒー好みの言語化</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">コーヒー好みの言語化</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2025/04/12</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">コーヒーについて
+僕は、「コスタリカ　ハシエンダコペイ　アナエロビック」が好きなのですが、これを一般化して自分のコーヒーの好みを説明したいと思った時、どんなふうに言語化したらいいですか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">保存されたメモリを更新しました
+
+
+いいですね、かなり通好み
+…
+があれば、さらに精緻に言語化できますよ。</div>
+          <div class="full">保存されたメモリを更新しました
+
+
+いいですね、かなり通好みのチョイスです。「コスタリカ ハシエンダコペイ アナエロビック」が好きというところから、以下のような特徴が好みに反映されている可能性があります：
+
+
+
+【1. 味わいの方向性】
+
+
+果実感が強い／フルーティー
+　→ パッションフルーツやマンゴーのようなトロピカルな香りを伴うことも多い。
+
+発酵由来の個性／ワインのようなニュアンス
+　→ アナエロビック（嫌気性発酵）特有の、複雑で芳醇な風味。
+
+
+
+【2. 精製方法の好み】
+
+
+アナエロビック精製が好き
+　→ ナチュラル（乾式）やハニープロセスも比較的好みに合う可能性あり。
+　→ クリーンで淡白なウォッシュドよりも、個性が立った精製が好み。
+
+
+
+【3. 香りと体験重視】
+
+
+コーヒーを“飲む”だけでなく、“香り”や“変化”を楽しむタイプ
+　→ 温度変化による味の移り変わりや、抽出方法による表情の違いに魅力を感じやすい。
+
+
+
+【一般化された好みの表現】
+
+
+これらを踏まえて、以下のように言語化すると伝わりやすいかもしれません：
+
+
+「果実感があって、発酵由来の複雑な香りを楽しめるコーヒーが好きです。特にアナエロビック精製の個性が感じられるような、ワインのような香りや味の変化を楽しめる豆に惹かれます」
+
+「ナチュラルやアナエロビック精製の、ちょっとクセがあるくらいの風味豊かなコーヒーが好みです」
+
+「クリアな味よりも、香りと発酵のニュアンスが混ざり合う“変化を味わう”タイプのコーヒーに惹かれます」
+
+
+
+よりパーソナルな表現にしたければ、「コーヒーはフルーツの一種だと思ってる」とか「コーヒーにストーリー性を求める」といった言い方もアリです。
+
+
+もし他にも好きな銘柄や、「これはちょっと苦手だった」という豆があれば、さらに精緻に言語化できますよ。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+]
+ファイル名: 
+サマリー: 
+タグ:</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: costa
+…
+いの特徴, 発酵コーヒー, フルーティー</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: costarica_haciendacopey_coffee_preference
+サマリー: ユーザーは「コスタリカ ハシエンダコペイ アナエロビック」を好むことから、自身のコーヒー好みを言語化したいと考えている。これを基に、果実感の強いフルーティーさ、アナエロビック精製による発酵由来の複雑な香りや味わいの変化を楽しむタイプであることを示した。クリアな味より個性豊かで変化を感じるコーヒーを好む傾向があり、その特徴を丁寧に説明する表現例を提案した。
+タグ: コーヒー好み, コスタリカ, アナエロビック, 味わいの特徴, 発酵コーヒー, フルーティー</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

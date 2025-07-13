@@ -1,0 +1,429 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>動画生成依頼</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">動画生成依頼</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2024/12/22</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">曲に合わせて動画を生成してほしいと思います。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">素晴らしいアイデアですね！どのタイプの動画を作りたいかを教え
+…
+いるかと思います。どちらをご希望ですか？</div>
+          <div class="full">素晴らしいアイデアですね！どのタイプの動画を作りたいかを教えていただけますか？以下の選択肢からお選びください：
+
+
+ソーシャル動画: 短い動画でナレーションや字幕を使用し、SNS向けの動画を作成します。
+
+ジェネレーティブAI: アイデアやテーマから、AIが映像を生成します（約4秒のクリップ）。
+
+クリップ動画: お持ちの長尺動画から、短いハイライト動画を作成します。
+
+スライド動画: パワーポイントやPDFのスライドを動画形式に変換します。
+
+
+曲に合わせた動画ですと、ソーシャル動画やクリップ動画が適しているかと思います。どちらをご希望ですか？</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">ジェネレーティブAIを希望します。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">了解しました！ジェネレーティブAIを使用して、曲に合わせた映
+…
+を生成するためのプロンプトを作成します！</div>
+          <div class="full">了解しました！ジェネレーティブAIを使用して、曲に合わせた映像を生成しましょう。いくつか質問させてください：
+
+
+どのようなテーマやスタイルを希望されていますか？（例: サイバーパンク、自然風景、抽象的アートなど）
+
+曲の雰囲気やトーンに合わせたい場合、その曲の具体的なイメージを教えてください。（例: 明るく元気、静かで幻想的）
+
+映像の用途はありますか？（例: 個人プロジェクト、SNS投稿など）
+
+
+これをもとに最適な映像を生成するためのプロンプトを作成します！</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">曲をアップロードするので、それを用いて作ってもらえますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">現時点では、ジェネレーティブAIフローでは音楽ファイルを直接
+…
+に合いそうなプロンプトを提案いたします！</div>
+          <div class="full">現時点では、ジェネレーティブAIフローでは音楽ファイルを直接使用することができません。ただし、曲の雰囲気やトーンを詳しく教えていただければ、それに合ったAI生成映像を作成できます。
+
+
+たとえば、以下の情報を教えていただけると助かります：
+
+
+曲の特徴やテーマ（例: 楽しくポップな感じ、静寂でミステリアスなど）
+
+使用したい映像スタイル（例: 抽象的なビジュアル、アニメーション、シネマティック風など）
+
+
+もし具体的な映像イメージがなくても、お任せいただければ曲に合いそうなプロンプトを提案いたします！</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この絵をもとにして、動かしてほしいと思います。
+毛筆のタッチ
+…
+につながる。
+フェードアウトしておわり。</div>
+          <div class="full">この絵をもとにして、動かしてほしいと思います。
+毛筆のタッチで。
+
+
+0:00から0:06
+・だんだん色が濃くなっていく。
+・だんだん背景のニューヨーク(香港テイスト配合)がみえてくる。
+・女性は画面奥に向いて歩いていく
+
+
+0:07から0:30まで1秒ごとに世界各国の「海辺の街(香港テイスト配合)」の若者が映る。
+食べていたり、走っていたり、ぼーっとしていたり、コーヒーを飲んでいたり、試着していたり、何かから逃げていたり、車で信号待ちをしたり、横断歩道をわたったり、電話をしたり、会話中ふと何かに気づいたり。
+
+
+0:31から0:34まで、ワンショットでドローンから香港の空撮。
+
+
+0:35から0:50まで、今まで映った街に戦車が侵入してくる。
+1秒ごとにカットが変わる。
+街は制圧される。
+兵隊も展開する。
+街の人々は呆然とそれを見つめる。
+
+
+0:51から0:54まで、薄暗がりで火炎瓶を用意する青年。
+0:55から0:57まで、建設現場の未完成な建物越しに映る戦車。
+0:58、同じショットをズームしたカットにジャンプ。戦車が爆発。
+0:59から1:45まで、いままで映った街で市街戦。
+1:46から1:55まで1秒ごとに燃え盛る夜の街。1:56は空から燃える街を見下ろす空撮。
+
+
+1:57から2:00、街全体を焼く火が鎮火した朝。瓦礫とか下町の背景に山、その奥に朝焼け。
+2:01から2:13まで、2秒ごとに、「隠れていたところから出てくる人々」
+2:14から2:30まで、1秒ごとに避難民の暮らし。炊き出し、瓦礫を運ぶ人々、呆然とする子どもなど、戦災の風景。
+2:31から2:35まで、ひび割れたアスファルトに咲く花を低いアングルからゆっくりズームアウト。最後に海が映る。
+2:36から2:38、それが荒廃した街でボロボロの服を纏った少年の瞳の中に映った映像だったとわかる。向かいには女性が立っている。少年は彼女を見上げている。女性の背中が画面の右に見切れている。
+2:39から2:42、少年の向かいに立つ女性が映る。0:00の女性。だんだんと冒頭のショットにつながる。
+フェードアウトしておわり。</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">壮大で感情を揺さぶるストーリーですね！このような詳細なビジョ
+…
+し、映像生成を開始します。どうしますか？</div>
+          <div class="full">壮大で感情を揺さぶるストーリーですね！このような詳細なビジョンを実現するには、現在のジェネレーティブAIツールの機能だけでは難しいかもしれません。ジェネレーティブAIは、短い（約4秒）のクリップで特定のスタイルや雰囲気を表現するのに適していますが、複雑なシーンの連続や長尺のストーリー展開には対応していません。
+
+
+しかし、以下のような対応が考えられます：
+
+
+ジェネレーティブAIで個別のシーンを生成する
+　例えば、以下のようなプロンプトを作成し、複数の短いクリップを生成する形です。
+　- 毛筆タッチで女性が歩き出す（冒頭部分）
+　- 香港テイストの街並みを背景にドローンで空撮するシーン
+　- 燃え盛る夜の街、戦災の風景
+
+ストーリーボードとして整理し、手動編集を補完
+　AIで生成した素材を動画編集ソフト（例えばVEED）で組み合わせ、全体のストーリーを構築することができます。
+
+映像クリエイターへの参考資料
+　このプロットをプロの映像制作者に共有し、具体的な映像化を依頼する。
+
+
+もし、まずはジェネレーティブAIで試したいシーンをいくつか選んでいただければ、そのシーンに合ったプロンプトを作成し、映像生成を開始します。どうしますか？</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">上記の「冒頭部分」を映像化してください。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">冒頭部分をジェネレーティブAIで映像化するために、以下のポイ
+…
+修正したい部分があればお知らせください！</div>
+          <div class="full">冒頭部分をジェネレーティブAIで映像化するために、以下のポイントをプロンプトに反映します：
+
+
+毛筆のタッチで女性が描かれ、だんだんと色が濃くなる。
+
+背景にニューヨークが見え始め、香港テイストが少し加わる。
+
+女性が画面奥に向かって歩いていく。
+
+
+生成するプロンプトの例：
+「A woman drawn in an ink-brush style gradually becomes more vivid as the background transitions into a blend of New York City and Hong Kong elements. The woman walks forward into the distance, showcasing dynamic motion in an artistic, painterly animation.»
+
+
+こちらの内容で映像を生成します。
+このプロンプトでよければ「続ける」とお答えください。また、修正したい部分があればお知らせください！</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">続ける</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">veed.io と通信しました
+
+
+あなたの映像プロジェクト
+…
+に微調整が必要であればお知らせください！</div>
+          <div class="full">veed.io と通信しました
+
+
+あなたの映像プロジェクトが準備できました！
+
+
+こちらをクリックして映像をご確認ください
+
+
+この映像をVEEDエディターでさらにカスタマイズ可能です：
+
+
+字幕のスタイリングやアニメーションの追加
+
+120以上の言語への翻訳
+
+AIアバターの活用
+
+音楽や効果音の追加
+
+
+さらに微調整が必要であればお知らせください！</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+]
+ファイル名: 
+サマリー: 
+タグ:</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: karet
+…
+ーヨーク,香港,アーティスティック,女性</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: karetaba_ink_brush_ny_hk
+サマリー:
+ユーザーのイラストをもとに、毛筆タッチで描かれた女性がだんだんと色濃くなり、背景にニューヨークと香港が融合した街並みが現れる冒頭映像をAIで生成しました。女性は奥に向かって歩き出し、アーティスティックな雰囲気と都市のエッセンスが組み合わさった映像イメージを再現しています。
+タグ: 毛筆,イラスト,AI映像,ニューヨーク,香港,アーティスティック,女性</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

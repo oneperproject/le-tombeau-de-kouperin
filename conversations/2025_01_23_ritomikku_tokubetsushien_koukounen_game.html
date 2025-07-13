@@ -1,0 +1,777 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>リトミック授業プラン</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">リトミック授業プラン</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2025/01/23</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">特別支援学級むけにリトミックの授業（45分）を考えています。
+…
+画用紙などを使った工作物は作成可能です。</div>
+          <div class="full">特別支援学級むけにリトミックの授業（45分）を考えています。
+グリーティングを除くと、賞味35分間で、なにかできるプログラムを考えてください。
+楽器はピアノ、タンバリン、トライアングル、カスタネットを使用できますが、スピーカーを使いたくないです。
+画用紙などを使った工作物は作成可能です。</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">特別支援学級向けにリトミックの授業を考える際、子どもたちの興
+…
+性に応じて、自由にアレンジしてください。</div>
+          <div class="full">特別支援学級向けにリトミックの授業を考える際、子どもたちの興味を引き出しながら、感覚を刺激する活動を織り交ぜると効果的です。また、集中力の波を考慮して、アクティブな活動と静かな活動を組み合わせると良いでしょう。以下は35分間のプログラム案です。
+
+
+
+プログラム案：四季を感じるリトミック
+
+
+1. はじまりのうたと準備運動（5分）
+
+
+目的: 活動の切り替え、気持ちの準備。
+
+ピアノ伴奏に合わせて「こんにちは」のうたを歌う（シンプルで覚えやすいメロディが良い）。
+
+曲に合わせて体を伸ばしたり、手足を動かしたりしてリラックス。
+
+
+
+2. 季節を感じるリズム遊び（10分）
+
+
+目的: 音楽を聞きながら体を動かすリズム感覚を育む。
+
+活動例:
+季節にちなんだテーマ（例：春→花が咲く、夏→波、秋→落ち葉、冬→雪）を選び、音を使って表現。
+
+タンバリンやカスタネットを使用:
+春→ゆっくりしたテンポで「花が咲くリズム」（トントントン…ゆっくり）。
+
+夏→速いリズムで「波がざぶんざぶん」。
+
+秋→落ち葉が落ちる様子を不規則なリズムで表現。
+
+冬→トライアングルで「雪のひらひら」。
+
+先生が即興でピアノを弾き、子どもたちが楽器で合わせる。
+
+
+
+3. 動物ごっこ（10分）
+
+
+目的: イメージ力や身体表現の発達を促す。
+
+動物をテーマにした音楽（即興ピアノ）を聞き、それに合わせて体を動かす。
+
+活動例:
+ウサギ→ピアノの軽快なリズムに合わせてピョンピョン跳ねる。
+
+ゾウ→低い音で重たく動く。
+
+小鳥→トライアングルの音に合わせて羽ばたく真似。
+
+
+
+4. 終わりの工作：リズムカード作り（10分）
+
+
+目的: 自分の感覚を視覚的に表現する。
+
+A4サイズの画用紙を用意し、簡単な模様を描いて「リズムカード」を作る。
+例えば、春なら「花」、夏なら「波」、秋なら「落ち葉」、冬なら「雪」など。
+
+カードを完成させた後、みんなでそのカードを使ってリズム遊び。
+
+
+
+5. おわりのうたとクールダウン（5分）
+
+
+目的: 授業の締めくくり、落ち着いた気持ちで終わる。
+
+ピアノ伴奏に合わせて「さようなら」のうたを歌う。
+
+手をつないで輪になり、ゆっくりと体を揺らしながら歌う。
+
+
+
+このプログラムは、身体の動き、感覚的な刺激、視覚的な要素をバランスよく組み込んでいます。楽器を使う部分は子どもたちの特性に応じて、自由にアレンジしてください。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">具体的な曲名など含めて、ブラッシュアップしてみてください。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">特別支援学級向けのリトミック授業を、具体的な曲名を含めて以下
+…
+性に応じて、自由にアレンジしてください。</div>
+          <div class="full">特別支援学級向けのリトミック授業を、具体的な曲名を含めて以下のようにブラッシュアップしました。
+
+
+
+プログラム案：四季を感じるリトミック
+
+
+1. はじまりのうたと準備運動（5分）
+
+
+目的: 活動の切り替え、気持ちの準備。
+
+活動内容:
+ピアノ伴奏に合わせて「ドレミの歌」を歌います。 知的障害・発達障害の育て方がわかるブログ |
+
+歌に合わせて体を伸ばしたり、手足を動かしたりしてリラックスします。
+
+
+
+2. 季節を感じるリズム遊び（10分）
+
+
+目的: 音楽を聴きながら体を動かすリズム感覚を育む。
+
+活動内容:
+季節にちなんだ曲を選び、音を使って表現します。
+
+使用楽器: タンバリン、カスタネット、トライアングル。
+
+曲例:
+春:「チューリップ」
+
+夏:「うみ」
+
+秋:「まつぼっくり」
+
+冬:「ジングルベル」
+
+先生がピアノでメロディーを弾き、子どもたちが楽器でリズムを合わせます。
+
+
+
+3. 動物ごっこ（10分）
+
+
+目的: イメージ力や身体表現の発達を促す。
+
+活動内容:
+動物をテーマにした音楽を聴き、それに合わせて体を動かします。
+
+使用楽器: タンバリン。
+
+曲例:
+「ぞうさん」: ゆっくりと大きな動きで表現。
+
+「ことりのうた」: 軽やかに羽ばたく動きを表現。
+
+先生がタンバリンでリズムを取り、子どもたちがそれに合わせて動物の動きを真似します。
+
+
+
+4. 終わりの工作：リズムカード作り（10分）
+
+
+目的: 自分の感覚を視覚的に表現する。
+
+活動内容:
+A4サイズの画用紙を用意し、季節や動物にちなんだ絵を描いて「リズムカード」を作ります。
+
+例えば、春なら「花」、夏なら「波」、秋なら「落ち葉」、冬なら「雪」など。
+
+カードを完成させた後、みんなでそのカードを使ってリズム遊びをします。
+
+
+
+5. おわりのうたとクールダウン（5分）
+
+
+目的: 授業の締めくくり、落ち着いた気持ちで終わる。
+
+活動内容:
+ピアノ伴奏に合わせて「さようなら」のうたを歌います。
+
+手をつないで輪になり、ゆっくりと体を揺らしながら歌います。
+
+
+
+このプログラムは、具体的な曲名を取り入れることで、子どもたちが親しみやすく、活動に集中しやすくなります。楽器を使う部分は子どもたちの特性に応じて、自由にアレンジしてください。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">ありがとうございます。
+それぞれのプログラムについて、動画での実践例がオンライン上にあれば、教えてください。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">特別支援学級向けのリトミック授業に関連する実践例の動画を以下
+…
+興味に合わせてアレンジしてみてください。</div>
+          <div class="full">特別支援学級向けのリトミック授業に関連する実践例の動画を以下にまとめました。各プログラムの参考としてご活用ください。
+
+
+
+1. はじまりのうたと準備運動
+
+
+参考動画: 「特別支援教育『やってみよう～リトミック1～』」
+さいたま市教育委員会が提供する動画で、音楽に合わせて体を動かす学習の様子が紹介されています。
+
+動画リンク:
+
+
+
+2. 季節を感じるリズム遊び
+
+
+参考動画: 「スカーフリトミック【特別支援学校・音楽】即時反応⭐︎動きは2種類だけ！」
+ムーブメントスカーフを使ったリトミック活動が紹介されています。
+
+動画リンク:
+
+
+
+3. 動物ごっこ
+
+
+参考動画: 「せんろはつづくよリトミック【特別支援学校・音楽】保育園・幼稚園・放課後等デイサービスでも使える音楽活動！」
+「線路は続くよどこまでも」の演奏に合わせて行うリトミックで、即時反応をねらいとした活動が紹介されています。
+
+動画リンク:
+
+
+
+4. 終わりの工作：リズムカード作り
+
+
+リズムカード作りに特化した動画は見つかりませんでしたが、以下のサイトでリトミックの指導案が紹介されています。
+サイトリンク:
+
+
+
+5. おわりのうたとクールダウン
+
+
+参考動画: 「きらきら星で『とん・パ　とん・パ』〜おうちでできるリトミック〜【特別支援学校・音楽】」
+「きらきら星」のメロディーに合わせて、膝と手を交互にたたくリトミックが紹介されています。クールダウンの参考としてご覧ください。
+
+動画リンク:
+
+
+
+これらの動画を参考に、各プログラムの具体的な進行方法や雰囲気を掴んでいただけると思います。お子さまの特性や興味に合わせてアレンジしてみてください。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">リトミックの内容
+・もう少し高い年齢向け
+で見繕ってもらえますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">特別支援学級の高学年向けに、より年齢に適したリトミックのプロ
+…
+味や特性に応じて柔軟に調整してください。</div>
+          <div class="full">特別支援学級の高学年向けに、より年齢に適したリトミックのプログラムをご提案いたします。高学年の生徒には、音楽的な理解や身体表現の深化を目指し、協調性や創造性を育む活動が効果的です。以下に、45分間（挨拶を除く35分間）のプログラム例を示します。
+
+
+
+プログラム案：音楽と身体表現の融合
+
+
+1. リズムパターンの学習と応用（10分）
+
+
+目的: 複雑なリズムパターンの理解と表現力の向上。
+
+活動内容:
+ピアノの伴奏に合わせて、手拍子や足踏みでシンコペーションやポリリズムなどのリズムパターンを練習します。
+
+習得したリズムを、タンバリンやカスタネットで表現し、グループでの合奏を行います。
+
+
+2. 音楽に合わせた即興ダンス（10分）
+
+
+目的: 音楽に対する即時反応能力と創造的表現の促進。
+
+活動内容:
+ピアノで即興的に演奏されるさまざまなテンポやムードの音楽に合わせて、生徒が自由に身体を動かします。
+
+音楽の変化に応じて、動きを即座に変えることで、音楽と身体の連動性を高めます。
+
+
+3. グループでのリズムアンサンブル（10分）
+
+
+目的: 協調性とリズム感の強化。
+
+活動内容:
+生徒を小グループに分け、それぞれに異なるリズムパターンを割り当てます。
+
+各グループが担当するリズムを練習し、最終的に全体で一つのリズムアンサンブルを完成させます。
+
+
+4. 音楽に合わせたストーリーテリング（5分）
+
+
+目的: 音楽的表現と物語の融合による創造性の育成。
+
+活動内容:
+ピアノの伴奏に合わせて、簡単な物語を音楽と動きで表現します。
+
+生徒が順番に物語の一部を担当し、音楽に合わせて演じることで、表現力と協調性を養います。
+
+
+5. クールダウンと振り返り（5分）
+
+
+目的: 活動の振り返りとリラクゼーション。
+
+活動内容:
+ゆったりとした音楽に合わせて、深呼吸やストレッチを行い、心身をリラックスさせます。
+
+今日の活動を振り返り、感じたことや学んだことを共有します。
+
+
+
+このプログラムは、高学年の生徒の発達段階に合わせて、音楽的理解と身体表現の深化を目指した内容となっています。各活動は、生徒の興味や特性に応じて柔軟に調整してください。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">参考になる動画のリンクを教えてください。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">特別支援学級の高学年向けリトミックの実践例として、以下の動画
+…
+興味に合わせてアレンジしてみてください。</div>
+          <div class="full">特別支援学級の高学年向けリトミックの実践例として、以下の動画をご紹介いたします。各プログラムの参考としてご活用ください。
+
+
+
+1. リズムパターンの学習と応用
+
+
+参考動画: 「特別支援教育『めざせ！リズムうち マスター』」
+さいたま市教育委員会が提供する動画で、リズム打ちの学習を紹介しています。
+
+動画リンク:
+
+
+
+2. 音楽に合わせた即興ダンス
+
+
+参考動画: 「Toku-Navi小学部『音楽』」
+特別支援学校小学部の器楽の取り組みを紹介しており、音楽に合わせた身体表現の工夫が見られます。
+
+動画リンク:
+
+
+
+これらの動画を参考に、高学年の生徒向けのリトミック活動の具体的な進行方法や雰囲気を掴んでいただけると思います。生徒の特性や興味に合わせてアレンジしてみてください。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">音を使ったゲームのようなものがあれば教えてください。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">音を使ったゲームは、特別支援学級や高学年の生徒にとっても楽し
+…
+を加えることで興味を引きやすくなります。</div>
+          <div class="full">音を使ったゲームは、特別支援学級や高学年の生徒にとっても楽しく取り組め、集中力や協調性を育む良い方法です。以下に、簡単で盛り上がる音を使ったゲームをいくつかご紹介します。
+
+
+
+1. 音を聞いて動きを変える「音の信号ゲーム」
+
+
+目的: 音を聞き分け、即時反応能力を鍛える。
+
+準備: ピアノやタンバリン、トライアングルなど。
+
+やり方:
+先生がピアノや楽器で異なる音を出します。
+高い音 → 速く歩く
+
+低い音 → ゆっくり歩く
+
+タンバリンを鳴らす → 止まる
+
+生徒たちは音に合わせて動きを変えます。
+
+徐々に音を速くしたり複雑にしたりして、レベルアップ。
+
+ポイント:
+動きのバリエーションを増やすことで楽しさアップ。
+
+音と動きの関連性を生徒にわかりやすく説明。
+
+
+
+2. リズムパターン当てゲーム
+
+
+目的: 聴覚の集中力とリズム感を育む。
+
+準備: タンバリン、カスタネット、手拍子。
+
+やり方:
+先生が簡単なリズムパターンを演奏（例: タン・タン・タン・トントン）。
+
+生徒がリズムを真似します。
+
+難易度を上げて、複雑なリズムを追加（例: 3拍子やポリリズム）。
+
+生徒同士でリズムを出し合い、クラス全員で当てっこするゲームに発展。
+
+ポイント:
+ミスを笑いに変えて、ゲーム感覚を大切に。
+
+
+
+3. 「音の宝探し」
+
+
+目的: 音源を特定する聴覚能力を鍛える。
+
+準備: 小さな音の出るもの（カスタネット、トライアングル）。
+
+やり方:
+1人の生徒が目を閉じます。
+
+他の生徒が教室内のどこかで音を鳴らします。
+
+音を頼りに、目を閉じた生徒が音の出所を探します。
+
+ポイント:
+最初は簡単な音、慣れたら隠れる場所を工夫して難易度を調整。
+
+
+
+4. 音階ジャンプゲーム
+
+
+目的: 音階を意識した動きや認識力を鍛える。
+
+準備: ピアノ、フロアにマットや指定エリアを設置。
+
+やり方:
+先生がピアノでドレミの音を弾きます。
+
+生徒は音に合わせてジャンプや移動をします（ド → 左、レ → 右、ミ → 前など）。
+
+音階が速くなるほど動きが増え、楽しく運動量も上がります。
+
+ポイント:
+音と体の動きを直感的に結びつけることがポイント。
+
+
+
+5. 音のしりとりゲーム
+
+
+目的: 創造力と音楽的感覚を育む。
+
+準備: 使用可能な楽器。
+
+やり方:
+最初の生徒が1つのリズムやメロディを楽器で演奏。
+
+次の生徒は、前の演奏の最後の音やリズムに関連付けて、別のリズムやメロディを作る。
+
+全員がつながるまで続けます。
+
+ポイント:
+自由な表現を尊重し、個々の創造力を伸ばす。
+
+
+
+6. サイレントミュージックゲーム
+
+
+目的: 集中力と想像力を鍛える。
+
+準備: ピアノや楽器。
+
+やり方:
+先生が音を鳴らし始め、途中で演奏をやめます。
+
+生徒は、頭の中で音を続け、合図で「次に来る音」を楽器で鳴らします。
+
+正解者にポイントをあげるなどの工夫を。
+
+ポイント:
+音楽の流れを頭の中で考える力を育成。
+
+
+
+これらのゲームは音楽教育の要素を取り入れつつ、遊びの感覚で楽しく取り組むことができます。特に高学年の生徒には、挑戦性のあるルールを加えることで興味を引きやすくなります。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">参考動画のリンクを教えてください。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">音を使ったリトミックのゲームに関する参考動画を以下にご紹介し
+…
+ム感や即時反応能力を養うのに効果的です。</div>
+          <div class="full">音を使ったリトミックのゲームに関する参考動画を以下にご紹介します。これらの動画は、音楽に合わせて体を動かす活動やリズム遊びの実践例を示しており、特別支援学級の高学年向けのリトミック活動の参考になると思います。
+
+
+
+1. ピアノで簡単リトミック | 即時反応
+
+
+この動画では、ピアノの音に合わせて歩く、走る、スキップ、しりもちなどの動きを取り入れたリトミック活動が紹介されています。音の変化に即座に反応する練習として参考になります。
+
+
+
+2. 音楽に合わせて体を動かそう! 子どもが喜ぶリトミック
+
+
+この動画では、「さんぽ」や「ぞうさん」などの曲に合わせて体を動かすリトミック活動が紹介されています。高学年向けには、動きの難易度を上げたり、テンポを変えるなどの工夫を加えることで応用できます。
+
+
+
+3. 準備なし！保育園でできるリズムゲーム7種類
+
+
+この動画では、特別な準備が不要なリズムゲームが7種類紹介されています。「焼き芋グーチーパー」や「あんぱん食パン」など、手軽に取り入れられるゲームが含まれており、高学年の生徒にもアレンジして活用できます。
+
+
+
+これらの動画を参考に、生徒の興味や特性に合わせてリトミック活動をアレンジしてみてください。音楽に合わせたゲームは、楽しみながらリズム感や即時反応能力を養うのに効果的です。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+]
+ファイル名: 
+サマリー: 
+タグ:</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: ritom
+…
+ム, 高学年, プログラム案, 動画参考</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: ritomikku_tokubetsushien_koukounen_game
+サマリー:
+特別支援学級向けのリトミック授業について、35分間の具体的なプログラム案を年齢別に提案。低学年向けには四季を感じるリズム遊びや動物ごっこ、画用紙を使った工作を組み込み、高学年向けにはリズムパターンの応用や即興ダンス、グループアンサンブル、ストーリーテリングを中心に構成。また、音を使ったゲーム例として「音の信号ゲーム」「リズムパターン当てゲーム」などを挙げ、実践参考動画のリンクも提供した。楽器はピアノ、タンバリン、トライアングル、カスタネットを用い、特別支援学級の特性に合わせた遊びや表現力を育む内容を目指している。
+タグ: 特別支援学級, リトミック, 音楽ゲーム, 高学年, プログラム案, 動画参考</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

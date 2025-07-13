@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>目標設定のアドバイス</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">目標設定のアドバイス</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2023/05/04</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">あなたにいただいたアドバイスをもとに、自己分析をしてみたので
+…
+基準となるようなアドバイスはありますか？</div>
+          <div class="full">あなたにいただいたアドバイスをもとに、自己分析をしてみたのですが、いまいち自分のことがわかったという気がしません。特に、自分の目標が曖昧な気がします。何か、達成したい目標を定める上で基準となるようなアドバイスはありますか？</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">自己分析を行い、自分自身について理解を深めることはとても重要
+…
+生がより充実したものになることでしょう。</div>
+          <div class="full">自己分析を行い、自分自身について理解を深めることはとても重要ですが、自分の目標を定める上で基準となるようなアドバイスをいくつかお伝えします。
+
+
+具体的で明確な目標を設定する
+目標を定める際には、曖昧な表現ではなく、具体的かつ明確な言葉で表現することが大切です。例えば、「英語を勉強する」という目標は、具体的には「TOEICスコアを800点にする」というように設定すると、達成度合いを明確に把握できます。
+
+SMART原則を意識する
+目標を設定する際には、SMART原則を意識することも重要です。SMART原則とは、Specific（具体的）、Measurable（測定可能）、Attainable（達成可能）、Relevant（関連性がある）、Time-bound（期限がある）の頭文字をとったもので、これに従って目標を設定することで、達成の可能性が高まります。
+
+自分自身の価値観を明確にする
+自分自身の価値観を明確にし、その価値観に基づいて目標を設定することで、より自分にとって意味のある目標が見つかるかもしれません。例えば、「社会貢献したい」という価値観がある場合には、「ボランティア活動をする」という目標を設定することができます。
+
+長期的なビジョンを持つ
+目標を設定する際には、短期的な目標だけでなく、長期的なビジョンも持つことが大切です。自分が将来何をしたいのか、どんな人生を送りたいのかを想像し、そのビジョンに向かって今できることを考えることが大切です。
+
+
+以上のアドバイスを参考にして、自分にとって意味のある目標を設定してみてください。目標を設定することで、今後の人生がより充実したものになることでしょう。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">ありがとうございます。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">どういたしまして。何か他に質問があれば、お気軽にお尋ねください。お力になれるように最善を尽くします。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+]
+ファイル名: 
+サマリー: 
+タグ:</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: jikob
+…
+長期ビジョン, 目標の具体化, 自己理解</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: jikobunseki_mokuhyo_guide
+サマリー:
+自己分析を進める中で、自分の目標設定が曖昧であると感じる悩みに対し、目標を明確にするための具体的なアドバイスを提供した対話。具体的かつ測定可能な目標設定の重要性や、SMART原則（具体的・測定可能・達成可能・関連性・期限設定）の活用、自分の価値観を軸にした目標設定、そして長期的なビジョンを持つことが、意味のある目標を定めるための基準として提案されている。これらを参考に、自分にとって実現可能かつ意義深い目標を模索することを促している。
+タグ:
+自己分析, 目標設定, SMART原則, 価値観, 長期ビジョン, 目標の具体化, 自己理解</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

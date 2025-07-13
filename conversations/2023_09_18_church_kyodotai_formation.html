@@ -1,0 +1,310 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>聖書について</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">聖書について</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2023/09/18</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">聖書について読んでいます。使徒パウロが「教会を設立した」という時、具体的にどんなことをしていたのですか？建築したというわけではないと思うのですが。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">使徒パウロは、聖書の中で教会を設立するという意味で直接的に建
+…
+会が設立され、キリスト教は広まりました。</div>
+          <div class="full">使徒パウロは、聖書の中で教会を設立するという意味で直接的に建物を建てたわけではありません。彼はキリスト教の信仰を広め、教会を設立するために以下のような活動を行いました：
+
+
+福音の宣教: パウロは各地を旅して、キリストの教えを伝えました。彼は異教徒やユダヤ人に向けてキリスト教の信仰を説明し、人々を信仰の受け入れに導きました。
+
+教えの伝授: パウロは信者たちにキリスト教の教えを教え、指導しました。彼は手紙を書いて、遠くの教会にも教えを伝えました。
+
+教会の組織: パウロは教会を組織化し、指導者を任命しました。彼はエルダーやディーコンといった役職を設け、教会の運営を助けました。
+
+イエスの教えの伝承: パウロはイエス・キリストの教えや生涯についての情報を伝え、信仰の基盤を築きました。
+
+
+したがって、パウロは物理的な建物を建てるのではなく、人々の信仰と共同体を形成するための努力を行いました。彼の活動によって、多くの教会が設立され、キリスト教は広まりました。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">教会≒共同体の形成、共同体の運営の道筋をつける、という感じでしょうか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">はい、正確です。教会の設立は共同体の形成と共同体の運営の道筋
+…
+その基盤を築く重要な役割を果たしました。</div>
+          <div class="full">はい、正確です。教会の設立は共同体の形成と共同体の運営の道筋をつけることに関連しています。使徒パウロは信者たちをまとめ、共同体を形成し、信仰と倫理の指針を提供し、教会の運営に関する指導を行いました。彼の努力は、信仰共同体の成長と発展に貢献しました。キリスト教の教会は信仰の共同体であり、信者たちが協力して信仰を実践し、共に神に仕える場所です。パウロの働きはその基盤を築く重要な役割を果たしました。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">・内容(思想、習慣)の言語化
+・信徒ではない人への営業
+・新
+…
+？他に、何か付け加えることはありますか？</div>
+          <div class="full">・内容(思想、習慣)の言語化
+・信徒ではない人への営業
+・新たな信者の受け入れ
+・共同体がするべき日常的行為
+・運営資金の調達方法と実行
+・指導体制(エルダー、ディーコンなど)の確立
+・首脳(パウロ)との連絡手段
+などでしょうか？他に、何か付け加えることはありますか？</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">おっしゃる通り、教会を設立し運営するには以下の要素が重要です
+…
+ざまな側面が教会の運営に影響を与えます。</div>
+          <div class="full">おっしゃる通り、教会を設立し運営するには以下の要素が重要です：
+
+
+内容(思想、習慣)の言語化: 教会は信仰の中心地であり、信仰の思想や習慣を明確に伝えることが不可欠です。信者たちに教えを提供し、信仰を深める機会を提供します。
+
+信徒ではない人への営業: 教会は新たな信者を受け入れ、信仰を広めるために積極的に外部への営業活動を行います。
+
+新たな信者の受け入れ: 新しい信者を歓迎し、信仰共同体に統合するプロセスが重要です。これにはバプテスマや入門プログラムなどが含まれます。
+
+共同体がするべき日常的行為: 教会は礼拝、祈り、聖書の学習、慈善活動などの日常的な行為を通じて信仰を実践します。
+
+運営資金の調達方法と実行: 教会の運営に必要な資金を調達し、予算を管理する体制を整えます。信者からの寄付や募金が一般的な資金調達方法です。
+
+指導体制(エルダー、ディーコンなど)の確立: 教会内での指導者の役割と責任を明確にし、指導体制を構築します。エルダー、ディーコン、牧師などが指導的な役割を果たします。
+
+首脳(パウロ)との連絡手段: 教会の首脳と信者たちとの連絡手段を確立し、情報や指導を伝えるプロセスを整備します。
+
+
+これらの要素は、教会の健全な運営と成長に不可欠な要素です。他にも地域社会への奉仕活動や団体内での調和の維持など、さまざまな側面が教会の運営に影響を与えます。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">ありがとうございます。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">どういたしまして。質問があればいつでもお気軽にどうぞ。お力になれてうれしいです。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: churc
+…
+教, 指導体制, 信仰運営, 教義言語化</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: church_kyodotai_formation
+サマリー:
+使徒パウロが「教会を設立した」とは、物理的な建物を建てることではなく、キリスト教の信仰共同体を形成し、運営の基盤を築く活動を指す。具体的には、教義や信仰習慣の言語化、新たな信者の受け入れと指導、礼拝や祈りなどの日常的行為の確立、資金調達の仕組み構築、指導体制（エルダーやディーコンなど）の確立、そして指導者と信者間の連絡体制の整備を含む。これらによって、教会は単なる集合体ではなく、機能的な共同体として成長した。
+タグ:
+教会設立, 共同体形成, 使徒パウロ, キリスト教, 指導体制, 信仰運営, 教義言語化</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

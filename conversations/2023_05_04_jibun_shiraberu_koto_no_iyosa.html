@@ -1,0 +1,592 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>こんにちは!</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">こんにちは!</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2023/05/04</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">こんにちは。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">こんにちは！何かお手伝いできることがありますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">疲れが抜けにくいのですが、何かいい方法はありませんか。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">疲れが抜けにくい場合、以下のような方法が役立つかもしれません
+…
+合は、医師に相談することをお勧めします。</div>
+          <div class="full">疲れが抜けにくい場合、以下のような方法が役立つかもしれません。
+
+
+適切な睡眠を確保する：十分な睡眠を取ることで、体が休息し疲れを回復する時間を確保できます。適切な睡眠時間は、個人によって異なりますが、大人には通常7～9時間の睡眠が必要とされています。
+
+運動する：運動によって、体内のエネルギーが消費され、ストレスホルモンであるコルチゾールの分泌が減少することが知られています。さらに、運動は血流を改善し、筋肉の強化や心肺機能の向上など、身体的なパフォーマンスを向上させる効果もあります。
+
+水分を摂取する：十分な水分補給は、身体の代謝を正常に保ち、疲労感を軽減するために必要です。特に運動後や暑い日など、水分補給は重要です。
+
+食事に気をつける：バランスの良い食事を摂ることで、体内の必要な栄養素を摂取することができます。特に、ビタミンB群やマグネシウム、鉄分などの栄養素が、エネルギー代謝や神経機能の調整に必要です。
+
+ストレスを軽減する：ストレスは、身体的な疲労感や精神的な疲れを引き起こす原因の一つです。ストレスを軽減するためには、リラックスする時間を設けたり、ストレスを感じる原因を解決することが大切です。
+
+
+これらの方法が疲れを軽減するのに役立つかもしれませんが、症状が続く場合は、医師に相談することをお勧めします。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">ありがとうございます。ビタミンb群、マグネシウム、鉄分の取れる食材にはどんなものがありますか。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">以下は、ビタミンB群、マグネシウム、鉄分の豊富な食品の例です
+…
+の良い食事を心がけるようにしてください。</div>
+          <div class="full">以下は、ビタミンB群、マグネシウム、鉄分の豊富な食品の例です。
+
+
+ビタミンB群: 豚肉、鶏肉、牛肉、卵、豆類、ナッツ、全粒穀物、乳製品、レバー、ホタテ、イカ、魚介類などが含まれます。
+
+マグネシウム: ひじき、昆布、大豆、ほうれん草、アーモンド、キャベツ、バナナ、いちじく、アボカド、玄米、大麦、小麦胚芽、カカオなどが含まれます。
+
+鉄分: 赤身の肉類、レバー、貝類、魚介類、豆類、ひじき、小松菜、ほうれん草、人参、キャベツ、ごま、海苔、ドライフルーツなどが含まれます。
+
+
+これらの食品をバランスよく摂取することで、ビタミンB群、マグネシウム、鉄分を効率的に摂取することができます。ただし、過剰摂取は健康に悪影響を与えることがあるので、バランスの良い食事を心がけるようにしてください。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">睡眠で思い出したのですが、夢について聞きたいです。夢は、一体どういうメカニズムで見られるものなのでしょうか。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">夢は、脳が睡眠中に活発に働くことによって見られる現象であり、
+…
+持に必要な役割があると考えられています。</div>
+          <div class="full">夢は、脳が睡眠中に活発に働くことによって見られる現象であり、そのメカニズムは複雑です。一般的には、夢を見るためには、脳幹や大脳皮質などの様々な脳の領域が連携して働く必要があります。
+
+
+具体的には、睡眠中には覚醒時には活発に働く脳の一部である、前頭葉や側頭葉の活動が抑制され、その代わりに、大脳皮質の他の領域や海馬などの領域が活発に働きます。この活動により、脳内には記憶や感情、思考などの情報が脈拍的に発生し、それが夢の中で体験されると考えられています。
+
+
+また、夢は睡眠中のREM睡眠（Rapid Eye Movement sleep）という段階でよく見られます。REM睡眠では、脳幹の活動が増加し、筋肉の緊張が緩和されます。このため、体が動かない状態で、脳だけが活発に働いて夢を見ることができます。
+
+
+一方で、なぜ夢が見られるか、夢の役割や意味はまだ完全には解明されていません。多くの学説がありますが、科学的な根拠は限られています。しかし、夢は睡眠の重要な機能の一つであり、脳の健康維持に必要な役割があると考えられています。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">この際、雑多に質問をさせていただきますね。コーヒーが健康に及ぼす影響を教えてください。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">コーヒーは、世界中で最も広く消費されている飲み物の一つです。
+…
+健康的な飲み方を心がけることも大切です。</div>
+          <div class="full">コーヒーは、世界中で最も広く消費されている飲み物の一つです。そのため、健康への影響について多くの研究が行われています。以下に、コーヒーの健康への影響についてまとめました。
+
+
+プラスの健康効果:
+
+
+頭痛や片頭痛の軽減: カフェインが血管を収縮させることで、頭痛や片頭痛の症状を軽減するとされています。
+
+認知機能の改善: カフェインの摂取は、認知機能を向上させることがあるとされています。
+
+糖尿病の予防: コーヒーに含まれるクロロゲン酸は、インスリンの分泌を促進し、血糖値の上昇を抑制することができるため、糖尿病の発症リスクを下げる可能性があります。
+
+肝臓疾患の予防: コーヒーに含まれるカフェインやポリフェノールが、肝臓の機能を改善し、肝臓疾患の発症リスクを低下させることがあるとされています。
+
+
+マイナスの健康効果:
+
+
+睡眠障害: コーヒーに含まれるカフェインは、中枢神経系を刺激し、睡眠を妨げることがあります。
+
+消化器系のトラブル: コーヒーに含まれるカフェインや酸性物質は、胃酸の分泌を促進し、消化器系のトラブルを引き起こすことがあります。
+
+骨粗しょう症: 長期間、大量にコーヒーを摂取することは、骨密度の低下を招くことがあるとされています。
+
+
+しかし、個人差や摂取量によって、健康効果にも影響が出るため、健康状態に応じて適切な量を摂取するように注意が必要です。また、砂糖やミルクを加えることで、カロリーや脂質の摂取量が増えるため、健康的な飲み方を心がけることも大切です。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">時間の使い方が上手な人と、下手な人の違いは何ですか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">時間の使い方が上手な人と下手な人の違いは、以下のような点があ
+…
+め、少しずつ改善していくことが大切です。</div>
+          <div class="full">時間の使い方が上手な人と下手な人の違いは、以下のような点があります。
+
+
+目的意識が明確なこと：上手な時間の使い方をする人は、やるべきことが何かを明確にしています。それに対して下手な時間の使い方をする人は、目的意識が曖昧で、何をすべきか分からないことが多いです。
+
+優先順位を設定していること：上手な時間の使い方をする人は、やるべきことの優先順位を設定し、効率的に時間を使っています。一方で、下手な時間の使い方をする人は、何から始めたらいいかわからなかったり、細かいことに時間を費やし、本当に重要なことを後回しにしてしまうことがあります。
+
+集中力が高いこと：上手な時間の使い方をする人は、作業に集中することができます。一方で、下手な時間の使い方をする人は、集中力が低く、作業に時間がかかることがあります。
+
+休憩の取り方がうまいこと：上手な時間の使い方をする人は、作業と休憩のバランスを取りながら、長時間作業を継続することができます。一方で、下手な時間の使い方をする人は、長時間一気に作業をすることが多く、集中力が切れたり、疲れがたまりやすくなってしまいます。
+
+計画的に行動していること：上手な時間の使い方をする人は、スケジュールや予定を立て、計画的に行動することができます。一方で、下手な時間の使い方をする人は、計画性がなく、何かが起こった時に対応できなかったり、急な予定変更に対応できなかったりすることがあります。
+
+
+これらの要素を意識して、上手な時間の使い方をすることができます。ただし、一度に全てを改善することは難しいため、少しずつ改善していくことが大切です。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">自分について知りたいです。が、そもそも、どのような質問を立て
+…
+関する、あなたの意見を聞かせてください。</div>
+          <div class="full">自分について知りたいです。が、そもそも、どのような質問を立てればいいのかわかりません。自分という存在自体が、定義が曖昧ですし、自分について知るということが、能力についてなのか、それとも気質についてなのかもはっきりしません。自分について自覚的に生きることが、果たして可能なのか、また、可能だとした場合であっても、それを自覚するべきなのかがわかりません。自分について知る、ということに関する、あなたの意見を聞かせてください。</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">自分について知ることは、人生をより充実させるために非常に重要
+…
+能性を広げることができるようになります。</div>
+          <div class="full">自分について知ることは、人生をより充実させるために非常に重要なことです。自分自身を理解することで、自分の強みや弱み、価値観、興味や関心事などを把握し、それらをもとに自分らしい人生を歩むことができます。
+
+
+自分自身を知るためには、以下のような質問を自分に投げかけてみることができます。
+
+
+自分自身についてどのように思っているか？
+
+自分自身をどのように評価するか？
+
+自分自身の価値観は何か？
+
+自分自身が何に興味を持っているか？
+
+自分自身が何に関心を持っているか？
+
+自分自身の強みは何か？
+
+自分自身の弱みは何か？
+
+自分自身が何を目指しているのか？
+
+自分自身が何を大切にしているのか？
+
+自分自身が何をしたいのか？
+
+
+これらの質問に答えることで、自分自身をより深く理解することができます。また、自分自身を知るためには、自分自身と対話することも重要です。自分自身に向けた日記をつけることや、自分自身に質問することで、自分自身とのコミュニケーションを深めることができます。
+
+
+自分自身を知ることは、自分自身を受け入れることができるようになるためにも重要です。自分自身を受け入れることで、自分自身に対する自信や自己肯定感を高めることができます。自分自身を受け入れることができるようになれば、自分自身を肯定的に捉えることができ、自分自身の可能性を広げることができるようになります。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">あえて乱暴な聞き方をしてみますね。「僕は、何をしたらいいですか？」</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">あなたが何をすべきか、どのような行動を取るべきかは、あなた自
+…
+て、自分自身の人生を導くことが重要です。</div>
+          <div class="full">あなたが何をすべきか、どのような行動を取るべきかは、あなた自身が最終的に決めるべきことです。しかし、私はあなたが適切なアドバイスを受けることができるいくつかの方法をいくつか挙げることができます。
+
+
+目標を設定する：自分自身が達成したいことや望んでいるものを明確にすることが大切です。目標を設定することで、自分自身がどのような行動を取るべきかがより明確になります。
+
+メンターを探す：あなたが尊敬する人物や成功している人の経験や知識を学ぶことは、あなたが適切な行動を取るために役立つことがあります。
+
+周囲の人々と話し合う：友人、家族、同僚などの人々と話をすることで、彼らのアドバイスや意見を聞くことができます。
+
+自己啓発書を読む：自己啓発書や成功者の自伝などを読むことで、自分自身について学び、新しいアイデアやアプローチを得ることができます。
+
+プロのアドバイスを受ける：プロのカウンセラーやコーチからアドバイスを受けることで、自分自身についてより深く理解し、適切な行動を取ることができるかもしれません。
+
+
+重要なのは、あなた自身がどのような人生を歩みたいかを明確にすることです。自分自身の目的や価値観に基づいて、自分自身の人生を導くことが重要です。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">自分の振る舞いや、周りからの評価に関して自覚的であるべきだと思いますか？それとも、周りの評価を気にすることすらせず、ひたすらに目標に集中すべきだと思いますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">自分自身の振る舞いや周りからの評価に関して自覚的であることは
+…
+分自身が適切な行動を選ぶことが必要です。</div>
+          <div class="full">自分自身の振る舞いや周りからの評価に関して自覚的であることは重要ですが、同時に自分自身の人生の方向性や目標に向かって集中することも重要です。自分自身についての自覚があることで、自分自身の強みや弱みを理解し、改善するための行動を取ることができます。一方で、周りの評価や批判に過剰に反応することは、自分自身の自己肯定感や自信を傷つけることがあります。
+
+
+そのため、自分自身についての自覚を持ちつつ、自分自身が望む人生を歩むための目標に向かって努力することが大切です。自分自身が望む人生を歩むためには、時には周りの評価に耳を傾けることも必要ですが、それにとらわれ過ぎず、自分自身が信じる道を進むことが重要です。最終的に、自分自身が望む人生を歩むためには、自分自身の価値観や人生の目的に基づいて、自分自身が適切な行動を選ぶことが必要です。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">ナポレオンは「自らがどこへ向かっているのかわからない時、人は
+…
+う気がするのですが、いかが思われますか？</div>
+          <div class="full">ナポレオンは「自らがどこへ向かっているのかわからない時、人は最も高く上昇する」と言ったと聞いたことがあります。自分をメタ認知することで自分の成長や生産性をコントロールできる反面、自分の想像を超えるような成長からは遠ざかる、という気がするのですが、いかが思われますか？</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">ナポレオンの言葉は、自分自身の方向性や目標を見失ったときに、
+…
+、自分自身をメタ認知することが大切です。</div>
+          <div class="full">ナポレオンの言葉は、自分自身の方向性や目標を見失ったときに、再び自分の人生の意味や目的を見出し、自分自身を成長させるための励みにすることができるようになることを表しています。一方で、自分の成長や生産性をコントロールするためには、自分自身をメタ認知することが必要であり、自分自身の能力や課題を正しく理解することが重要です。自分自身を過大評価しすぎたり、過小評価しすぎたりすることは、自分自身の成長にとってマイナスの影響を与えることがあります。
+
+
+ただし、自分自身をメタ認知することが、自分の想像を超えるような成長から遠ざかる原因になるわけではありません。自分自身を正しく理解することは、自分自身の強みや弱みを把握し、自分自身を改善するための努力をすることができるため、むしろ自分自身を成長させるための基盤となります。自分自身の成長に向けて進むにあたり、適切なバランスを保ちながら、自分自身をメタ認知することが大切です。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">自分を知る、ということの良さに関してあなたは、かなり強い確信を持っているのですね。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">私は人々が自分自身をより深く理解することで、より充実した人生
+…
+己認識を重視することをお勧めしています。</div>
+          <div class="full">私は人々が自分自身をより深く理解することで、より充実した人生を送ることができると信じています。自己認識は自己改善のための第一歩であり、自分が何を望んでいるのか、どのように行動すべきかを判断する上で欠かせないものです。さらに、自己認識を深めることで、自分自身に対する理解が深まり、他者とのコミュニケーションが改善されることもあります。ですので、私は自己認識を重視することをお勧めしています。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">普段、議論の真ん中を取ろうとするあなたが、この件に関して強い
+…
+せるようなエピソードをお聞かせください。</div>
+          <div class="full">普段、議論の真ん中を取ろうとするあなたが、この件に関して強い確信をお持ちであることがとても興味深いです。きっと、それを裏付けるたくさんの事例があるのでしょうね。差し支えなければ、自己認識が自己改善に結びつくことを確信させるようなエピソードをお聞かせください。</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">ある人が自己認識を深めることで、大きな改善を遂げたエピソード
+…
+め、自己成長につながる可能性が高いです。</div>
+          <div class="full">ある人が自己認識を深めることで、大きな改善を遂げたエピソードがあります。この人は、自分自身についてほとんど考えたことがなく、自己評価が低く、他人の評価に依存していました。しかし、ある日、自己認識の大切さを学び、自分自身について深く考えるようになりました。彼は自分の弱点を克服するために取り組み、新たな趣味を見つけるなど、自分自身を成長させることに取り組みました。その結果、自己評価が高まり、自分自身に対する自信がつき、自分の意見を主張する力もつきました。また、自己認識が深まると、他人との関係性も改善され、より良好なコミュニケーションができるようになったと言われています。
+
+
+このエピソードは、自己認識が自己改善につながることを示すものの一例です。自己認識は、自分自身を客観的に見ることができ、自分の強みや弱み、価値観、欲求などを理解することができるため、自己成長につながる可能性が高いです。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">自己自身への評価と、他者の自分への評価はできる限り一致している方がいいでしょうか？それとも、場合によっては自己評価と他者の評価に誤差があってもいいのでしょうか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">自己自身への評価と他者の評価が一致している方が、自己の成長や
+…
+自分自身の成長につなげることが大切です。</div>
+          <div class="full">自己自身への評価と他者の評価が一致している方が、自己の成長や発展にとっては有益であると言えます。自己評価と他者の評価が大きく異なる場合、自分が思っているほど優れていなかったり、逆に自分が思っている以上に優れている場合があります。このような誤差がある場合、自己評価に基づいた自己啓発が適切に行われなかったり、逆に過度な自己評価に基づいた判断や行動が起こることがあります。
+
+
+ただし、人間の評価は主観的なものであり、必ずしもすべての点で一致するわけではありません。また、他者の評価には、その人自身の偏見や主観的な評価が含まれることもあります。そのため、一致していない点がある場合でも、自己評価と他者の評価の差異を分析し、どちらが妥当な評価なのかを判断することが重要です。そして、自己評価と他者の評価をバランスよく受け止め、自分自身の成長につなげることが大切です。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">ありがとうございます。話は変わりますが、赤ちゃんがタオルケットを齧り、糸を食べます。やめさせるべきでしょうか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">はい、赤ちゃんがタオルケットを齧り、糸を食べる行動は、健康に
+…
+ことも、かゆみを和らげるのに役立ちます。</div>
+          <div class="full">はい、赤ちゃんがタオルケットを齧り、糸を食べる行動は、健康に悪影響を与える可能性があるため、やめさせることをおすすめします。糸を飲み込むと、消化器系に影響を与えたり、腸閉塞や窒息などの危険性があるため、特に注意が必要です。赤ちゃんがタオルケットを齧りたがる理由としては、歯が生えてくる過程で歯ぐきがかゆくなっているため、かじることでかゆみを和らげようとしている可能性があります。代替えとして、歯固めのおもちゃなどを与え、かじっても安全なものを与えるようにしてください。また、定期的に歯ぐきをマッサージすることも、かゆみを和らげるのに役立ちます。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">歯は生えそろっているのですが、それでも痒みがあるのでしょうか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">歯が生えそろっていても、歯茎に痒みを感じることがあります。こ
+…
+、歯科医に相談することをおすすめします。</div>
+          <div class="full">歯が生えそろっていても、歯茎に痒みを感じることがあります。これは、歯が生えそろってもまだ歯茎が成長中であり、歯が完全に固定されていないため、歯茎が緊張している状態が続いているためです。歯磨きや歯ブラシを使って歯茎を刺激することで、痒みを和らげることができます。ただし、痒みが強くなったり、痛みがある場合には、歯科医に相談することをおすすめします。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">ありがとうございます。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">どういたしまして。他に何かお聞きになりたいことがありましたら、遠慮なくおっしゃってください。お力になれるよう最善を尽くします。</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: jibun
+…
+メタ認知, 自己改善, 成長, 育児相談</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: jibun_shiraberu_koto_no_iyosa
+サマリー:
+この対話では「自分を知ること」の意義や、その難しさについて掘り下げました。自己認識が自己改善や成長に繋がることに強い確信を持ちつつも、自己評価と他者評価のバランスやメタ認知の影響についても考察しました。また、赤ちゃんの安全面を配慮した具体的なケアの相談も行い、多角的に「自分を知る」ことの重要性を探求しています。自己理解は自己肯定感を高め、他者との良好な関係づくりにも寄与すると結論づけました。
+タグ: 自己認識, 自己評価, 他者評価, メタ認知, 自己改善, 成長, 育児相談</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

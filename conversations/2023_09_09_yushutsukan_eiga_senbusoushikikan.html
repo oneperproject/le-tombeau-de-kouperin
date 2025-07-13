@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>優秀な指揮官を描いた映画</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">優秀な指揮官を描いた映画</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2023/09/09</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">優秀な指揮官を描いた映画を紹介してください。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">もちろんです！優秀な指揮官を描いた映画の中でも有名なものをい
+…
+品です。お楽しみいただけることでしょう。</div>
+          <div class="full">もちろんです！優秀な指揮官を描いた映画の中でも有名なものをいくつか紹介します：
+
+
+『パットン大戦車軍団』（1970年） - ジョージ・C・スコットが、第二次世界大戦中のアメリカ陸軍の指揮官であるジョージ・S・パットン将軍を演じた作品です。
+
+『ワーキング・ガール』（1980年） - シガニー・ウィーバーが、宇宙船の指揮官エレン・リプリーを演じたSF映画で、彼女は危機的な状況で的確な指揮を執ります。
+
+『プライベート・ライアン』（1998年） - トム・ハンクスが、第二次世界大戦中のアメリカ軍の兵士たちを率いる隊長ジョン・ミラー大尉を演じ、危険な任務に挑みます。
+
+『キャプテン・フィリップス』（2013年） - トム・ハンクスが、ソマリア海賊によるハイジャックから船を守る指揮官リチャード・フィリップス船長を演じた実話に基づいた作品です。
+
+
+これらの映画は、指揮官のリーダーシップと決断力を描いており、非常に印象的な作品です。お楽しみいただけることでしょう。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">実在の戦争指揮官を描いた映画はありますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">はい、実在の戦争指揮官を描いた映画は多く存在します。以下はい
+…
+ち、映画を通じて観客に伝えられています。</div>
+          <div class="full">はい、実在の戦争指揮官を描いた映画は多く存在します。以下はいくつかの例です：
+
+
+『パットン大戦車軍団』（1970年） - ジョージ・S・パットン将軍の生涯と第二次世界大戦での指揮を描いています。ジョージ・C・スコットが主演し、アカデミー賞を受賞しました。
+
+『マッカーサー』（1977年） - ダグラス・マッカーサー将軍の戦争での指導を描いた映画で、ギレルモ・デル・トロがマッカーサーを演じました。
+
+『パール・ハーバー』（2001年） - 第二次世界大戦の太平洋戦争における実在の指揮官、ダドリー・W・モートン大将を含む多くの軍人の物語です。
+
+『マーシャル 法廷を変えた男』（2017年） - アフリカ系アメリカ人のスー・マーシャル判事が、第二次世界大戦中にアメリカ陸軍の大尉として奮闘する姿を描いています。
+
+
+これらの映画は、実在の戦争指揮官たちの生涯や功績を称え、彼らのリーダーシップと勇気を伝えるために制作されました。彼らの物語は歴史的な重要性を持ち、映画を通じて観客に伝えられています。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: yushu
+…
+ 映画紹介, リーダーシップ, 歴史映画</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: yushutsukan_eiga_senbusoushikikan
+サマリー:
+この対話では、優秀な戦争指揮官を描いた映画について尋ねられた。まず、ジョージ・S・パットン将軍を描く『パットン大戦車軍団』や、『プライベート・ライアン』のジョン・ミラー大尉など、フィクションや実在人物を含む指揮官映画を紹介。次に、実在の戦争指揮官をテーマにした作品として、『パットン大戦車軍団』や『マッカーサー』をはじめ、『パール・ハーバー』など具体例を挙げて説明した。これらは指揮官のリーダーシップや勇気を描き、歴史的価値も高い作品群である。
+タグ: 戦争映画, 実在指揮官, パットン, マッカーサー, 映画紹介, リーダーシップ, 歴史映画</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

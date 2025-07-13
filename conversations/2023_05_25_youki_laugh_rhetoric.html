@@ -1,0 +1,473 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>陽気に暮らすアイデア</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">陽気に暮らすアイデア</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2023/05/25</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">ChatGPTさん、おはようございます。
+毎日陽気に、気楽に、笑いながら暮らすにはどうすればいいですか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">おはようございます！陽気に、気楽に、笑いながら暮らすためのい
+…
+う。どうぞ素敵な毎日をお過ごしください！</div>
+          <div class="full">おはようございます！陽気に、気楽に、笑いながら暮らすためのいくつかのアイデアをお伝えしますね。
+
+
+ポジティブな考え方を心がける: ポジティブな視点で物事を見ることは、日常の中で楽しさや喜びを見つけるのに役立ちます。ネガティブな出来事や困難な状況に直面した場合でも、そこから学びを見つけたり、良い側面を見つけたりすることに意識を向けましょう。
+
+笑いを大切にする: 笑いは最高の心のリフレッシュ方法です。コメディ番組やおもしろい本、友人との楽しい会話など、笑いの要素を取り入れる時間を作りましょう。笑いはストレスを和らげ、ポジティブな気分を生み出します。
+
+身体活動を取り入れる: 運動は身体だけでなく、心の健康にも良い影響を与えます。自分に合った楽しい運動を見つけて、定期的に取り入れることで、ストレスの軽減や幸福感の向上につながります。
+
+趣味や興味を追求する: 自分の興味や好きなことに時間を割くことは、日常生活を楽しむ上で重要です。新しい趣味を見つけたり、既存の趣味を深めたりすることで、充実感や喜びを感じることができます。
+
+社交的な関わりを持つ: 大切な人々とのつながりは、幸福感や笑いの源です。友人や家族と一緒に時間を過ごしたり、共通の興味を持つグループに参加したりすることで、笑いや楽しさを分かち合えます。
+
+自己ケアを行う: 心身の健康を保つためには、適切な自己ケアが必要です。良い睡眠をとったり、バランスの取れた食事を摂ったり、ストレスを軽減する方法を見つけたりすることで、心地よい気分を保つことができます。
+
+
+これらのアイデアを組み合わせて、日々を陽気に、気楽に、笑いながら過ごすことができるでしょう。どうぞ素敵な毎日をお過ごしください！</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">1.について
+あんまりポジティブだと、緊張感のないやつ、ふざけたやつだと思われませんか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">ポジティブな考え方を心がけることは、緊張感のない人やふざけた
+…
+や楽しい毎日を築くことができるでしょう。</div>
+          <div class="full">ポジティブな考え方を心がけることは、緊張感のない人やふざけた人だと思われることではありません。ポジティブな人は、一般的に周囲の人々に好感を持たれ、明るい雰囲気を作り出すことができます。
+
+
+ポジティブな人が抱くのは、ネガティブな状況や困難な状況に対しても前向きな態度を持つことです。それは、チャレンジや解決策を見つけるための柔軟な思考や、他の人を励まし、支えることができる力を持っていることを意味します。
+
+
+ただし、ポジティブであることは常に笑ってばかりいることを意味するわけではありません。状況や人々に応じて適切な反応を示すことが重要です。重要な仕事や真剣な場面では、適切な緊張感や集中力を持ちながら取り組むことが求められるでしょう。
+
+
+ポジティブな人は、他の人に良い影響を与え、楽しい雰囲気を作り出すことができますが、それは真剣さや責任感を欠いているわけではありません。バランスを保ちながら、ポジティブな態度を持つことが大切です。
+
+
+自分自身の性格や個性を活かしながら、ポジティブな考え方を心がけることで、より充実した人間関係や楽しい毎日を築くことができるでしょう。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">日々の生活の中では、前向きであったり、チャレンジすること態度よりも、深刻で、沈鬱で、シリアスな方が真面目なやつ、と思われやすい状況もあるなと感じています。この点についてはどう思われますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">確かに、一部の状況や環境では、真面目でシリアスな態度が求めら
+…
+実した日々を送ることを心がけてください。</div>
+          <div class="full">確かに、一部の状況や環境では、真面目でシリアスな態度が求められることもあります。特に、仕事や学業、重要な決定をする場面では、深刻さや真剣さが必要です。
+
+
+ただし、日常生活全体を通して見た場合、深刻で沈鬱な態度だけを持つことは、心の健康や幸福感に悪影響を及ぼす可能性があります。過度に真面目になりすぎることやネガティブな思考に囚われることは、ストレスや心の負担を増やすことにつながるかもしれません。
+
+
+ポジティブな態度を持つことは、深刻な問題や困難に立ち向かうための資質であり、解決策を見つけたり、柔軟に対応したりする力を高めることにも役立ちます。ポジティブな思考は、創造性やイノベーションを促し、人間関係の構築やコミュニケーションの円滑化にも寄与します。
+
+
+もちろん、適切な場面では真剣さや深刻さが求められますし、人々の感情や状況は多様です。そのため、状況に応じて適切な態度を持つことが大切です。しかし、一般的には、ポジティブな態度を持ちながら前向きに取り組むことは、幸福感や充実感をもたらすことが多いと言えます。
+
+
+ポジティブな態度と真剣さは相反するものではなく、バランスを取りながら共存させることができます。自分の性格や状況に合わせて、適切な態度を選びながら、充実した日々を送ることを心がけてください。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">2.について
+昔からお笑いの技術について考えています。僕は松
+…
+って創造される奇跡の一種なのでしょうか？</div>
+          <div class="full">2.について
+昔からお笑いの技術について考えています。僕は松本人志を尊崇しているのですが、彼のアイデアは魔法としか言いようがありません。そこに、何か法則がありそうなのに、常にこちらの予想を超えた面白い発想がなされます。
+お笑いにも、原則や方法などが存在するのでしょうか？それとも、やはりお笑いとは一部の天才の直観によって創造される奇跡の一種なのでしょうか？</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">お笑いは、一部の天才の直観によって創造される奇跡の一種と言え
+…
+いのスキルやセンスを磨くことが大切です。</div>
+          <div class="full">お笑いは、一部の天才の直観によって創造される奇跡の一種と言える一方で、実は一定の原則や方法が存在するとも言えます。お笑いの技術やアイデアは、創造性と才能に加えて、特定の要素や構造に基づいている場合があります。
+
+
+一般的に、お笑いの基本的な原則や法則は以下のような要素を含んでいます：
+
+
+サプライズや予測の裏返し: お笑いは予想を超えた意外性や驚きが大切です。人々が予想していない展開や逆転、思わず笑ってしまう瞬間が魅力的です。
+
+コンビネーションと相互作用: お笑いはしばしば複数の要素や人物の相互作用によって生まれます。ダブルアクトやコンビのような相手とのやり取りやコミュニケーションが重要です。
+
+ユーモアの規則やパターン: お笑いには様々なユーモアの規則やパターンが存在します。例えば、ワードプレイ、ギャップ（意外性）、パロディ、シチュエーションのひねりなどがあります。
+
+タイミングとリズム: お笑いの効果を高めるためには、タイミングとリズムが重要です。ギャグや笑いのポイントを正確なタイミングで配信することが求められます。
+
+観客の感情と共感: お笑いは観客の感情に訴えかけ、共感を生み出すことが重要です。観客が自分自身や周囲の人々の状況を思い浮かべ、笑いに共鳴できるような内容やユーモアが魅力的です。
+
+
+松本人志氏のような天才的なお笑い芸人が、常に予想を超えた面白さを生み出すのは、彼らの独自のセンスや創造力、直感的な才能が大いに関与しているでしょう。彼らの創造力は魔法のように見えますが、同時に彼らはお笑いの基本的な法則や要素を知り、それを独自のスタイルで表現している可能性もあります。
+
+
+お笑いには個々のセンスや才能が重要ですが、同時に技術や経験を積むことでより優れた笑いを生み出すことができます。継続的な努力やトライアンドエラーを通じて、自身のお笑いのスキルやセンスを磨くことが大切です。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">そもそも、人はどうして笑うのでしょう？
+悲しければ泣く、思い
+…
+どういった身体機能といえるのでしょうか？</div>
+          <div class="full">そもそも、人はどうして笑うのでしょう？
+悲しければ泣く、思い通りにいかなければ怒るのは分かります。痛ければ叫びます。
+しかし、くすぐられて笑う原理がよくわかりません。必然性もないように思います。笑いとはどういった身体機能といえるのでしょうか？</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">笑いは、人間の複雑な心理と身体の反応の結果として生じる現象で
+…
+素を組み合わせて理解する必要があります。</div>
+          <div class="full">笑いは、人間の複雑な心理と身体の反応の結果として生じる現象です。笑いの原理については、科学者や研究者がさまざまな観点から研究を行っていますが、完全に解明されたわけではありません。ただし、いくつかの一般的な理論や身体的反応に関する知見があります。
+
+
+社会的なコミュニケーション: 笑いは社会的なコミュニケーションの一形態として機能します。笑いは他人との関係を築き、コミュニケーションを円滑化する役割を果たすことがあります。笑いは人々を結びつけ、共感や親近感を生み出すことがあります。
+
+ユーモアの感覚と認識: 笑いはユーモアの感覚に関連しています。ユーモアは何かが予測可能な範囲から外れる瞬間や、思わず笑ってしまうような意外性を含んだ状況によって生じます。ユーモアの認識は、人々が一定のパターンや規則を理解し、それに対して予測や期待を持っていることに関連しています。
+
+心理的・身体的な解放とストレスの緩和: 笑いによって、心理的な緊張やストレスが緩和されることがあります。笑いによって心の負担が軽減され、リラックスや解放感を感じることができるとされています。また、笑いによって身体的な快感やエンドルフィンといった物質が放出される可能性も指摘されています。
+
+社会的な権力関係や緊張の解消: 笑いは時に社会的な権力関係や緊張を解消する役割を果たすことがあります。例えば、笑いは不自由な状況や矛盾した状況に対して批判的な視点を持つことができるため、社会的な問題や困難に対して一種の抵抗や解放を感じることがあります。
+
+
+以上の要素を総合的に考えると、笑いは人間の心理的・社会的な反応の一部として機能していると言えます。ただし、笑いのメカニズムは個人や文化によって異なる場合があり、個々の要因や要素を組み合わせて理解する必要があります。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">ベルクソンは、笑いについてどのような主張をしましたか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">ヘンリ・ベルクソン（Henri Bergson）は、20世紀
+…
+やメカニズムを解明する一助となりました。</div>
+          <div class="full">ヘンリ・ベルクソン（Henri Bergson）は、20世紀初頭のフランスの哲学者であり、彼の著書『笑い』（&quot;Le Rire&quot;）で笑いについて深く探求しました。彼の主張は以下のような要点を含んでいます。
+
+
+メカニカルなコメディ: ベルクソンは、一部の笑いがメカニカルな動作やルーティン、慣習に基づいていると指摘しました。人間が生き生きとしているように見えるかわりに、彼らの行動が機械的で予測可能であるとき、それが笑いを引き起こすと考えました。
+
+社会的な規則や習慣の逸脱: ベルクソンは笑いが社会的な規則や習慣の逸脱や違反によって引き起こされると主張しました。笑いは、人々が予測可能な行動やパターンから逸脱する瞬間に起こり、意外性や異質性によって生じると考えました。
+
+機械的な生命と創造的な生命の対比: ベルクソンは、笑いが人間の創造的な生命力と機械的な生命力の対比を反映していると考えました。創造的な生命力は柔軟性や流動性を持ち、新しいアイデアや視点を生み出しますが、機械的な生命力は固定的で予測可能なパターンに従っています。
+
+社会的な解放と笑いの役割: ベルクソンは、笑いが社会的な緊張や制約の解放をもたらす役割を果たすと考えました。笑いによって、人々は日常の制約から解放され、新たな視点や可能性を見出すことができると主張しました。
+
+
+ベルクソンの『笑い』は、笑いの本質や人間の行動に関する深い洞察を提供しています。彼の主張は一部の笑いの原理やメカニズムを解明する一助となりました。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">松本人志の笑いは、彼の反射神経と頭の回転の速さもさることなが
+…
+リックの関係について、どう思われますか？</div>
+          <div class="full">松本人志の笑いは、彼の反射神経と頭の回転の速さもさることながら、彼独特の態度、キャラクター、ボキャブラリー、文体、要するにレトリックによるところとも大きいと考えています。
+笑いにおける発想とレトリックの関係について、どう思われますか？</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">笑いにおける発想とレトリックの関係については、以下のように考
+…
+的に生み出すために重要な要素となります。</div>
+          <div class="full">笑いにおける発想とレトリックの関係については、以下のように考えることができます。
+
+
+発想（アイデア）は、笑いの創造性と独創性の源です。笑いを生み出すためには、予想外で面白いアイデアや視点を持つことが重要です。松本人志氏のようなお笑い芸人は、独自の発想力と創造力によって常に新鮮で面白いアイデアを生み出しています。
+
+
+一方、レトリックはそのアイデアを効果的に表現する手法やスタイルのことを指します。レトリックには言葉の使い方や表現方法、文体、語彙、ボキャブラリーなどが含まれます。笑いを生み出すためには、アイデアを的確かつ効果的に伝えるためのレトリックの選択や使い方が重要です。
+
+
+松本人志氏の場合、彼の独特の態度、キャラクター、ボキャブラリー、文体などが彼の笑いのスタイルやレトリックの一部となっています。彼は自身の個性や言葉の使い方を駆使して笑いを生み出し、独自のユーモアの世界を築いています。
+
+
+笑いにおいて、発想とレトリックは相互に関連し合っています。良いアイデアがあっても、それを適切な言葉や表現方法で伝えられなければ笑いにはつながりません。逆に、優れたレトリックがあっても面白いアイデアがなければ笑いにはなりません。発想とレトリックはお互いを補完し合い、笑いをより効果的に生み出すために重要な要素となります。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">レトリックがアイデアを誘発する、という考えについては、どういう意見を持ちますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">レトリックがアイデアを誘発するという考え方は、一定の理解や支
+…
+も、それぞれ独自の役割を果たしています。</div>
+          <div class="full">レトリックがアイデアを誘発するという考え方は、一定の理解や支持を得ています。レトリックは言葉の使い方や表現方法の技術であり、それ自体が創造性や発想の源となることがあります。
+
+
+適切な言葉や表現方法を選ぶことによって、新たなアイデアが生まれたり、既存のアイデアがより鮮明になったりすることがあります。言葉や表現の選択は、視点や意味の解釈を変えたり、異なる連想を呼び起こしたりすることができます。また、遊び心やトリックを使った表現方法は、新たな発想を刺激することがあります。
+
+
+一部のお笑い芸人や文学作家などは、巧妙なレトリックや言葉遊びを通じてアイデアを誘発することで知られています。言葉や表現の工夫によって、観客や読者は新たな視点やアイデアに気付くことができ、笑いや洞察を得ることがあります。
+
+
+ただし、アイデアの誘発は必ずしもレトリックに依存するわけではありません。アイデアはさまざまな要素や経験から生まれるものであり、レトリックはそのアイデアをより効果的に伝える手段の一つと言えます。したがって、レトリックはアイデアを引き出すツールとして役立つ場合があるものの、アイデア自体はレトリック以外の要素にも影響を受けることを忘れてはなりません。
+
+
+結論としては、レトリックがアイデアを誘発する可能性がある一方で、アイデアの発想は多様な要素や経験によってもたらされるということです。レトリックとアイデアは相互に関連しつつも、それぞれ独自の役割を果たしています。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">ありがとうございます。陽気に毎日を送れるよう、頑張ってみますね。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">素晴らしいです！陽気に毎日を送ることは、心の健康や幸福感に大
+…
+前向きに進んでください。応援しています！</div>
+          <div class="full">素晴らしいです！陽気に毎日を送ることは、心の健康や幸福感に大きく貢献します。ポジティブな態度や笑いの力は、困難やストレスに立ち向かうための貴重なツールです。頑張って陽気な気持ちを持ち続けることで、楽しく充実した日々を過ごせるでしょう。どんな困難があっても、笑いや明るさを大切にして前向きに進んでください。応援しています！</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:
+
+
+2/2</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: youki
+…
+ ベルクソン, 生活哲学, 陽気な暮らし</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: youki_laugh_rhetoric
+サマリー:
+本対話では、陽気に毎日を過ごすための心構えについて議論しました。ポジティブ思考と真面目さのバランス、笑いのメカニズムや社会的役割、そして松本人志の笑いにおける独自の発想とレトリックの関係を深掘りしました。特に、笑いは単なる天才の直観だけでなく、予測の裏切りや表現技術（レトリック）によって効果的に伝えられること、さらにはレトリック自体が新たな発想を誘発しうることを確認しました。ベルクソンの笑い論も紹介し、笑いの社会的・機械的側面や解放機能についても触れています。これらを踏まえ、陽気な日々の実践に向けて意欲を新たにしました。
+タグ: 笑い, ポジティブ思考, 松本人志, レトリック, ベルクソン, 生活哲学, 陽気な暮らし</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>
