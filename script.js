@@ -1,104 +1,79 @@
 
-let indexData = [];
-let selectedYear = null;
-let selectedTag = null;
-let currentKeyword = "";
+document.addEventListener("DOMContentLoaded", async () => {
+    const response = await fetch("data/index.json");
+    const items = await response.json();
 
-async function fetchIndex() {
-  const response = await fetch("index.json");
-  indexData = await response.json();
-}
+    const searchInput = document.getElementById("searchInput");
+    const cardsContainer = document.getElementById("cardsContainer");
+    const yearDisplay = document.getElementById("yearDisplay");
 
-function render() {
-  const container = document.getElementById("entryContainer");
-  container.innerHTML = "";
+    function renderCards(filteredItems) {
+        cardsContainer.innerHTML = "";
+        filteredItems.forEach(item => {
+            const card = document.createElement("div");
+            card.className = "card";
 
-  const filteredData = indexData.filter(entry => {
-    const matchYear = selectedYear ? entry.timestamp.startsWith(selectedYear) : true;
-    const matchTag = selectedTag ? entry.tags.includes(selectedTag) : true;
-    const matchKeyword = currentKeyword
-      ? entry.summary.includes(currentKeyword) || entry.tags.some(tag => tag.includes(currentKeyword))
-      : true;
-    return matchYear && matchTag && matchKeyword;
-  });
+            const date = document.createElement("div");
+            date.className = "date";
+            date.textContent = item.timestamp;
 
-  filteredData.forEach(entry => {
-    const div = document.createElement("div");
-    div.className = "entry-card";
-    div.innerHTML = `
-      <h3>${entry.title}</h3>
-      <p class="timestamp">${entry.timestamp}</p>
-      <p>${entry.summary}</p>
-      <div class="entry-tags">${entry.tags.map(tag => `<span class="entry-tag" data-tag="${tag}">${tag}</span>`).join("")}</div>
-      <a href="${entry.path}" class="entry-link">読む</a>
-    `;
+            const title = document.createElement("div");
+            title.className = "title";
+            title.textContent = item.title;
 
-    div.querySelectorAll(".entry-tag").forEach(tagEl => {
-      tagEl.addEventListener("click", () => {
-        const tag = tagEl.dataset.tag;
-        const wasSelected = selectedTag === tag;
-        selectedTag = wasSelected ? null : tag;
+            const description = document.createElement("div");
+            description.className = "description";
+            description.textContent = item.summary;
 
-        if (wasSelected) {
-          const entryYear = entry.timestamp.slice(0, 4);
-          selectedYear = entryYear;
+            const tags = document.createElement("div");
+            tags.className = "tags";
+            item.tags.forEach(tag => {
+                const tagButton = document.createElement("button");
+                tagButton.textContent = `#${tag}`;
+                tagButton.className = "tag-button";
+                tagButton.addEventListener("click", () => {
+                    searchInput.value = `#${tag}`;
+                    performSearch();
+                });
+                tags.appendChild(tagButton);
+            });
+
+            card.appendChild(date);
+            card.appendChild(title);
+            card.appendChild(description);
+            card.appendChild(tags);
+
+            cardsContainer.appendChild(card);
+        });
+
+        let currentYear;
+        if (filteredItems.length > 0) {
+            const years = filteredItems
+                .map(item => item.timestamp?.split('-')[0])
+                .filter(Boolean);
+            currentYear = years.length > 0 ? Math.max(...years.map(y => parseInt(y))) : null;
         } else {
-          selectedYear = null;
+            currentYear = null;
         }
 
-        currentKeyword = "";
-        document.getElementById("searchInput").value = "";
-        render();
-      });
-    });
-
-    container.appendChild(div);
-  });
-
-  // 年代ナビの強調更新
-  document.querySelectorAll(".year-link").forEach(link => {
-    if (link.dataset.year === selectedYear) {
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
+        yearDisplay.textContent = currentYear ? `${currentYear}` : "";
     }
-  });
-}
 
-function setupSearch() {
-  const input = document.getElementById("searchInput");
-  const button = document.getElementById("searchButton");
-  input.addEventListener("keypress", e => {
-    if (e.key === "Enter") {
-      currentKeyword = input.value.trim();
-      selectedTag = null;
-      selectedYear = null;
-      render();
+    function performSearch() {
+        const query = searchInput.value.toLowerCase();
+        let filteredItems = items;
+
+        if (query) {
+            filteredItems = items.filter(item =>
+                item.title.toLowerCase().includes(query) ||
+                item.summary.toLowerCase().includes(query) ||
+                item.tags.some(tag => `#${tag}`.toLowerCase().includes(query))
+            );
+        }
+
+        renderCards(filteredItems);
     }
-  });
-  button.addEventListener("click", () => {
-    currentKeyword = input.value.trim();
-    selectedTag = null;
-    selectedYear = null;
-    render();
-  });
-}
 
-function setupYearLinks() {
-  document.querySelectorAll(".year-link").forEach(link => {
-    link.addEventListener("click", () => {
-      selectedYear = link.dataset.year;
-      selectedTag = null;
-      currentKeyword = "";
-      document.getElementById("searchInput").value = "";
-      render();
-    });
-  });
-}
-
-window.onload = async () => {
-  await fetchIndex();
-  setupSearch();
-  setupYearLinks();
-  render();
-};
+    searchInput.addEventListener("input", performSearch);
+    performSearch(); // 初回実行
+});
