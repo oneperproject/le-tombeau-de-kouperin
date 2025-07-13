@@ -1,4 +1,3 @@
-
 fetch("index.json")
   .then(response => response.json())
   .then(data => {
@@ -12,34 +11,32 @@ fetch("index.json")
     let currentKeyword = "";
     let selectedYear = null;
 
+    // 年リスト作成（存在する記事のみ）
     const years = [...new Set(data.map(entry => entry.timestamp.slice(0, 4)))].sort();
     const latestYear = years[years.length - 1];
     selectedYear = latestYear;
 
-    if (menuToggle && searchMenu) {
-      menuToggle.addEventListener("click", () => {
-        searchMenu.classList.toggle("hidden");
-      });
-    }
+    // メニュー操作
+    menuToggle.addEventListener("click", () => {
+      searchMenu.classList.toggle("hidden");
+    });
 
-    function updateYearNav() {
-      yearNav.innerHTML = "";
-      years.forEach(year => {
-        const span = document.createElement("span");
-        span.className = "year-option";
-        if (year === selectedYear) span.classList.add("active");
-        span.textContent = year;
-        span.onclick = () => {
-          selectedYear = year;
-          selectedTag = null;
-          currentKeyword = "";
-          searchInput.value = "";
-          render();
-        };
-        yearNav.appendChild(span);
-      });
-    }
+    // 年代ナビ生成
+    years.forEach(year => {
+      const span = document.createElement("span");
+      span.className = "year-option";
+      span.textContent = year;
+      span.onclick = () => {
+        selectedYear = year;
+        selectedTag = null;
+        currentKeyword = "";
+        searchInput.value = "";
+        render();
+      };
+      yearNav.appendChild(span);
+    });
 
+    // テキスト検索
     searchInput.addEventListener("input", e => {
       currentKeyword = e.target.value.toLowerCase();
       selectedTag = null;
@@ -49,8 +46,13 @@ fetch("index.json")
 
     function render() {
       container.innerHTML = "";
-      updateYearNav();
 
+      // 年代ナビのハイライト更新
+      Array.from(yearNav.querySelectorAll(".year-option")).forEach(el => {
+        el.classList.toggle("active", el.textContent === selectedYear);
+      });
+
+      // 絞り込み処理
       let filtered = data.filter(entry => {
         const entryYear = entry.timestamp.slice(0, 4);
         const matchesYear = selectedYear ? entryYear === selectedYear : true;
@@ -59,6 +61,7 @@ fetch("index.json")
           entry.title.toLowerCase().includes(currentKeyword) ||
           entry.summary.toLowerCase().includes(currentKeyword) ||
           entry.tags.some(tag => tag.toLowerCase().includes(currentKeyword));
+
         return matchesYear && matchesTag && matchesKeyword;
       });
 
@@ -67,6 +70,7 @@ fetch("index.json")
       filtered.forEach(entry => {
         const div = document.createElement("div");
         div.className = "timeline-entry";
+
         const tagHTML = entry.tags
           .map(tag => {
             const activeClass = selectedTag === tag ? "active" : "";

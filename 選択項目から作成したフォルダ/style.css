@@ -34,13 +34,7 @@ header p {
   color: #444;
 }
 
-.year-option {
-  display: inline-block;
-  margin: 0 1em;
-  cursor: pointer;
-}
-
-.year-option.active {
+.year-navigation .current-year {
   font-weight: bold;
   text-decoration: underline;
   color: #222;
