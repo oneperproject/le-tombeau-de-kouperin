@@ -1,9 +1,9 @@
-
 body, html {
   height: 100%;
   margin: 0;
   font-family: "Hiragino Kaku Gothic ProN", sans-serif;
-  background: linear-gradient(to bottom, #4a76a8 0%, #98c4ff 50%, #d8ecff 100%);
+  background-size: 100% 100%;
+  background: linear-gradient(to bottom, #d8ecff 0%, #98c4ff 50%, #4a76a8 100%);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -97,26 +97,5 @@ header p {
 }
 .entry-tag.active {
   background-color: #5BA4D6;
-  color: white;
-}
-
-:root {
-  --accent-color: #FFA07A;
-}
-
-.color-cycle-button {
-  margin: 1em auto;
-  display: block;
-  background-color: #FFA07A;
-  color: white;
-  font-size: 0.9em;
-  padding: 0.5em 1em;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.entry-tag.active {
-  background-color: var(--accent-color);
   color: white;
 }
