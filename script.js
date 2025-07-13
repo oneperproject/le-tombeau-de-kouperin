@@ -7,11 +7,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     const cardsContainer = document.getElementById("cardsContainer");
     const yearDisplay = document.getElementById("yearDisplay");
 
+    let selectedTag = null;
+    let selectedYear = null;
+    let currentKeyword = "";
+
     function renderCards(filteredItems) {
         cardsContainer.innerHTML = "";
         filteredItems.forEach(item => {
             const card = document.createElement("div");
             card.className = "card";
+            card.dataset.year = item.timestamp?.split('-')[0];
 
             const date = document.createElement("div");
             date.className = "date";
@@ -31,10 +36,30 @@ document.addEventListener("DOMContentLoaded", async () => {
                 const tagButton = document.createElement("button");
                 tagButton.textContent = `#${tag}`;
                 tagButton.className = "tag-button";
+                tagButton.dataset.tag = tag;
+
                 tagButton.addEventListener("click", () => {
-                    searchInput.value = `#${tag}`;
-                    performSearch();
+                    const wasActive = selectedTag === tag;
+                    selectedTag = wasActive ? null : tag;
+
+                    const cardYear = card.dataset.year;
+
+                    if (!wasActive) {
+                        selectedYear = null;
+                    } else {
+                        selectedYear = cardYear;
+                    }
+
+                    currentKeyword = "";
+                    searchInput.value = "";
+                    updateYearNav();
+                    performSearch();  // 再描画
                 });
+
+                if (selectedTag === tag) {
+                    tagButton.classList.add("active");
+                }
+
                 tags.appendChild(tagButton);
             });
 
@@ -60,10 +85,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     function performSearch() {
-        const query = searchInput.value.toLowerCase();
         let filteredItems = items;
 
-        if (query) {
+        if (selectedTag) {
+            filteredItems = filteredItems.filter(item => item.tags.includes(selectedTag));
+        } else if (currentKeyword) {
+            const query = currentKeyword.toLowerCase();
             filteredItems = items.filter(item =>
                 item.title.toLowerCase().includes(query) ||
                 item.summary.toLowerCase().includes(query) ||
@@ -71,9 +98,25 @@ document.addEventListener("DOMContentLoaded", async () => {
             );
         }
 
+        if (selectedYear) {
+            filteredItems = filteredItems.filter(item =>
+                item.timestamp && item.timestamp.startsWith(selectedYear)
+            );
+        }
+
         renderCards(filteredItems);
     }
 
-    searchInput.addEventListener("input", performSearch);
+    function updateYearNav() {
+        // 年表示更新用：現在は省略
+    }
+
+    searchInput.addEventListener("input", () => {
+        currentKeyword = searchInput.value;
+        selectedTag = null;
+        selectedYear = null;
+        performSearch();
+    });
+
     performSearch(); // 初回実行
 });
