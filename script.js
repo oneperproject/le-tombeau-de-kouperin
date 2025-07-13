@@ -1,122 +1,83 @@
 
-document.addEventListener("DOMContentLoaded", async () => {
-    const response = await fetch("data/index.json");
-    const items = await response.json();
+document.addEventListener("DOMContentLoaded", () => {
+  const tagContainer = document.getElementById("tag-filter");
+  const yearDisplay = document.getElementById("current-year");
+  const cardContainer = document.getElementById("card-container");
 
-    const searchInput = document.getElementById("searchInput");
-    const cardsContainer = document.getElementById("cardsContainer");
-    const yearDisplay = document.getElementById("yearDisplay");
+  let selectedTag = null;
+  let allCards = [];
 
-    let selectedTag = null;
-    let selectedYear = null;
-    let currentKeyword = "";
+  // サンプルデータ（実際はJSONから読み込まれる）
+  const data = [
+    { title: "記事A", year: 2023, tags: ["教育", "AI"] },
+    { title: "記事B", year: 2024, tags: ["政治", "倫理"] },
+    { title: "記事C", year: 2025, tags: ["教育"] },
+  ];
 
-    function renderCards(filteredItems) {
-        cardsContainer.innerHTML = "";
-        filteredItems.forEach(item => {
-            const card = document.createElement("div");
-            card.className = "card";
-            card.dataset.year = item.timestamp?.split('-')[0];
+  const allTags = Array.from(new Set(data.flatMap(d => d.tags)));
+  let currentYear = Math.max(...data.map(d => d.year));
 
-            const date = document.createElement("div");
-            date.className = "date";
-            date.textContent = item.timestamp;
+  function renderTags() {
+    tagContainer.innerHTML = "";
+    allTags.forEach(tag => {
+      const btn = document.createElement("button");
+      btn.textContent = tag;
+      btn.className = "entry-tag";
+      btn.dataset.tag = tag;
+      btn.addEventListener("click", () => handleTagClick(tag));
+      tagContainer.appendChild(btn);
+    });
+  }
 
-            const title = document.createElement("div");
-            title.className = "title";
-            title.textContent = item.title;
+  function renderCards() {
+    cardContainer.innerHTML = "";
+    const filtered = selectedTag
+      ? data.filter(d => d.tags.includes(selectedTag))
+      : data;
 
-            const description = document.createElement("div");
-            description.className = "description";
-            description.textContent = item.summary;
-
-            const tags = document.createElement("div");
-            tags.className = "tags";
-            item.tags.forEach(tag => {
-                const tagButton = document.createElement("button");
-                tagButton.textContent = `#${tag}`;
-                tagButton.className = "tag-button";
-                tagButton.dataset.tag = tag;
-
-                tagButton.addEventListener("click", () => {
-                    const wasActive = selectedTag === tag;
-                    selectedTag = wasActive ? null : tag;
-
-                    const cardYear = card.dataset.year;
-
-                    if (!wasActive) {
-                        selectedYear = null;
-                    } else {
-                        selectedYear = cardYear;
-                    }
-
-                    currentKeyword = "";
-                    searchInput.value = "";
-                    updateYearNav();
-                    performSearch();  // 再描画
-                });
-
-                if (selectedTag === tag) {
-                    tagButton.classList.add("active");
-                }
-
-                tags.appendChild(tagButton);
-            });
-
-            card.appendChild(date);
-            card.appendChild(title);
-            card.appendChild(description);
-            card.appendChild(tags);
-
-            cardsContainer.appendChild(card);
-        });
-
-        let currentYear;
-        if (filteredItems.length > 0) {
-            const years = filteredItems
-                .map(item => item.timestamp?.split('-')[0])
-                .filter(Boolean);
-            currentYear = years.length > 0 ? Math.max(...years.map(y => parseInt(y))) : null;
-        } else {
-            currentYear = null;
-        }
-
-        yearDisplay.textContent = currentYear ? `${currentYear}` : "";
-    }
-
-    function performSearch() {
-        let filteredItems = items;
-
-        if (selectedTag) {
-            filteredItems = filteredItems.filter(item => item.tags.includes(selectedTag));
-        } else if (currentKeyword) {
-            const query = currentKeyword.toLowerCase();
-            filteredItems = items.filter(item =>
-                item.title.toLowerCase().includes(query) ||
-                item.summary.toLowerCase().includes(query) ||
-                item.tags.some(tag => `#${tag}`.toLowerCase().includes(query))
-            );
-        }
-
-        if (selectedYear) {
-            filteredItems = filteredItems.filter(item =>
-                item.timestamp && item.timestamp.startsWith(selectedYear)
-            );
-        }
-
-        renderCards(filteredItems);
-    }
-
-    function updateYearNav() {
-        // 年表示更新用：現在は省略
-    }
-
-    searchInput.addEventListener("input", () => {
-        currentKeyword = searchInput.value;
-        selectedTag = null;
-        selectedYear = null;
-        performSearch();
+    const sorted = filtered.filter(d => d.year === currentYear);
+    sorted.forEach(entry => {
+      const div = document.createElement("div");
+      div.className = "card";
+      div.dataset.year = entry.year;
+      div.innerHTML = `<h3>${entry.title}</h3><p>${entry.tags.join(", ")}</p>`;
+      cardContainer.appendChild(div);
     });
 
-    performSearch(); // 初回実行
+    yearDisplay.textContent = currentYear;
+  }
+
+  function handleTagClick(tag) {
+    if (selectedTag === tag) {
+      selectedTag = null;
+      currentYear = Math.max(...data.map(d => d.year));
+    } else {
+      selectedTag = tag;
+      const taggedCards = data.filter(d => d.tags.includes(tag));
+      currentYear = taggedCards.length > 0
+        ? Math.min(...taggedCards.map(d => d.year))
+        : currentYear;
+    }
+    renderCards();
+    updateTagStyles();
+  }
+
+  function updateTagStyles() {
+    document.querySelectorAll(".entry-tag").forEach(btn => {
+      btn.classList.toggle("active", btn.dataset.tag === selectedTag);
+    });
+  }
+
+  document.getElementById("prev-year").addEventListener("click", () => {
+    currentYear = Math.max(...data.map(d => d.year).filter(y => y < currentYear));
+    renderCards();
+  });
+
+  document.getElementById("next-year").addEventListener("click", () => {
+    currentYear = Math.min(...data.map(d => d.year).filter(y => y > currentYear));
+    renderCards();
+  });
+
+  renderTags();
+  renderCards();
 });
