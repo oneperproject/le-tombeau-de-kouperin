@@ -3,11 +3,11 @@ body, html {
   height: 100%;
   margin: 0;
   font-family: "Hiragino Kaku Gothic ProN", sans-serif;
-  background: linear-gradient(to bottom, #4a76a8 0%, #98c4ff 50%, #d8ecff 100%);
+  background: linear-gradient(to bottom, #5BA4D6 0%, #98c4ff 50%, #E2F1FB 100%);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  color: #222;
+  color: #192238;
 }
 
 header {
@@ -19,11 +19,12 @@ header h1 {
   margin: 0;
   font-size: 2.2em;
   letter-spacing: 0.1em;
+  color: #192238;
 }
 
 header p {
   font-size: 1em;
-  color: #444;
+  color: #354055;
   margin-top: 0.4em;
 }
 
@@ -31,13 +32,13 @@ header p {
   margin-top: 0.8em;
   font-size: 0.95em;
   text-align: center;
-  color: #444;
+  color: #354055;
 }
 
 .year-navigation .current-year {
   font-weight: bold;
   text-decoration: underline;
-  color: #222;
+  color: #192238;
 }
 
 .container {
@@ -67,7 +68,7 @@ header p {
 .entry-title a {
   font-weight: bold;
   font-size: 1.05em;
-  color: #1e2a38;
+  color: #192238;
   text-decoration: none;
 }
 
@@ -78,7 +79,7 @@ header p {
 .entry-summary {
   font-size: 0.9em;
   margin-top: 0.5em;
-  color: #444;
+  color: #354055;
 }
 
 .entry-tags {
@@ -88,35 +89,15 @@ header p {
 .entry-tags span {
   display: inline-block;
   background-color: #eef6ff;
-  color: #355f8a;
+  color: #354055;
   border-radius: 10px;
   padding: 0.3em 0.8em;
   font-size: 0.8em;
   margin-right: 0.3em;
   margin-bottom: 0.3em;
 }
+
 .entry-tag.active {
   background-color: #5BA4D6;
-  color: white;
-}
-
-:root {
-  --accent-color: #FFA07A;
-}
-
-.color-cycle-button {
-  margin: 1em auto;
-  display: block;
-  background-color: #FFA07A;
-  color: white;
-  font-size: 0.9em;
-  padding: 0.5em 1em;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.entry-tag.active {
-  background-color: var(--accent-color);
   color: white;
 }

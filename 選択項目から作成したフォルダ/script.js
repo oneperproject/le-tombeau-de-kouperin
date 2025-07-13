@@ -107,12 +107,3 @@ fetch("index.json")
   .catch(error => {
     console.error("index.jsonの読み込みに失敗しました:", error);
   });
-
-// 夕暮れ色定義とランダム選択
-const duskColors = [
-  "#FFA07A", "#FF8C69", "#F4A460", "#CD5C5C", "#DAA520"
-];
-if (Math.random() < 0.01) {
-  const newColor = duskColors[Math.floor(Math.random() * duskColors.length)];
-  document.documentElement.style.setProperty("--accent-color", newColor);
-}

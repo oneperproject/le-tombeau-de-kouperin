@@ -99,24 +99,3 @@ header p {
   background-color: #5BA4D6;
   color: white;
 }
-
-:root {
-  --accent-color: #FFA07A;
-}
-
-.color-cycle-button {
-  margin: 1em auto;
-  display: block;
-  background-color: #FFA07A;
-  color: white;
-  font-size: 0.9em;
-  padding: 0.5em 1em;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.entry-tag.active {
-  background-color: var(--accent-color);
-  color: white;
-}
