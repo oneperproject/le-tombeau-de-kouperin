@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>チャット読み上げツール</title>
+  <style>
+    body { font-family: sans-serif; padding: 1em; max-width: 600px; margin: auto; }
+    input, button { font-size: 1em; margin: 0.5em 0; width: 100%; }
+    iframe { width: 100%; height: 300px; border: 1px solid #ccc; margin-top: 1em; }
+  </style>
+</head>
+<body>
+  <h2>チャット読み上げツール</h2>
+  <p>チャットHTMLのURLを入力してください：</p>
+  <input id="urlInput" type="text" placeholder="https://example.com/chat.html">
+  <button onclick="loadAndSpeak()">読み上げ開始</button>
+  <iframe id="chatFrame"></iframe>
+
+  <script>
+    function loadAndSpeak() {
+      const url = document.getElementById('urlInput').value;
+      const frame = document.getElementById('chatFrame');
+      frame.src = url;
+
+      frame.onload = () => {
+        try {
+          const doc = frame.contentDocument || frame.contentWindow.document;
+          const bubbles = doc.querySelectorAll('.bubble-base');
+          const texts = [];
+
+          bubbles.forEach(bubble => {
+            const full = bubble.querySelector('.full');
+            const preview = bubble.querySelector('.preview');
+            const text = full?.innerText || preview?.innerText;
+            if (text) texts.push(text.trim());
+          });
+
+          speakTexts(texts);
+        } catch (e) {
+          alert('CORS制限のため、読み込めません。同一ドメインのHTMLを使用してください。');
+        }
+      };
+    }
+
+    function speakTexts(texts) {
+      const synth = window.speechSynthesis;
+      let i = 0;
+
+      function speakNext() {
+        if (i >= texts.length) return;
+        const utter = new SpeechSynthesisUtterance(texts[i]);
+        utter.lang = 'ja-JP';
+        utter.onend = () => { i++; speakNext(); };
+        synth.speak(utter);
+      }
+
+      speakNext();
+    }
+  </script>
+</body>
+</html>
