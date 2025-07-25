@@ -1,0 +1,424 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>USB-Cハブ 干渉回避</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">USB-Cハブ 干渉回避</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2025/07/21</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">USBハブを探しています。
+Mac miniのUSBポートや
+…
+ています。
+何か、おすすめはありますか？</div>
+          <div class="full">USBハブを探しています。
+Mac miniのUSBポートや、いま家にあるハブは、ポート同士の隙間が短く、隣のUSBメモリに干渉して挿せません。
+一つのcポートから、複数のcポートに分岐できるものを探しています。
+何か、おすすめはありますか？</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">なるほど、**「USB-Cポートから複数のUSB-Cポートに
+…
+けたら、さらにぴったりの製品を探せます！</div>
+          <div class="full">なるほど、**「USB-Cポートから複数のUSB-Cポートに分岐」できて、物理的な干渉（隣のポートとぶつかる）を避けたいということですね。
+Mac miniのUSB-C（Thunderbolt）ポートから使える「スペースに余裕があるUSB-Cハブ」**という条件で、以下のような製品が目的に合います。
+
+
+
+✅ 条件に合いそうなおすすめ製品（2025年時点）
+
+
+① 【Anker 565 USB-C ハブ】
+
+
+USB-C x2（1つは100W PD対応）
+
+USB-A x2、HDMI、Ethernet、SDカードスロットなど
+
+ケーブル付きなので本体から離れて分岐できる → 干渉しにくい
+
+価格：約9,000円前後
+
+Amazon 商品ページ（参考）
+
+
+② 【Satechi USB-C Multiport Adapter V3】
+
+
+USB-C PD ×1（100W）
+
+USB-C データ ×1（最大5Gbps）※データ専用
+
+USB-A x2、HDMI、SDカード、Ethernet
+
+USB-CからUSB-Cへの分岐が明記されている製品として優秀
+
+ケーブル付きでMac miniからの距離も取れる
+
+価格：約12,000円前後
+
+Satechi公式サイト
+
+
+③ 【UGREEN Revodok 6-in-1 USB-Cハブ】
+
+
+USB-Cポート×2（うち1つはPD給電）、USB-A×2、HDMI、SDカード
+
+ケーブルタイプで物理的干渉を避けやすい
+
+USB-Cポートにゆとりある配置
+
+比較的安価（約6,000円前後）
+
+Amazon 商品ページ（参考）
+
+
+
+🔧 注意点
+
+
+USB-C分岐でデータ転送ができるのは限られた製品のみ
+　→ 多くのハブはUSB-C PDポート（給電専用）＋USB-C（映像出力）という構成なので、USBメモリなどを挿したいなら「データ対応のUSB-Cポート」があることを要確認です。
+
+「USB-Cを3ポート以上に分岐」は稀
+　→ USB-CはThunderbolt/PD/DisplayPortなど複数のプロトコルを内包しており、分岐に限界があります。
+　→ 多ポート接続したい場合、USB-Aポートも活用する方が現実的です。
+
+L字や延長ケーブル型のアダプターで隙間を作るのも一手
+　→ ハブ本体を変えず、**物理的に距離を空けるアクセサリ（延長、L字変換）**も選択肢に入ります。
+
+
+
+🔚まとめ（おすすめ構成）
+
+
+「USB-Cポート ×2以上」を明記しているハブ（特にSatechiやAnker）
+
+物理的に分岐できるケーブル型ハブ
+
+USBメモリ干渉を避けたいなら、延長ケーブル or 小型アダプター併用も有効
+
+
+
+ご希望があれば、「ポート構成がシンプルなもの」「デスク上でコンパクトにまとまるもの」「旅行用の超小型タイプ」など、使用スタイルに合わせた提案も可能です。どんな用途で使いたいか、もう少し教えていただけたら、さらにぴったりの製品を探せます！</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">延長、小型アダプタを紹介してください。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">了解しました！
+ここでは「USB-Cのポートが隣と干渉する問
+…
+す。必要なら写真や詳細を教えてください。</div>
+          <div class="full">了解しました！
+ここでは「USB-Cのポートが隣と干渉する問題」を延長ケーブルや小型アダプタでスマートに解決するためのおすすめアイテムを紹介します。
+
+
+
+🧩【物理干渉を防ぐ延長＆小型アダプタ】
+
+
+✅ ① USB-C 延長ケーブル（データ転送・PD対応）
+
+
+【UGREEN USB-C 延長ケーブル（0.5m〜1m）】
+
+
+5Gbpsデータ転送対応、60W PD給電もOK
+
+Mac miniから物理的に離してハブを設置できる
+
+ケーブルが柔らかく取り回しやすい
+
+長さ：0.5m / 1m / 2m など選べる
+
+価格：1,000〜1,500円前後
+
+
+🔗 Amazon商品ページ
+
+
+
+✅ ② USB-C L字アダプタ（スペース節約に）
+
+
+【Cable Matters USB-C L字変換アダプタ（2個セット）】
+
+
+上向き・下向き・左右向きのL字で選べる
+
+データ転送・PD・映像出力対応（4K@60Hz）
+
+干渉を物理的に逃がせるので非常に便利
+
+MacBookにも対応
+
+価格：1,000〜1,300円前後
+
+
+🔗 Amazon商品ページ
+
+
+
+✅ ③ USB-C メス→オス小型アダプタ（短い延長）
+
+
+【Anker USB-C延長アダプタ（オス-メス）】
+
+
+約3cmの小型延長で「干渉回避」にぴったり
+
+データ転送＆PD対応
+
+高品質で破損しづらい
+
+価格：1,000円前後
+
+
+🔗 Anker 公式ページ
+
+
+
+✅ ④ 角度調整できる回転アダプタ（柔軟に逃がせる）
+
+
+【BASEUS USB-C フレキシブル回転アダプタ】
+
+
+180度回転＆90度折り曲げが可能
+
+ポートに挿した後、角度を自由に調整できる
+
+複数のUSBメモリ・ハブ利用時に非常に有効
+
+価格：1,000円前後
+
+
+🔗 Amazon商品ページ（例）
+
+
+
+🎯 まとめ：どれを選ぶべき？
+
+目的
+おすすめアイテム
+Mac mini本体から距離をとりたい
+UGREEN 延長ケーブル
+隣のポートとの干渉を避けたい
+L字アダプタ（Cable Mattersなど）
+少しだけ位置をずらしたい
+Anker 小型延長アダプタ
+柔軟に角度を変えたい
+BASEUS フレキシブルアダプタ
+
+
+もし今使っているUSBメモリやハブの形状がわかれば、それに**合わせたアダプタの向き（L字の方向など）**も具体的に提案できます。必要なら写真や詳細を教えてください。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+]
+ファイル名: 
+サマリー: 
+タグ:</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: usb_c
+…
+延長ケーブル, L字変換, 周辺機器対策</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: usb_c_hub_adapter_guide
+サマリー:
+Mac miniで使用するUSBデバイスが隣のポートに干渉して挿せない問題に対して、USB-Cから複数のCポートに分岐できるハブのおすすめ製品と、干渉回避のための延長ケーブルや小型アダプタ（L字変換・回転アダプタなど）を紹介。目的に応じた製品選定のポイントもまとめ、実用性と柔軟性を両立する接続環境の改善策を提案している。
+タグ: USBハブ, USB-C, Mac mini, アダプタ, 延長ケーブル, L字変換, 周辺機器対策</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

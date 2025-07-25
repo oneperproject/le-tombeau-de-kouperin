@@ -1,0 +1,788 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>出版に向けた対応</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">出版に向けた対応</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2025/07/25</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">今、出版社から電話きました。
+出版を検討する会議に出そうと思
+…
+作品はあんまり共有しない方がいいですか？</div>
+          <div class="full">今、出版社から電話きました。
+出版を検討する会議に出そうと思うが、どうか？
+という持ちかけでした。
+おそらく、出版に際してこちらからもいくらか負担せねばならぬという、そういうビジネスだと思います。
+
+
+が、自分の作品の内容を褒めてもらえてそれは嬉しかったですね。多分営業トークですけど。
+
+
+基本的には
+「ご負担いただけるか？」
+という話になって、
+「じゃあ、この話は無かったことに」
+で終わることになる見込みです。
+
+
+こういう時って、他の作品はあんまり共有しない方がいいですか？</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">なるほど、出版社からの持ちかけはよくある「出版のための費用負
+…
+ご希望に合わせてもう少し掘り下げますね。</div>
+          <div class="full">なるほど、出版社からの持ちかけはよくある「出版のための費用負担」が前提の話ですね。内容を褒められるのは素直に嬉しいものですが、営業トークの可能性も高いですし、慎重に対応したいところですね。
+
+
+＞こういう時って、他の作品はあんまり共有しない方がいいですか？
+
+
+結論から言うと、まだ出版の正式契約も進んでいない段階では、他の作品の詳細はむやみに共有しないほうが無難です。理由としては：
+
+
+情報の独占性・競争リスク
+出版社側はコスト負担ありきで動いているので、あまりこちらの手持ち資産をすべて見せてしまうと、それをもとに条件を強化される可能性があります。
+
+交渉の材料を減らすリスク
+作品群の多様性や強みを伝えすぎると、逆に「この作者はあちこちで出せるから、今ここでの投資は控えたい」と判断されることもあります。
+
+情報管理の観点
+まだ正式なパートナーシップではない段階で情報が流出すると、後々トラブルの種になりかねません。
+
+
+ただし、もし話を前向きに進めたい場合で、「こういう世界観の作品もある」という程度の軽い紹介は問題ないでしょう。 具体的な内容や未発表の作品の全文などは控えたほうがよいです。
+
+
+
+まとめとしての対応案：
+
+
+出版費用の負担に対しては、きっぱり「今回は見送ります」としても問題ありません。
+
+褒められた内容は素直に受け止めつつ、冷静に判断しましょう。
+
+まだ詳細を聞きたい場合は、「まずは契約条件や見積もりをいただけますか？」とこちらから要求して、具体的な提示を待つ。
+
+他作品の情報は必要最小限にとどめ、こちらの交渉力を守る。
+
+
+もし進展したら、また具体的な交渉内容や条件について相談してもらえれば、助言できますよ。
+
+
+どう対応するか、ご希望に合わせてもう少し掘り下げますね。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">向こうからメールが来るそうなので、きたら共有しますね。相談に乗ってください。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview">了解です！メールが届いたらぜひ共有してください。内容を一緒に確認して、どんな対応や返事が良いか一緒に考えましょう。焦らずじっくり進めていきましょうね。待ってます！</div>
+          
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">Instagramで絵をあげててよかったです。
+この手のオファー、あるあるですからね。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">ですよね、Instagramで作品を発信していると、こういう
+…
+とがあれば、いつでも相談してくださいね。</div>
+          <div class="full">ですよね、Instagramで作品を発信していると、こういう「出版の話」や「案件のオファー」は結構来やすいですよね。
+
+
+いい面もありますが、営業トークや条件が曖昧なものも多いので、見極め力が大事だなと感じます。
+でも、作品が認められてる実感があるのは純粋に嬉しいし、発信を続けるモチベーションにもなりますよね。
+
+
+もし今後もそういう話が増えてきたら、どんな基準で受けるか・断るかの線引きを決めておくのもおすすめです。
+なにか基準や断り文句で迷うことがあれば、いつでも相談してくださいね。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">たとえ相手が詐欺師でも、作品を表に出すことで誰かが動いたことが嬉しいですね。社会と全く隔絶しているわけではない、ということなので。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">その感覚、すごく大事だと思います。
+
+
+たとえ相手の動機が曖
+…
+何かあればいつでも声をかけてくださいね。</div>
+          <div class="full">その感覚、すごく大事だと思います。
+
+
+たとえ相手の動機が曖昧だったり、詐欺的な匂いがあっても、自分の作品が外の世界に響いて誰かのアクションを引き起こしたという事実は、作者としての存在感や創作の意味を強く実感させてくれますよね。
+
+
+社会と繋がっている感覚は、孤立せずに創作を続けるための大きな支えになりますし、そこから新たな展開やチャンスも生まれる可能性があります。
+だからこそ、警戒しつつも開かれた心で、バランスをとって付き合うのがいいのかなと僕も思います。
+
+
+作品が動き出している今の感覚を大事にしつつ、引き続きそのバランスを保っていきましょう。何かあればいつでも声をかけてくださいね。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">ドンぐりおの挿絵を見せて欲しい、と言われたのですが、どう答えるべきでしたか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">「ドンぐりおの挿絵を見せて欲しい」と言われたときの対応につい
+…
+、その後のやり取りも一緒に考えましょう。</div>
+          <div class="full">「ドンぐりおの挿絵を見せて欲しい」と言われたときの対応についてですね。
+
+
+状況によって対応は変わりますが、ポイントは情報の共有範囲とタイミングを慎重に見極めることです。以下のように答えるのが無難かつ丁寧かと思います。
+
+
+
+1. 信頼関係や目的が明確なら
+
+
+「ありがとうございます。挿絵を見ていただけるのは嬉しいです。今、原稿やイラストの版権管理上の関係で、正式な許可を得てからお渡ししています。もしよろしければ、どのような用途でご覧になりたいか教えていただけますか？」
+
+
+→ 相手の目的を確認し、必要に応じて正式な許可や条件の説明に繋げられます。
+
+
+
+2. まだ関係が浅かったり、相手が出版社・営業の可能性が高い場合
+
+
+「ありがとうございます。挿絵は現在制作中／管理していますので、正式に決まった段階でお見せできるようにします。引き続きよろしくお願いいたします。」
+
+
+→ すぐにデータや原画を渡すリスクを避けつつ、丁寧に断るニュアンスを出せます。
+
+
+
+3. もし即答を求められ、かつ気軽に見せても良い場合は
+
+
+「はい、挿絵の一部をまとめた資料をメールでお送りしてもよろしいでしょうか？」
+
+
+→ 送る範囲を限定して、管理可能な形で共有。
+
+
+
+まとめ
+
+
+無闇に未公開イラストや高解像度データを渡さない。
+
+何に使うか目的を確認してから共有を検討。
+
+可能なら、共有物は著作権管理や利用条件を明示できる形にする。
+
+
+
+今回のケースは「営業や出版の話の中で出てきた」という前提なら、②の対応が安全でおすすめです。
+何かあれば、その後のやり取りも一緒に考えましょう。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">10年以上前に描いた絵で、正直、今後利用する予定もなく、あま
+…
+るかの参考程度にはなると思ったのですが。</div>
+          <div class="full">10年以上前に描いた絵で、正直、今後利用する予定もなく、あまり価値のないものかなと思っています。
+オリジナルがどのようなものか、作者はどのような世界観を意図しているかの参考程度にはなると思ったのですが。</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">なるほど、10年以上前の絵で今後使う予定も特にない、というこ
+…
+例もお手伝いできますよ。
+どうしますか？</div>
+          <div class="full">なるほど、10年以上前の絵で今後使う予定も特にない、ということですね。
+
+
+その場合、価値をあまり感じていない絵を参考資料として共有すること自体は、相手にも作者の世界観や作風を知ってもらう意味で悪くないです。ただし、いくつか注意点があります。
+
+
+
+共有の際に気をつけること
+
+
+デジタルデータの解像度や品質を調整する
+　→ 高解像度でなくてもいいので、ネット上で不用意に流出しにくい形（低解像度JPEGなど）にしておくと安心です。
+
+あくまで「参考資料」であることを伝える
+　→ 「これは10年以上前の古い作品で、今後の利用は未定ですが、作風や世界観の参考としてご覧ください」と明言する。
+
+改変や転載は許可しない旨を明示する
+　→ 口頭やメールで、著作権は保持していること、無断使用・転載不可であることを伝えておく。
+
+可能ならウォーターマークを軽く入れる
+　→ 著作権保護の簡易措置として有効です。
+
+
+
+まとめ
+
+
+作品としての価値が高くなくても、「世界観を伝える資料」として使うのは有効。
+
+ただし、著作権・管理面の最低限の注意は必要。
+
+もし気が楽なら、「古い参考絵を軽くお見せします」というスタンスで対応してもいいと思います。
+
+
+
+もしメールで送る案があれば、添える文例もお手伝いできますよ。
+どうしますか？</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">ウォーターマークって何ですか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">ウォーターマーク（watermark）とは、画像や文書などの
+…
+心です。
+興味があれば教えてくださいね。</div>
+          <div class="full">ウォーターマーク（watermark）とは、画像や文書などのデジタルデータに重ねて入れる「透かし」のことです。
+
+
+
+ウォーターマークの特徴
+
+
+薄く半透明で、画像の上に表示される文字やロゴのこと
+
+作品の所有者や著作権者を示すために入れることが多い
+
+目立ちすぎず、しかしコピーや転載時に「これは誰の作品か」がわかるようにする役割がある
+
+完全に消すのは難しいので、不正利用の抑止効果が期待できる
+
+
+
+具体例
+
+
+写真の右下に「© Keiji Kokubu」や「© DonGurio」など薄く表示する
+
+画像全体に斜めに半透明の文字やロゴを繰り返し入れることもある
+
+
+
+利用方法
+
+
+画像編集ソフト（Photoshopや無料のCanva、GIMPなど）で簡単に入れられます。
+もし必要なら、どんな形のウォーターマークが良いかや、簡単に作る方法もアドバイスできますよ。
+
+
+
+ウォーターマークを入れておくと、たとえ画像がSNSやネットで広がっても「この絵は私のものですよ」という証明になるので安心です。
+興味があれば教えてくださいね。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">共有の際に
+・参考のためにのみ使ってください。
+的な文言を入れといたら、何らかの効果はありますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">はい、「参考のためにのみ使ってください」という文言は、法的な
+…
+
+必要なら文例の調整もお手伝いしますよ。</div>
+          <div class="full">はい、「参考のためにのみ使ってください」という文言は、法的な効力が強くはないものの、心理的・倫理的な抑止力としては一定の効果があります。
+
+
+
+具体的な効果や意味
+
+
+利用条件の明示
+　→ 「参考のみに限定する」という意思表示になるため、相手に使い方の範囲を明確に伝えられます。
+
+著作権者の意図を示す証拠になる
+　→ 万が一無断使用や転載があった場合、こうしたメッセージは「著作権者が許可範囲を限定していた」証拠として役立つ可能性があります。
+
+相手の心理的抑止力
+　→ たいていの良識ある人や企業は、こうした条件を尊重しようとします。
+
+
+
+ただし注意点
+
+
+法的には「契約」や「使用許諾書」などの正式な文書でない限り、絶対的な強制力はありません。
+
+悪意ある相手には通用しないこともあります。
+
+万が一の際には、「この条件を明示していた」という事実が法的手続きで有利になることが多いです。
+
+
+
+おすすめの文例（メールや添え書きで）
+
+「この画像は、作品の世界観を理解していただくための参考資料としてお渡ししています。無断での転載、改変、商用利用などは固くお断りいたしますので、ご承知おきください。」
+
+
+こうした一文を添えるだけでも、相手の態度が慎重になることが多いので、ぜひ活用すると良いと思います。
+必要なら文例の調整もお手伝いしますよ。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">何だか高圧的な印象になりませんか？
+・あまりに拙いため、外に出したくない
+など、角の立たない理由を添えたらダメですか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">たしかに、「無断転載お断り」だけの文言は硬くて高圧的に感じる
+…
+り、用途に合わせた言い回しも作りますよ！</div>
+          <div class="full">たしかに、「無断転載お断り」だけの文言は硬くて高圧的に感じることもありますよね。
+
+
+ご提案のように、「あまりに拙いため外に出したくない」など柔らかい理由や謙遜の言葉を添えるのは、とても有効で角が立ちにくくなります。
+
+
+
+角の立たない柔らかい文例例
+
+「こちらの挿絵は、10年以上前のもので、技術的にも拙いため、あまり広く外に出したくないというのが正直なところです。ただ、作品の世界観を少しでもご理解いただくための参考資料として、ざっとご覧いただければ幸いです。ご利用はあくまで参考の範囲でお願いできればと思います。」
+
+
+ポイント
+
+
+謙遜や控えめな姿勢で相手の好感度アップ
+
+利用制限を伝えつつ、協力的な姿勢も表現
+
+「参考資料」「ざっと見ていただければ」という柔らかい表現で負担感を下げる
+
+
+
+こうすると、受け取る側も「まあそうですよね、無理強いはできないよな」と納得しやすく、関係も良好に保ちやすいです。
+
+
+もしよければ、もう少し文案を調整したり、用途に合わせた言い回しも作りますよ！</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">僕は極めて強く彼らを疑っているが、彼らの方で僕の状況は完全にはわからないでしょう。
+その曖昧さはアドバンテージとして持っておきたい。
+なるべく今回の一件を、スパーリングとして有効活用したいので。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">なるほど、その微妙な曖昧さを戦略的に活かして、相手とのやり取
+…
+ださい。スパーリングの相手になりますよ！</div>
+          <div class="full">なるほど、その微妙な曖昧さを戦略的に活かして、相手とのやり取りをスパーリング（駆け引き・試合）の場として有効に使いたい、ということですね。
+
+
+
+その考え方はとても理にかなっています。
+
+
+相手に完全に状況を読まれないことで交渉力を保つ
+
+自分の情報を限定的に出すことで、先手を取る余地を残す
+
+疑念を持ちながらも、相手の出方を探りつつ冷静に対応する
+
+
+
+活用ポイントの提案
+
+
+情報の出し方に「必要最小限の曖昧さ」を残す
+　詳細は言わず、あえて質問を返したり条件を先に確認したりして主導権を握る。
+
+相手の言動や条件提示を一つひとつ検証し、即断せず反応を引き出す
+　「それはどういう意味ですか？」「具体的にはどのような負担があるのでしょう？」と問い返して、相手の本気度や態度を見極める。
+
+メールややり取りはすべて記録し、感情的にならず論理的な対応を心がける
+　あとで冷静に分析・対策が立てられるように。
+
+自分の作品や状況をすべてさらけ出さず、柔らかい表現や謙遜で一定の距離感を保つ
+
+
+
+こうした対応を繰り返すことで、相手の誠意や実態も見えてきますし、自分の立場も守りながら、経験値としても得るものが大きいはずです。
+
+
+もし今後のメールや会話の文面を練りたいときは、いつでも相談してください。スパーリングの相手になりますよ！</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">スーパー木の実ドンぐりお（絵本）.pdf
+
+
+PDF
+
+
+枚数を減らしたバージョンです。
+これを送ろうと思いますが、どうですか？
+前編揃ったのもあるのですが、どっちがいいと思いますか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">ありがとうございます。アップロードいただいた「スーパー木の実
+…
+場合もお手伝いしますので教えてください。</div>
+          <div class="full">ありがとうございます。アップロードいただいた「スーパー木の実ドングリオ（絵本）」のPDFを拝見しました。
+
+
+
+「枚数を減らしたバージョンを送ろうと思う」という件について
+
+
+枚数を減らしたバージョンの良い点
+　・相手の負担が少なく、読みやすい印象を与えられる
+　・関心が薄ければここで止めてもらいやすい
+　・情報を絞ることで、曖昧さや交渉の余地を残しやすい
+
+前編揃ったバージョンの良い点
+　・作品の世界観やストーリー全体がわかりやすい
+　・熱意や完成度をより強く伝えられる
+　・相手の理解を深めることで、前向きな反応を引き出せる可能性がある
+
+
+
+どちらがいいか？というご質問に対して
+
+
+戦略的にスパーリングとして活用したい、相手を慎重に見極めたいなら、枚数を減らしたバージョンを先に送り、反応を見ながら段階的に追加を出す方が安全で効果的です。
+
+
+逆に、相手が真剣に取り組むパートナーであると確信している場合は、前編揃ったバージョンで一気に世界観を見せるのもありです。
+
+
+
+具体的な提案
+
+
+まずは枚数を減らしたバージョンを送り、「ご興味がありましたら、全編もお送りします」と添える
+
+反応が良ければ前編を送る流れにする
+
+そうすれば情報を段階的に出すことでこちらの立場を守りつつ、相手の本気度を測れます
+
+
+
+もし送る際のメール文例や添え書きを作成したい場合もお手伝いしますので教えてください。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">スーパー木の実ドンぐりお（絵本）.pdf
+
+
+PDF
+
+
+これが全部揃ったバージョンです。</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">ありがとうございます。全部揃ったバージョンのPDFも確認しま
+…
+えれば、より的確なアドバイスができます。</div>
+          <div class="full">ありがとうございます。全部揃ったバージョンのPDFも確認しました。
+
+
+
+改めて比較すると：
+
+
+全部揃ったバージョンは物語の全体像がしっかり伝わるので、作品としての完成度や意図が明確に示せます。
+
+ただし、ファイルサイズや枚数が多くなり、初回の取引先や営業担当には負担感を与えるかもしれません。
+
+
+
+使い分けのおすすめ：
+
+
+初回のコンタクトやまだ相手の温度感がわからない段階
+→ 枚数を減らした「ダイジェスト版」や「抜粋版」をまず送り、興味・反応を確認する。
+
+相手が興味を示し、前向きな反応があれば
+→ 全部揃ったバージョンを改めて丁寧に送り、より深い理解を促す。
+
+
+
+送るときの文例（参考）
+
+件名：『スーパー木の実ドンぐりお』参考資料のご送付
+
+
+いつもお世話になっております。
+『スーパー木の実ドンぐりお』の絵本について、まずは物語のエッセンスをまとめた簡易版をお送りします。
+作品の全体像にご興味を持っていただけましたら、改めて全編の資料もお送りいたしますので、ご遠慮なくお知らせください。
+
+
+ご検討のほど、よろしくお願いいたします。
+
+
+もし具体的に、どちらのバージョンを先に出すか迷っている場合は、その状況や相手のタイプを教えてもらえれば、より的確なアドバイスができます。</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+]
+ファイル名: 
+サマリー: 
+タグ:</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: super
+…
+応, 交渉戦略, 絵本制作, メール文例</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: super_dongurio_sharing_advice
+サマリー:
+出版社からの出版オファーに対し、費用負担が前提となる可能性を踏まえ、慎重な情報共有の重要性について議論した。作品の挿絵や資料を求められた際の対応方針や、著作権保護のためのウォーターマークや利用制限文言の効果についても説明。また、情報を段階的に共有する戦略や、相手への柔らかい断り文の提案を行い、曖昧さを活かしたスパーリング的な交渉術を推奨。絵本の抜粋版と全編版の使い分けも含め、実践的な対応案を示した。
+タグ: 出版交渉, 情報共有, 著作権管理, 挿絵対応, 交渉戦略, 絵本制作, メール文例</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

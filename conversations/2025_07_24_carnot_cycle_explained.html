@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>カルノーサイクルの概要</title>
+<style>
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  padding: 0;
+}
+.bubble-base {
+  padding: 8px 12px;
+  border-radius: 15px;
+  min-width: 50%;
+  max-width: 70%;
+  word-break: break-word;
+  position: relative;
+  white-space: pre-wrap;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  border: 4px solid transparent;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+  margin: 0;
+}
+.bubble-user {
+  background: #d1f5d3;
+}
+.bubble-assistant {
+  background: #e0e0e0;
+}
+.bubble-base.selected {
+  border: 4px solid #66ccff;
+}
+.user {
+  justify-content: flex-end;
+}
+.assistant {
+  justify-content: flex-start;
+}
+.preview, .full {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.long-preview {
+  font-weight: bold;
+}
+.full {
+  display: none;
+}
+.custom-context-menu {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center; margin-bottom: 8px;">カルノーサイクルの概要</h1>
+<p style="text-align:center; font-size: 12px; color: #666;">2025/07/24</p>
+<div class="chat-container" id="chatContainer">
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview">カルノーサイクルって何ですか？</div>
+          
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">カルノーサイクル（Carnot cycle）とは、熱機関の理
+…
+の図も描いて説明できます。どうしますか？</div>
+          <div class="full">カルノーサイクル（Carnot cycle）とは、熱機関の理論的な最高効率を示す理想的な熱サイクルのことです。1824年にフランスの物理学者サディ・カルノー（Sadi Carnot）によって提唱されました。
+
+
+
+🔁 カルノーサイクルの構成（4つの過程）
+
+
+断熱膨張（可逆）
+→ 外部から熱を受け取らずに気体が膨張し、温度が下がる。
+（断熱 = 熱のやりとりなし）
+
+等温膨張（高温熱源と接触）
+→ 高温熱源から熱  $Q_H$  を受け取りながら、気体が膨張。
+→ 温度は一定（理想気体の場合、内部エネルギーは変わらない）
+
+断熱圧縮（可逆）
+→ 熱の出入りなしで気体が圧縮され、温度が上がる。
+
+等温圧縮（低温熱源と接触）
+→ 低温熱源に熱  $Q_C$  を放出しながら圧縮。
+→ 温度は一定。
+
+
+
+📊 カルノーサイクルの特徴
+
+
+理想的なサイクル（現実の機械では実現不可能だが、理論上の限界として重要）
+
+**可逆（リバーシブル）**な過程で構成されているため、エントロピーの増減がない
+
+効率は以下の式で与えられる：
+
+
+$$
+\eta = 1 - \frac{T_C}{T_H}
+$$
+
+
+ここで：
+
+
+$\eta$ ：熱効率
+
+$T_H$ ：高温熱源の温度（絶対温度）
+
+$T_C$ ：低温熱源の温度（絶対温度）
+
+
+
+💡 なぜ重要なの？
+
+
+どんな熱機関も、カルノーサイクルより効率が良くなることはない
+
+熱力学第2法則（エントロピー増大の法則）と深く関係している
+
+現実の熱機関（エンジンや冷蔵庫など）の効率を評価する理想基準となる
+
+
+
+興味があれば、ピストン付きシリンダーで動作するカルノーサイクルの図も描いて説明できます。どうしますか？</div>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="bubble-base bubble-user">
+          <div class="preview long-preview">この対話の要点をもとに、以下の3点を生成してください：
+
+
+
+…
+]
+ファイル名: 
+サマリー: 
+タグ:</div>
+          <div class="full">この対話の要点をもとに、以下の3点を生成してください：
+
+
+ファイル名（英語またはローマ字。スペースなし、記号は_に変換。例: kuroshiro_test）
+
+サマリー（日本語、300文字前後。簡潔に主旨を伝える）
+
+タグ（日本語。3〜7語程度のカンマ区切り）
+
+
+以下のフォーマットに従って出力してください：
+
+
+[要素生成完了#FILEINFO]
+ファイル名: 
+サマリー: 
+タグ:</div>
+        </div>
+      </div>
+
+      <div class="message assistant">
+        <div class="bubble-base bubble-assistant">
+          <div class="preview long-preview">[要素生成完了#FILEINFO]
+ファイル名: carno
+…
+ー, エントロピー, 効率, 物理学基礎</div>
+          <div class="full">[要素生成完了#FILEINFO]
+ファイル名: carnot_cycle_explained
+サマリー: カルノーサイクルとは、サディ・カルノーによって提唱された、熱機関の理論的最高効率を示す理想的なサイクルである。この対話では、4つの過程（断熱膨張、等温膨張、断熱圧縮、等温圧縮）を順に解説し、その熱効率の計算式や意味についても触れた。カルノーサイクルの重要性は、どんな熱機関もこれを超える効率を持てないという、熱力学第2法則の根本に関わる点にある。
+タグ: カルノーサイクル, 熱力学, 熱機関, サディ・カルノー, エントロピー, 効率, 物理学基礎</div>
+        </div>
+      </div>
+</div>
+<div id="customMenu" class="custom-context-menu">バブルをコピー</div>
+<script>
+(function(){
+let selectedBubbleForCopy = null;
+function toggleBubble(element, isExpandable, event) {
+  event.stopPropagation();
+  if (isExpandable) {
+    const preview = element.querySelector(".preview");
+    const full = element.querySelector(".full");
+    if (preview && full) {
+      if (preview.style.display !== "none") {
+        preview.style.display = "none";
+        full.style.display = "block";
+      } else {
+        preview.style.display = "block";
+        full.style.display = "none";
+        const rect = element.getBoundingClientRect();
+        const offset = window.pageYOffset + rect.top - 10;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+  }
+  document.querySelectorAll(".bubble-base").forEach(b => b.classList.remove("selected"));
+  const bubble = element.querySelector(".bubble-base");
+  if (bubble) {
+    setTimeout(() => {
+      bubble.classList.add("selected");
+      selectedBubbleForCopy = bubble;
+    }, 33);
+  }
+}
+document.body.addEventListener("click", function(){
+  document.getElementById("customMenu").style.display = "none";
+});
+document.getElementById("customMenu").addEventListener("click", function(){
+  if (selectedBubbleForCopy) {
+    navigator.clipboard.writeText(selectedBubbleForCopy.innerText).then(() => {
+      selectedBubbleForCopy.style.transition = "none";
+      selectedBubbleForCopy.style.background = "#ccf0ff";
+      setTimeout(() => {
+        selectedBubbleForCopy.style.transition = "background 0.4s ease-out";
+        selectedBubbleForCopy.style.background = "";
+      }, 400);
+    });
+  }
+  this.style.display = "none";
+});
+window.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".message").forEach(div => {
+    const isExpandable = div.querySelector(".full") !== null;
+    div.onclick = (e) => toggleBubble(div, isExpandable, e);
+    div.oncontextmenu = (e) => {
+      e.preventDefault();
+      selectedBubbleForCopy = div.querySelector(".bubble-base");
+      const menu = document.getElementById("customMenu");
+      menu.style.left = e.pageX + "px";
+      menu.style.top = e.pageY + "px";
+      menu.style.display = "block";
+    };
+  });
+});
+})();
+</script>
+</body>
+</html>

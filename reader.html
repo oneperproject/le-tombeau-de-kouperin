@@ -3,60 +3,66 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>チャット読み上げツール</title>
+  <title>チャット読み上げ支援ビュー</title>
   <style>
-    body { font-family: sans-serif; padding: 1em; max-width: 600px; margin: auto; }
-    input, button { font-size: 1em; margin: 0.5em 0; width: 100%; }
-    iframe { width: 100%; height: 300px; border: 1px solid #ccc; margin-top: 1em; }
+    body { font-family: sans-serif; margin: 0; padding: 1em; background: #f8f8f8; }
+    #upload {
+      display: block;
+      font-size: 1em;
+      margin: 0 auto 1em auto;
+    }
+    #chatContainer {
+      width: 100%; max-width: 600px;
+      margin: 0 auto; background: white; border: 1px solid #ccc;
+      padding: 1em; box-sizing: border-box;
+    }
+    .bubble-base {
+      margin: 0.75em 0;
+      padding: 0.8em 1em;
+      border-radius: 1em;
+      max-width: 90%;
+      white-space: pre-wrap;
+    }
+    .assistant { background-color: #e0f7fa; align-self: flex-start; }
+    .user { background-color: #ffe0b2; align-self: flex-end; }
   </style>
 </head>
 <body>
-  <h2>チャット読み上げツール</h2>
-  <p>チャットHTMLのURLを入力してください：</p>
-  <input id="urlInput" type="text" placeholder="https://example.com/chat.html">
-  <button onclick="loadAndSpeak()">読み上げ開始</button>
-  <iframe id="chatFrame"></iframe>
+
+  <input type="file" id="upload" accept=".html">
+
+  <div id="chatContainer"></div>
 
   <script>
-    function loadAndSpeak() {
-      const url = document.getElementById('urlInput').value;
-      const frame = document.getElementById('chatFrame');
-      frame.src = url;
+    const chatContainer = document.getElementById("chatContainer");
+    const upload = document.getElementById("upload");
 
-      frame.onload = () => {
-        try {
-          const doc = frame.contentDocument || frame.contentWindow.document;
-          const bubbles = doc.querySelectorAll('.bubble-base');
-          const texts = [];
+    upload.addEventListener("change", () => {
+      const file = upload.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(reader.result, "text/html");
+        const bubbleNodes = doc.querySelectorAll(".bubble-base");
 
-          bubbles.forEach(bubble => {
-            const full = bubble.querySelector('.full');
-            const preview = bubble.querySelector('.preview');
-            const text = full?.innerText || preview?.innerText;
-            if (text) texts.push(text.trim());
-          });
+        chatContainer.innerHTML = ""; // clear previous
 
-          speakTexts(texts);
-        } catch (e) {
-          alert('CORS制限のため、読み込めません。同一ドメインのHTMLを使用してください。');
-        }
+        bubbleNodes.forEach(bubble => {
+          const full = bubble.querySelector(".full");
+          const preview = bubble.querySelector(".preview");
+          const text = (full?.innerText || preview?.innerText || "").trim();
+          if (!text) return;
+
+          const div = document.createElement("div");
+          div.className = "bubble-base " + (bubble.classList.contains("assistant") ? "assistant" : "user");
+          div.textContent = text;
+          chatContainer.appendChild(div);
+        });
       };
-    }
-
-    function speakTexts(texts) {
-      const synth = window.speechSynthesis;
-      let i = 0;
-
-      function speakNext() {
-        if (i >= texts.length) return;
-        const utter = new SpeechSynthesisUtterance(texts[i]);
-        utter.lang = 'ja-JP';
-        utter.onend = () => { i++; speakNext(); };
-        synth.speak(utter);
-      }
-
-      speakNext();
-    }
+      reader.readAsText(file);
+    });
   </script>
+
 </body>
 </html>
